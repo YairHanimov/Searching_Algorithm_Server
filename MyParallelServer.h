@@ -12,7 +12,7 @@ class MyParallelServer : public Server{
 
 private:
     int port;
-    ClientHandler c;
+    ClientHandler client_handler;
  public:
   MyParallelServer() {
 
