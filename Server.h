@@ -1,0 +1,14 @@
+//
+// Created by yair on 12/01/2020.
+//
+
+#ifndef SEARCHING_ALGORITHM_SERVER_SERVER_H
+#define SEARCHING_ALGORITHM_SERVER_SERVER_H
+
+
+class Server {
+
+};
+
+
+#endif //SEARCHING_ALGORITHM_SERVER_SERVER_H
