@@ -19,6 +19,9 @@ public:
 
     }
 
+    void  open(int , ClientHandler );
+    void stop();
+
 };
 
 
