@@ -6,7 +6,10 @@
 #define SEARCHING_ALGORITHM_SERVER_MYSERIALSERVER_H
 
 #include "ClientHandler.h"
-#include "
+#include "server_side.h"
+
+using namespace server_side;
+
 class MySerialServer : public Server {
 private:
     int port;
