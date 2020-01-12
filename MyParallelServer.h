@@ -7,7 +7,11 @@
 
 
 class MyParallelServer {
+private: int port;
 
+public:MyParallelServer(){
+
+}
 };
 
 
