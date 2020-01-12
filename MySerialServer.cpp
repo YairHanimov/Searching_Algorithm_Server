@@ -5,7 +5,7 @@
 #include <netinet/in.h>
 #include "chrono"
 
-#define TIMEOUT 120
+#define TIMEOUT 1
 using namespace std;
 //
 // Created by yair on 12/01/2020.
