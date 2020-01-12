@@ -10,6 +10,10 @@
 namespace server_side {
 
 class Server {
+private:
+    int port;
+    ClientHandler c;
+public:
   virtual void open(int port, ClientHandler c);
   virtual void stop();
 };

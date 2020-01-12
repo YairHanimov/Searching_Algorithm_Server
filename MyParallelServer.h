@@ -9,8 +9,7 @@
 using namespace server_side;
 
 class MyParallelServer : public Server{
- private:
-  int port;
+
 
  public:
   MyParallelServer() {
