@@ -5,14 +5,17 @@
 #ifndef SEARCHING_ALGORITHM_SERVER_MYPARALLELSERVER_H
 #define SEARCHING_ALGORITHM_SERVER_MYPARALLELSERVER_H
 
+#include "server_side.h"
+using namespace server_side;
 
-class MyParallelServer {
-private: int port;
+class MyParallelServer : public Server{
+ private:
+  int port;
 
-public:MyParallelServer(){
+ public:
+  MyParallelServer() {
 
-}
+  }
 };
-
 
 #endif //SEARCHING_ALGORITHM_SERVER_MYPARALLELSERVER_H

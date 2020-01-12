@@ -10,8 +10,8 @@
 namespace server_side {
 
 class Server {
-virtual void open(int port,ClientHandler c );
-virtual void stop();
+  virtual void open(int port, ClientHandler c);
+  virtual void stop();
 };
 }
 #endif //SEARCHING_ALGORITHM_SERVER_SERVER_SIDE_H
