@@ -13,6 +13,8 @@ public: StringReverser(string s){
     this->mystring=s;
 }
 
+public: string reversme(){}
+
 };
 
 
