@@ -9,7 +9,7 @@
 
 class MyTestClientHandler : public ClientHandler{
  public:
-  void handleClient(int inputStream, int outputStream) override;
+  virtual void handleClient(int inputStream, int outputStream);
 };
 
 #endif //SEARCHING_ALGORITHM_SERVER_MYTESTCLIENTHANDLER_H

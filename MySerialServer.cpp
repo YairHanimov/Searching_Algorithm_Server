@@ -1,17 +1,11 @@
 #include <sys/socket.h>
 #include "MySerialServer.h"
-#include <thread>
-#include <sys/socket.h>
-#include <string>
 #include <iostream>
 #include <unistd.h>
 #include <netinet/in.h>
-#include <vector>
-#include <stdlib.h>
-#include <stdio.h>
-#include "cstring"
 #include "chrono"
 
+#define TIMEOUT 1200
 using namespace std;
 //
 // Created by yair on 12/01/2020.
@@ -42,21 +36,22 @@ void MySerialServer::open(int port, ClientHandler c) {
   if (listen(socketfd, 1) == -1) {
     cerr << "Error during listening command" << endl;
   }
+  struct timeval tv;
+  int timeout_in_seconds = TIMEOUT;
+  tv.tv_sec = timeout_in_seconds;
+  tv.tv_usec = 0;
+  setsockopt(socketfd, SOL_SOCKET, SO_RCVTIMEO, (const char *) &tv, sizeof tv);
 
   //accepting a client
   bool serialListening = true;
   socklen_t addrlen = sizeof(sockaddr_in);
   while (serialListening) {
-//    struct timeval tv;
-//    int timeout_in_seconds = 10;
-//    tv.tv_sec = timeout_in_seconds;
-//    setsockopt(socketfd, SOL_SOCKET, SO_RCVTIMEO, (const char*)&tv, sizeof tv);
-    int client_socket =
-        accept(socketfd, (struct sockaddr *) &address, &addrlen);
+    int client_socket = -1;
+    client_socket = accept(socketfd, (struct sockaddr *) &address, &addrlen);
     this->client_handler.handleClient(socketfd, socketfd);
-
     if (client_socket == -1) {
-      cerr << "Error accepting client" << endl;
+      serialListening = false;
+      //cerr << "Error accepting client" << endl;
     }
 
   }
