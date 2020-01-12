@@ -5,8 +5,11 @@
 #ifndef SEARCHING_ALGORITHM_SERVER_MYTESTCLIENTHANDLER_H
 #define SEARCHING_ALGORITHM_SERVER_MYTESTCLIENTHANDLER_H
 
-class MyTestClientHandler {
+#include "ClientHandler.h"
 
+class MyTestClientHandler : public ClientHandler{
+ public:
+  void handleClient(int inputStream, int outputStream) override;
 };
 
 #endif //SEARCHING_ALGORITHM_SERVER_MYTESTCLIENTHANDLER_H

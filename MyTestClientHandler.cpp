@@ -3,3 +3,7 @@
 //
 
 #include "MyTestClientHandler.h"
+
+void MyTestClientHandler::handleClient(int inputStream, int outputStream) {
+
+}
