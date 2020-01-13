@@ -1,0 +1,14 @@
+//
+// Created by eyal on 12.1.2020.
+//
+
+#ifndef SEARCHING_ALGORITHM_SERVER_SEARCHABLE_H
+#define SEARCHING_ALGORITHM_SERVER_SEARCHABLE_H
+
+
+class Searchable {
+
+};
+
+
+#endif //SEARCHING_ALGORITHM_SERVER_SEARCHABLE_H

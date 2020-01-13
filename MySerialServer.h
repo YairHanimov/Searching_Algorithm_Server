@@ -5,7 +5,7 @@
 #ifndef SEARCHING_ALGORITHM_SERVER_MYSERIALSERVER_H
 #define SEARCHING_ALGORITHM_SERVER_MYSERIALSERVER_H
 
-#include "ClientHandler.h"
+#include "MyTestClientHandler.h"
 #include "server_side.h"
 
 using namespace server_side;
@@ -13,13 +13,13 @@ using namespace server_side;
 class MySerialServer : public Server {
 private:
     int port;
-    ClientHandler client_handler;
+    MyTestClientHandler client_handler;
 public:
     MySerialServer() {
 
     }
 
-    void  open(int , ClientHandler );
+    void  open(int , MyTestClientHandler );
     void stop();
 
 };

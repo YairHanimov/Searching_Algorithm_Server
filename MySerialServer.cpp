@@ -5,12 +5,12 @@
 #include <netinet/in.h>
 #include "chrono"
 
-#define TIMEOUT 1
+#define TIMEOUT 1200
 using namespace std;
 //
 // Created by yair on 12/01/2020.
 //
-void MySerialServer::open(int port, ClientHandler c) {
+void MySerialServer::open(int port, MyTestClientHandler c) {
   this->port = port;
   this->client_handler = c;
   int socketfd = socket(AF_INET, SOCK_STREAM, 0);
@@ -48,12 +48,13 @@ void MySerialServer::open(int port, ClientHandler c) {
   while (serialListening) {
     int client_socket = -1;
     client_socket = accept(socketfd, (struct sockaddr *) &address, &addrlen);
-    this->client_handler.handleClient(socketfd, socketfd);
-    if (client_socket == -1) {
+
+    if (client_socket < 0) {
       serialListening = false;
       //cerr << "Error accepting client" << endl;
     }
 
+    this->client_handler.handleClient(client_socket, client_socket);
   }
   //closing the listening socket
   close(socketfd);

@@ -5,8 +5,16 @@
 #ifndef SEARCHING_ALGORITHM_SERVER_SOLVER_H
 #define SEARCHING_ALGORITHM_SERVER_SOLVER_H
 
-class Solver {
+#include "string"
 
+using namespace std;
+
+template<class problem, class solution>
+class Solver {
+public:
+    virtual solution solve(problem);
+
+    virtual ~Solver();
 };
 
 #endif //SEARCHING_ALGORITHM_SERVER_SOLVER_H

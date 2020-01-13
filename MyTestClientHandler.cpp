@@ -4,14 +4,14 @@
 
 #include <stdio.h>
 #include "MyTestClientHandler.h"
-#include <sys/socket.h>
-#include "MySerialServer.h"
 #include <iostream>
 #include <unistd.h>
-#include <netinet/in.h>
-#include "chrono"
+using namespace std;
+
 void MyTestClientHandler::handleClient(int inputStream, int outputStream) {
     char buffer[1024] = {0};
-    ssize_t valread = read(inputStream, buffer, 1024);
-
+    while(true) {
+        ssize_t valread = read(inputStream, buffer, 1024);
+        cout << buffer << endl;
+    }
 }
