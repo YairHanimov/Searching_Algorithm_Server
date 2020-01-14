@@ -5,8 +5,8 @@
 #include "StringReverser.h"
 #include <bits/stdc++.h>
 using namespace std;
-string StringReverser::reverseMe() {
-    reverse(this->mystring.begin(), this->mystring.end());
-    return this->mystring;
+string StringReverser::solve(string problem) {
+    reverse(problem.begin(), problem.end());
+    return problem;
 
 }

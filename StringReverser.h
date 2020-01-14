@@ -9,14 +9,10 @@
 
 using namespace std;
 
-class StringReverser : public Solver<string,string> {
-private: string mystring;
-public: StringReverser(string s){
-    this->mystring=s;
-}
-
-public: string reverseMe();
-
+class StringReverser : public Solver <string,string> {
+public:
+    StringReverser() = default;
+    string solve(string problem) override;
 };
 
 
