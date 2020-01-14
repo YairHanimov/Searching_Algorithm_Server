@@ -5,7 +5,7 @@
 #include <netinet/in.h>
 #include "chrono"
 
-#define TIMEOUT 1
+#define TIMEOUT 15
 using namespace std;
 
 void MySerialServer::open(int port, MyTestClientHandler c) {

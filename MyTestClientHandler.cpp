@@ -15,13 +15,18 @@ void MyTestClientHandler::handleClient(int inputStream, int outputStream) {
     char buffer[1024] = {0};
     vector<string> line;
     while (true) {
+        buffer[1024] = {0};
 
         ssize_t valread = read(inputStream, buffer, 1024);
-        cout << buffer << endl;
+      //  cout << buffer << endl;
         char *token = strtok(buffer, "\n");
         while (token != NULL) {
+            cout<<" my token"<<endl;
+            cout<<token<<endl;
             line.push_back(token);
+
             token = strtok(NULL, "\n");
+            cin.clear();
         }
     }
 }
