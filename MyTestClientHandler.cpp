@@ -18,7 +18,10 @@ void MyTestClientHandler::handleClient(int inputStream, int outputStream) {
         buffer[1024] = {0};
 
         ssize_t valread = read(inputStream, buffer, 1024);
-      //  cout << buffer << endl;
+        if (strcmp(buffer, "end") == 0) {
+            break;
+        }
+        cout << buffer << endl;
         char *token = strtok(buffer, "\n");
         while (token != NULL) {
             cout<<" my token"<<endl;

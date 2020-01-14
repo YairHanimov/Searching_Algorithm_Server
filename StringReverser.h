@@ -5,15 +5,17 @@
 #ifndef SEARCHING_ALGORITHM_SERVER_STRINGREVERSER_H
 #define SEARCHING_ALGORITHM_SERVER_STRINGREVERSER_H
 #include "string"
+#include "Solver.h"
+
 using namespace std;
 
-class StringReverser {
+class StringReverser : public Solver<string,string> {
 private: string mystring;
 public: StringReverser(string s){
     this->mystring=s;
 }
 
-public: string reversme();
+public: string reverseMe();
 
 };
 

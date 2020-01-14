@@ -5,7 +5,7 @@
 #include "StringReverser.h"
 #include <bits/stdc++.h>
 using namespace std;
-string StringReverser::reversme() {
+string StringReverser::reverseMe() {
     reverse(this->mystring.begin(), this->mystring.end());
     return this->mystring;
 

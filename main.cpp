@@ -11,6 +11,6 @@ int main() {
     a->open(5600, (MyTestClientHandler)*ch);
     string strtest="hello world";
     StringReverser *rev=new StringReverser(strtest);
-    cout<<rev->reversme()<<endl;
+    cout << rev->reverseMe() << endl;
     return 0;
 }
