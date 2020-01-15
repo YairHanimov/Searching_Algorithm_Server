@@ -17,7 +17,7 @@ public:
     unordered_map<string, typename list<pair<problem, solution>>::iterator> cache;
     unsigned long capacity = 0;
 
-    void insert(problem p, solution s) {
+    void insert(problem p, solution s) override {
         ofstream in_file;
         string filename = s.class_name + p;
         in_file.open(filename, ios::binary);
@@ -42,7 +42,7 @@ public:
         }
     }
 
-    solution* get(problem p) {
+    solution* get(problem p) override {
         solution *s;
         auto it = cache.find(p);
         if (it == cache.end()) {

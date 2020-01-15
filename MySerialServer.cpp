@@ -8,7 +8,8 @@
 #define TIMEOUT 15
 using namespace std;
 
-void MySerialServer::open() {
+template<class problem, class solution>
+void MySerialServer<problem, solution>::open() {
     int socketfd = socket(AF_INET, SOCK_STREAM, 0);
     if (socketfd == -1) {
         cerr << "Could not create a socket" << endl;
@@ -56,6 +57,7 @@ void MySerialServer::open() {
 
 }
 
-void MySerialServer::stop() {
+template<class problem, class solution>
+void MySerialServer<problem, solution>::stop() {
 
 }

@@ -8,8 +8,8 @@ using namespace std;
 
 int main() {
     auto *ch = new MyTestClientHandler();
-    FileCacheManager<string,string> *cm ();
-    auto *a = new MySerialServer(ch, cm);
+    auto *cm = new FileCacheManager<string,string>();
+    MySerialServer<string,string> *serial_server = new MySerialServer<string,string>(5600, ch, cm);
     //  a->open(5600, (MyTestClientHandler)*ch);
     string strtest = "hello world";
 
