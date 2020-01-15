@@ -42,27 +42,27 @@ public:
         }
     }
 
-    solution get(problem p) {
-        solution s;
+    solution* get(problem p) {
+        solution *s;
         auto it = cache.find(p);
         if (it == cache.end()) {
             // if (cache.find(p)==cache.end){
-            std::fstream in_file;
-            std::string filename = s.class_name + p;
+            fstream in_file;
+            string filename = p;
             in_file.open(filename);
             if (!in_file) {
-                throw "an error";
+                return nullptr;
             }
             in_file.read((char *) &s, sizeof(s));
             insert(p, s);
             in_file.close();
-            return s;
+            return &s;
 
         } else {
 
             dq.splice(dq.begin(), dq, it->second);
             insert(p, it->second->second);
-            return it->second->second;
+            return &it->second->second;
         }
     }
 
