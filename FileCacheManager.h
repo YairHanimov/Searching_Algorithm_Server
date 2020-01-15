@@ -6,11 +6,12 @@
 #define SEARCHING_ALGORITHM_SERVER_FILECACHEMANAGER_H
 
 #import "unordered_map"
+#import "CacheManager.h"
 
 using namespace std;
 
 template<class problem, class solution>
-class FileCacheManager {
+class FileCacheManager : public CacheManager<problem,solution> {
 public:
     unordered_map<problem, solution> cache;
     bool isProblemSolver(string p);

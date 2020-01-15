@@ -5,6 +5,7 @@
 #ifndef SEARCHING_ALGORITHM_SERVER_CACHEMANAGER_H
 #define SEARCHING_ALGORITHM_SERVER_CACHEMANAGER_H
 
+template<class problem, class solution>
 class CacheManager {
 
 };
