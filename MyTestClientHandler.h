@@ -8,13 +8,13 @@
 #include "ClientHandler.h"
 #include "CacheManager.h"
 
-template<class problem, class solution>
+//template<class problem, class solution>
 class MyTestClientHandler : public ClientHandler {
 public:
-    CacheManager<problem, solution> *cache_manager;
-    MyTestClientHandler(CacheManager<problem, solution> *cm) {
-        this->cache_manager = cm;
-    }
+  //  CacheManager<problem, solution> *cache_manager;
+//    MyTestClientHandler(CacheManager<problem, solution> *cm) {
+//        this->cache_manager = cm;
+//    }
     virtual void handleClient(int inputStream, int outputStream);
 };
 

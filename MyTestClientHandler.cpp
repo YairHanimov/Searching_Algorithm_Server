@@ -12,8 +12,7 @@
 
 using namespace std;
 
-template<class problem, class solution>
-void MyTestClientHandler<problem, solution>::handleClient(int inputStream, int outputStream) {
+void MyTestClientHandler::handleClient(int inputStream, int outputStream) {
     char buffer[1024] = {0};
     vector<string> line;
     while (true) {
@@ -25,15 +24,15 @@ void MyTestClientHandler<problem, solution>::handleClient(int inputStream, int o
         }
         cout << buffer << endl;
 
-        auto solu = this->cache_manager->get(buffer);
-        if (solu==NULL){
-            StringReverser *rev = new StringReverser();
-             string afterfix="";
-             afterfix+= rev->solve(buffer);
-             this->cache_manager->insert(buffer,afterfix);
-        }
-        else
-            cout<<solu<<endl;
+//        auto solu = this->cache_manager->get(buffer);
+//        if (solu==NULL){
+//            StringReverser *rev = new StringReverser();
+//             string afterfix="";
+//             afterfix+= rev->solve(buffer);
+//             this->cache_manager->insert(buffer,afterfix);
+//        }
+//        else
+//            cout<<solu<<endl;
 
 
 //        char *token = strtok(buffer, "\n");

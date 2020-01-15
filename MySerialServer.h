@@ -12,7 +12,6 @@
 
 using namespace server_side;
 
-template<class problem, class solution>
 class MySerialServer : public Server {
 private:
     int port = 0;
