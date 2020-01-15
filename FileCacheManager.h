@@ -19,7 +19,7 @@ public:
 
     void insert(problem p, solution s) override {
         ofstream in_file;
-        string filename = s.class_name + p;
+        string filename = p;
         in_file.open(filename, ios::binary);
         if (!in_file) {
             throw "error open file";
