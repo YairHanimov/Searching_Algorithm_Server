@@ -1,6 +1,3 @@
-//
-// Created by eyal on 12.1.2020.
-//
 
 #ifndef SEARCHING_ALGORITHM_SERVER_FILECACHEMANAGER_H
 #define SEARCHING_ALGORITHM_SERVER_FILECACHEMANAGER_H
@@ -67,11 +64,9 @@ public:
             insert(p, it->second->second);
             return it->second->second;
         }
-
-
     }
 
-    explicit FileCacheManager(unsigned long cap ) {
+    explicit FileCacheManager(unsigned long cap) {
         this->capacity = cap;
     }
 };
