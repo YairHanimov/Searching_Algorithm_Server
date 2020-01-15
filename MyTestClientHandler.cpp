@@ -22,14 +22,14 @@ void MyTestClientHandler::handleClient(int inputStream, int outputStream) {
             break;
         }
         cout << buffer << endl;
-        char *token = strtok(buffer, "\n");
-        while (token != NULL) {
-            cout<<" my token"<<endl;
-            cout<<token<<endl;
-            line.push_back(token);
-
-            token = strtok(NULL, "\n");
-            cin.clear();
-        }
+//        char *token = strtok(buffer, "\n");
+//        while (token != NULL) {
+//            cout << " my token" << endl;
+//            cout << token << endl;
+//            line.push_back(token);
+//
+//            token = strtok(NULL, "\n");
+//
+//        }
     }
 }
