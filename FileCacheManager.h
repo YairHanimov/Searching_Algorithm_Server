@@ -5,83 +5,75 @@
 #ifndef SEARCHING_ALGORITHM_SERVER_FILECACHEMANAGER_H
 #define SEARCHING_ALGORITHM_SERVER_FILECACHEMANAGER_H
 
+#include <list>
+#include <fstream>
 #import "unordered_map"
 #import "CacheManager.h"
 
 using namespace std;
 
 template<class problem, class solution>
-class FileCacheManager : public CacheManager<problem,solution> {
+class FileCacheManager : public CacheManager<problem, solution> {
 public:
-    unordered_map<problem, solution> cache;
-    bool isProblemSolver(string p);
 
-    list<pair<string, T>> dq;
-    unordered_map<string, typename list< pair<string, T>>::iterator> mymap;
-    unsigned long capacity;
-    void insert(string key, T obj) {
-        std:: ofstream in_file;
-        std::string filename=obj.class_name+key;
-        in_file.open(filename,::std::ios::binary);
-        if (! in_file){
-            throw"eror open file";
+    list<pair<problem, solution>> dq;
+    unordered_map<string, typename list<pair<problem, solution>>::iterator> cache;
+    unsigned long capacity = 0;
+
+    void insert(problem p, solution s) {
+        ofstream in_file;
+        string filename = s.class_name + p;
+        in_file.open(filename, ios::binary);
+        if (!in_file) {
+            throw "error open file";
         }
-        in_file.write((char*)&obj, sizeof(obj));
+        in_file.write((char *) &s, sizeof(s));
         in_file.close();
-        auto it = mymap.find(key);
-        dq.push_front(pair<string, T>(key, obj));
-        if (it != mymap.end()) {
+        auto it = cache.find(p);
+        dq.push_front(pair<problem, solution>(p, s));
+        if (it != cache.end()) {
             dq.erase(it->second);
-            mymap.erase(it);
+            cache.erase(it);
         }
-        mymap[key] = dq.begin();
+        cache[p] = dq.begin();
 
-        if (mymap.size() > capacity) {
+        if (cache.size() > capacity) {
             auto last = dq.end();
             last--;
-            mymap.erase(last->first);
+            cache.erase(last->first);
             dq.pop_back();
         }
-    };
+    }
 
-    T get(string key) {
-        T obj;
-        auto it = mymap.find(key);
-        if (it == mymap.end()) {
-            // if (mymap.find(key)==mymap.end){
+    solution get(problem p) {
+        solution s;
+        auto it = cache.find(p);
+        if (it == cache.end()) {
+            // if (cache.find(p)==cache.end){
             std::fstream in_file;
-            std::string filename = obj.class_name + key;
+            std::string filename = s.class_name + p;
             in_file.open(filename);
             if (!in_file) {
                 throw "an error";
             }
-            in_file.read((char*)&obj, sizeof(obj));
-            insert(key,obj);
+            in_file.read((char *) &s, sizeof(s));
+            insert(p, s);
             in_file.close();
-            return obj;
+            return s;
 
         } else {
 
-            dq.splice(dq.begin(),dq,it->second);
-            insert(key, it->second->second);
+            dq.splice(dq.begin(), dq, it->second);
+            insert(p, it->second->second);
             return it->second->second;
         }
 
 
-    };
-    CacheManager(unsigned long cap) {
-        this->capacity = cap;
-    };
-    void foreach(){
-
-    };
-
-    void foreach(function<void(T&)>func){
-        for (auto x: dq){
-            func(x.second);
-        }
     }
-};
+
+    explicit FileCacheManager(unsigned long cap ) {
+        this->capacity = cap;
+    }
 };
 
 #endif //SEARCHING_ALGORITHM_SERVER_FILECACHEMANAGER_H
