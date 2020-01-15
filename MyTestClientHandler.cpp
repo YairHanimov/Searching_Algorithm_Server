@@ -11,7 +11,8 @@
 
 using namespace std;
 
-void MyTestClientHandler::handleClient(int inputStream, int outputStream) {
+template<class problem, class solution>
+void MyTestClientHandler<problem, solution>::handleClient(int inputStream, int outputStream) {
     char buffer[1024] = {0};
     vector<string> line;
     while (true) {
