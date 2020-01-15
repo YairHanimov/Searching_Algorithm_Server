@@ -8,9 +8,7 @@
 #define TIMEOUT 15
 using namespace std;
 
-void MySerialServer::open(int port, MyTestClientHandler c) {
-    this->port = port;
-    this->client_handler = c;
+void MySerialServer::open() {
     int socketfd = socket(AF_INET, SOCK_STREAM, 0);
     if (socketfd == -1) {
         cerr << "Could not create a socket" << endl;
@@ -61,5 +59,3 @@ void MySerialServer::open(int port, MyTestClientHandler c) {
 void MySerialServer::stop() {
 
 }
-
-#include "MySerialServer.h"

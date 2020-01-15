@@ -66,8 +66,8 @@ public:
         }
     }
 
-    explicit FileCacheManager(unsigned long cap) {
-        this->capacity = cap;
+    FileCacheManager() {
+        this->capacity = 5;
     }
 };
 
