@@ -5,8 +5,11 @@
 #ifndef SEARCHING_ALGORITHM_SERVER_BESTFS_H
 #define SEARCHING_ALGORITHM_SERVER_BESTFS_H
 
+#include "Searcher.h"
+using namespace std;
 
-class BestFS {
+template<class T>
+class BestFS : public Searcher<T>{
 
 };
 

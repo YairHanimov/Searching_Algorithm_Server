@@ -5,7 +5,7 @@
 #ifndef SEARCHING_ALGORITHM_SERVER_SEARCHER_H
 #define SEARCHING_ALGORITHM_SERVER_SEARCHER_H
 
-template<class problem>
+template<class T>
 class Searcher {
 
 };

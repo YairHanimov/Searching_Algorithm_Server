@@ -5,8 +5,11 @@
 #ifndef SEARCHING_ALGORITHM_SERVER_BFS_H
 #define SEARCHING_ALGORITHM_SERVER_BFS_H
 
+#include "Searcher.h"
+using namespace std;
 
-class BFS {
+template<class T>
+class BFS : public Searcher<T>{
 
 };
 

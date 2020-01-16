@@ -5,8 +5,11 @@
 #ifndef SEARCHING_ALGORITHM_SERVER_ASTAR_H
 #define SEARCHING_ALGORITHM_SERVER_ASTAR_H
 
+#include "Searcher.h"
+using namespace std;
 
-class AStar {
+template<class T>
+class AStar : public Searcher<T>{
 
 };
 

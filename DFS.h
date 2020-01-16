@@ -5,8 +5,11 @@
 #ifndef SEARCHING_ALGORITHM_SERVER_DFS_H
 #define SEARCHING_ALGORITHM_SERVER_DFS_H
 
+#include "Searcher.h"
+using namespace std;
 
-class DFS {
+template<class T>
+class DFS : public Searcher<T>{
 
 };
 
