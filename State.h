@@ -14,8 +14,8 @@ private:
     double cost;            //cost of visiting
     double shortestPath;    //how much cost until now
 public:
-    State(T inputObj){
-        this->obj(*inputObj);
+    State<T>(T inputObj){
+        this->obj(inputObj);
         this->parent = nullptr;
         this-visited = false;
         this->cost = 0;

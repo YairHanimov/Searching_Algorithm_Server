@@ -86,12 +86,12 @@ public:
         Cell *startcell = new Cell(start1, start2);
         Cell *endedsell = new Cell(end1, end2);
 
-        //Matrix *returnMatrix;
-//        returnMatrix->matrix = matrix;
-//        returnMatrix->start(startcell);
-//        returnMatrix->end(endedsell);
+        Matrix *returnMatrix;
+        returnMatrix->matrix = matrix;
+        returnMatrix->start = *startcell;
+        returnMatrix->end = *endedsell;
 
-        Matrix *returnMatrix = new Matrix(*matrix, *startcell, *endedsell);
+//        Matrix *returnMatrix = new Matrix(matrix, *startcell, *endedsell);
         return *returnMatrix;
     }
 
