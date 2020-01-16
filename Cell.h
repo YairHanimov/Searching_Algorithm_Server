@@ -11,6 +11,10 @@ private:
     int row;
     int col;
 public:
+    Cell(int row_input, int col_input){
+        this->row = row_input;
+        this->col = col_input;
+    }
     int getRow() {
         return this->row;
     }
