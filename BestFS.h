@@ -1,0 +1,14 @@
+//
+// Created by eyal on 16.1.2020.
+//
+
+#ifndef SEARCHING_ALGORITHM_SERVER_BESTFS_H
+#define SEARCHING_ALGORITHM_SERVER_BESTFS_H
+
+
+class BestFS {
+
+};
+
+
+#endif //SEARCHING_ALGORITHM_SERVER_BESTFS_H
