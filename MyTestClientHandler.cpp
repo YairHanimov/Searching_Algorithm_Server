@@ -22,6 +22,7 @@ void MyTestClientHandler::handleClient(int inputStream, int outputStream) {
             break;
         }
         cout << buffer << endl;
+
 //        char *token = strtok(buffer, "\n");
 //        while (token != NULL) {
 //            cout << " my token" << endl;
