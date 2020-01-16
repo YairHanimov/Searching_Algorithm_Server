@@ -7,12 +7,18 @@
 
 #include "Searchable.h"
 #include "State.h"
+#include "Cell.h"
+
 using namespace std;
 
-template<class T>
-class Matrix : public Searchable<T>{
+class Matrix : public Searchable<Cell>{
 public:
-    vector<vector<State<T>>> matrix;
+    vector<vector<State<Cell>>> matrix;
+    Cell start;
+    Cell end;
+    virtual State<Cell> getInitialState() {}
+    virtual bool isGoalState(State<Cell>){}
+    virtual vector<State<Cell>> getAllPossibleStates(State<Cell>){}
 };
 
 #endif //SEARCHING_ALGORITHM_SERVER_MATRIX_H

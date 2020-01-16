@@ -12,9 +12,9 @@ using namespace std;
 template<class T>
 class Searchable {
 public:
-    State<T> getInitialState() {}
-    bool isGoalState(State<T>){}
-    vector<State<T>> getAllPossibleStates(State<T>){}
+    virtual State<T> getInitialState() {}
+    virtual bool isGoalState(State<T>){}
+    virtual vector<State<T>> getAllPossibleStates(State<T>){}
 };
 
 
