@@ -7,7 +7,14 @@
 
 template<class T>
 class State {
-
+private:
+    State<T> parent;        //where we came from
+    bool visited;           //was visited or not
+    double cost;            //cost of visiting
+    double shortestPath;    //how much cost until now
+public:
+    State<T> getParent(){}
+    void setShortestPath(){}
 };
 
 
