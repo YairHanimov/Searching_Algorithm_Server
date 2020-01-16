@@ -8,7 +8,7 @@ int main() {
     std::cout << "Hello, World!" << std::endl;
     auto *ch = new MyTestClientHandler();
     auto *a = new MySerialServer();
-    a->open(5600, (MyTestClientHandler)*ch);
+  //  a->open(5600, (MyTestClientHandler)*ch);
     string strtest="hello world";
     StringReverser *rev=new StringReverser();
 
