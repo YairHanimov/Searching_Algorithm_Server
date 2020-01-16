@@ -14,10 +14,14 @@ using namespace std;
 class Matrix : public Searchable<Cell>{
 public:
     vector<vector<State<Cell>>> matrix;
-    Cell start;
-    Cell end;
-    virtual State<Cell> getInitialState() {}
-    virtual bool isGoalState(State<Cell>){}
+    State<Cell> start;
+    State<Cell> end;
+    virtual State<Cell> getInitialState() {
+        return this->start;
+    }
+    virtual bool isGoalState(State<Cell> c){
+
+    }
     virtual vector<State<Cell>> getAllPossibleStates(State<Cell>){}
 };
 
