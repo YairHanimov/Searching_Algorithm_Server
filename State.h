@@ -5,7 +5,7 @@
 #ifndef SEARCHING_ALGORITHM_SERVER_STATE_H
 #define SEARCHING_ALGORITHM_SERVER_STATE_H
 
-
+template<class T>
 class State {
 
 };
