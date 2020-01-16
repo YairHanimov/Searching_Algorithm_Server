@@ -12,6 +12,7 @@
 #include <vector>
 #include <cstring>
 #include "StringReverser.h"
+#include "Solver.h"
 
 using namespace std;
 
@@ -19,9 +20,11 @@ template<class problem, class solution>
 class MyTestClientHandler : public ClientHandler {
 public:
     CacheManager<problem, solution> *cache_manager;
+    Solver<problem, solution> *sol;
 
-    MyTestClientHandler(CacheManager<problem, solution> *cm) {
+    MyTestClientHandler(CacheManager<problem, solution> *cm, Solver<problem,solution> *s) {
         this->cache_manager = cm;
+        this->sol = s;
     }
 
     virtual void handleClient(int inputStream, int outputStream) {
