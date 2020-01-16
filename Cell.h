@@ -15,6 +15,10 @@ public:
         this->row = row_input;
         this->col = col_input;
     }
+    Cell(Cell *c) {
+        this->row = c->row;
+        this->col = c->col;
+    }
     int getRow() {
         return this->row;
     }

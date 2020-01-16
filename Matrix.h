@@ -16,10 +16,18 @@ public:
     vector<vector<State<Cell>>> matrix;
     State<Cell> start;
     State<Cell> end;
-    virtual State<Cell> getInitialState() {
+    Matrix(vector<vector<State<Cell>>> *m, State<Cell> s, State<Cell> e) {
+        this->matrix = *m;
+        this->start = s;
+        this->end = e;
+    }
+    State<Cell> getInitialState() override{
         return this->start;
     }
-    virtual bool isGoalState(State<Cell> c){
+    bool isGoalState(State<Cell> c) override{
+
+    }
+    double getCellValue(Cell c) {
 
     }
     virtual vector<State<Cell>> getAllPossibleStates(State<Cell>){}

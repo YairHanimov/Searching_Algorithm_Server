@@ -22,11 +22,11 @@ public:
     OA() = default;
 
     string solve(string p) override {
-        Matrix<string> m = stringtomatrix(p);
-        cout<<"bla bla"<<endl;
+        Matrix m = stringToMatrix(p);
+        cout << "bla bla" << endl;
     }
 
-    Matrix<string> stringtomatrix(string str) {
+    Matrix stringToMatrix(string str) {
         vector<string> line;
         int n = str.length();
 
@@ -41,43 +41,58 @@ public:
             token = strtok(NULL, "\n");
 
         }
-        string lexer="";
-        int row=0;
-        int call=0;
-        int mysize=line.size();
-
-        while(row<(mysize-3)){
-            lexer+=line.front();
+        string lexer = "";
+        int row = 0;
+        int col = 0;
+        int mysize = line.size();
+        vector<vector<State<Cell>>> matrix;
+        while (row < (mysize - 3)) {
+            vector<State<Cell>> stateLine;
+            lexer += line.front();
             line.pop_back();
-            char *token = strtok(strToChar, ",");
+            token = strtok(strToChar, ",");
             while (token != NULL) {
-                Cell *c= new Cell(row,call);
-                State<Cell> *st = new State<Cell>((double )atoi(token));
-                call++;
+                Cell *c = new Cell(row, col);
+                State<Cell> *st = new State<Cell>(c);
+                st->setCost((double) atoi(token));
+                stateLine.push_back(*st);
+                col++;
                 token = strtok(NULL, ",");
             }
+            matrix.push_back(stateLine);
             row++;
         }
-        char *token = strtok(strToChar, ",");
+        double start1;
+        double start2;
+        double end1;
+        double end2;
+        token = strtok(strToChar, ",");
         if (token != NULL) {
-            double  start1=(double )atoi(token);
+            start1 = (double) atoi(token);
             token = strtok(NULL, ",");
         }
         if (token != NULL) {
-            double  start2=(double )atoi(token);
+            start2 = (double) atoi(token);
             token = strtok(NULL, ",");
         }
         if (token != NULL) {
-            double  end1=(double )atoi(token);
+            end1 = (double) atoi(token);
             token = strtok(NULL, ",");
         }
         if (token != NULL) {
-            double  end2=(double )atoi(token);
+            end2 = (double) atoi(token);
             token = strtok(NULL, ",");
         }
-        Cell *startcell=new Cell(start1,start2);
-        Cell *endedsell=new Cell(start1,start2);
-        State<Cell> *start = new State<Cell>()
+        Cell *startcell = new Cell(start1, start2);
+        Cell *endedsell = new Cell(end1, end2);
+
+        //Matrix *returnMatrix;
+//        returnMatrix->matrix = matrix;
+//        returnMatrix->start(startcell);
+//        returnMatrix->end(endedsell);
+
+        Matrix *returnMatrix = new Matrix(*matrix, *startcell, *endedsell);
+        return *returnMatrix;
     }
 
 
