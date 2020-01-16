@@ -50,7 +50,7 @@ void MySerialServer<problem, solution>::open() {
             serialListening = false;
         }
 
-        this->client_handler.handleClient(client_socket, client_socket);
+        this->client_handler->handleClient(client_socket, client_socket);
     }
     //closing the listening socket
     close(socketfd);

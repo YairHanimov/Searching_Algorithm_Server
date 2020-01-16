@@ -4,8 +4,8 @@
 
 #include <list>
 #include <fstream>
-#import "unordered_map"
-#import "CacheManager.h"
+#include  <unordered_map>
+#include "CacheManager.h"
 
 using namespace std;
 
@@ -54,9 +54,9 @@ public:
                 return nullptr;
             }
             in_file.read((char *) &s, sizeof(s));
-            insert(p, s);
+//            insert(p, s);
             in_file.close();
-            return &s;
+            return s;
 
         } else {
 
