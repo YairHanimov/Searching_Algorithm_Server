@@ -15,5 +15,4 @@ public:
     vector<vector<State<T>>> matrix;
 };
 
-
 #endif //SEARCHING_ALGORITHM_SERVER_MATRIX_H

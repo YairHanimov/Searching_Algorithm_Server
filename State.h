@@ -8,11 +8,17 @@
 template<class T>
 class State {
 private:
-    State<T> parent;        //where we came from
+    State<T> *parent;       //where we came from
     bool visited;           //was visited or not
     double cost;            //cost of visiting
     double shortestPath;    //how much cost until now
 public:
+    State(double value){
+        this->parent = nullptr;
+        this-visited = false;
+        this->cost = value;
+        this->shortestPath = 0;
+    }
     State<T> getParent(){}
     void setShortestPath(){}
 };

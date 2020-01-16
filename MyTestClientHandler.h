@@ -22,7 +22,7 @@ public:
     CacheManager<problem, solution> *cache_manager;
     Solver<problem, solution> *sol;
 
-    MyTestClientHandler(CacheManager<problem, solution> *cm, Solver<problem,solution> *s) {
+    MyTestClientHandler(CacheManager<problem, solution> *cm, Solver<problem, solution> *s) {
         this->cache_manager = cm;
         this->sol = s;
     }
@@ -38,7 +38,6 @@ public:
                 break;
             }
 
-
             auto solu = this->cache_manager->get(buffer);
             if (solu == NULL) {
                 StringReverser *rev = new StringReverser();
@@ -50,7 +49,7 @@ public:
             } else {
                 string s = *solu;
                 cout << "i am going print" << endl;
-                cout<<s<<endl;
+                cout << s << endl;
             }
 
             char *token = strtok(buffer, "\n");

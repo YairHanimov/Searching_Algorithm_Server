@@ -13,7 +13,6 @@ class StringReverser : public Solver <string,string> {
 public:
     StringReverser() = default;
     string solve(string problem) override;
-    string print();
 };
 
 
