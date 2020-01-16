@@ -14,15 +14,15 @@ using namespace std;
 class Matrix : public Searchable<Cell>{
 public:
     vector<vector<State<Cell>>> matrix;
-    State<Cell> start;
-    State<Cell> end;
-    Matrix(vector<vector<State<Cell>>> m, State<Cell> s, State<Cell> e) {
+    State<Cell> *start;
+    State<Cell> *end;
+    Matrix(vector<vector<State<Cell>>> m, State<Cell> *s, State<Cell> *e) {
         this->matrix = m;
         this->start = s;
         this->end = e;
     }
     State<Cell> getInitialState() override{
-        return this->start;
+        return *this->start;
     }
     bool isGoalState(State<Cell> c) override{
 

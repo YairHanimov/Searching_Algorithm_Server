@@ -88,8 +88,8 @@ public:
 
         Matrix *returnMatrix;
         returnMatrix->matrix = matrix;
-        returnMatrix->start = *startcell;
-        returnMatrix->end = *endedsell;
+        *returnMatrix->start = startcell;
+        *returnMatrix->end = endedsell;
 
 //        Matrix *returnMatrix = new Matrix(matrix, *startcell, *endedsell);
         return *returnMatrix;
