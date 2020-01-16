@@ -17,13 +17,10 @@ class MySerialServer : public Server {
 private:
     int port = 0;
     ClientHandler *client_handler;
-    CacheManager<problem, solution> *cache_manager;
 public:
-    MySerialServer(int port, ClientHandler *ch, CacheManager<problem, solution> *cm) {
+    MySerialServer(int port, ClientHandler *ch) {
         this->port = port;
         this->client_handler = ch;
-        this->cache_manager = cm;
-
     }
 
     void open() override;

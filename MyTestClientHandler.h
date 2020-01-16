@@ -6,10 +6,16 @@
 #define SEARCHING_ALGORITHM_SERVER_MYTESTCLIENTHANDLER_H
 
 #include "ClientHandler.h"
+#include "CacheManager.h"
 
-class MyTestClientHandler : public ClientHandler{
- public:
-  virtual void handleClient(int inputStream, int outputStream);
+template<class problem, class solution>
+class MyTestClientHandler : public ClientHandler {
+public:
+    CacheManager<problem, solution> *cache_manager;
+    MyTestClientHandler(CacheManager<problem, solution> *cm) {
+        this->cache_manager = cm;
+    }
+    virtual void handleClient(int inputStream, int outputStream);
 };
 
 #endif //SEARCHING_ALGORITHM_SERVER_MYTESTCLIENTHANDLER_H
