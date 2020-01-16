@@ -4,6 +4,7 @@
 
 #include <stdio.h>
 #include "MyTestClientHandler.h"
+#include "StringReverser.h"
 #include <iostream>
 #include <unistd.h>
 #include <vector>
@@ -23,6 +24,17 @@ void MyTestClientHandler<problem, solution>::handleClient(int inputStream, int o
             break;
         }
         cout << buffer << endl;
+
+        auto solu = this->cache_manager->get(buffer);
+        if (solu==NULL){
+            StringReverser *rev = new StringReverser();
+             string afterfix="";
+             afterfix+= rev->solve(buffer);
+             this->cache_manager->insert(buffer,afterfix);
+        }
+        else
+            cout<<solu<<endl;
+
 
 //        char *token = strtok(buffer, "\n");
 //        while (token != NULL) {
