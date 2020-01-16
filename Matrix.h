@@ -16,8 +16,8 @@ public:
     vector<vector<State<Cell>>> matrix;
     State<Cell> start;
     State<Cell> end;
-    Matrix(vector<vector<State<Cell>>> *m, State<Cell> s, State<Cell> e) {
-        this->matrix = *m;
+    Matrix(vector<vector<State<Cell>>> m, State<Cell> s, State<Cell> e) {
+        this->matrix = m;
         this->start = s;
         this->end = e;
     }
