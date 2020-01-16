@@ -11,11 +11,13 @@ using namespace std;
 
 template<class problem, class solution>
 class FileCacheManager : public CacheManager<problem, solution> {
+private:
+    solution s;
 public:
 
     list<pair<problem, solution>> dq;
-    unordered_map<string, typename list<pair<problem, solution>>::iterator> cache;
-    unsigned long capacity = 0;
+    unordered_map<problem, typename list<pair<problem, solution>>::iterator> cache;
+    unsigned long capacity = 10;
 
     void insert(problem p, solution s) override {
         ofstream in_file;
@@ -42,8 +44,8 @@ public:
         }
     }
 
-    solution* get(problem p) override {
-        solution *s;
+    solution *get(problem p) override {
+        this->s;
         auto it = cache.find(p);
         if (it == cache.end()) {
             // if (cache.find(p)==cache.end){
@@ -54,7 +56,7 @@ public:
                 return nullptr;
             }
             in_file.read((char *) &s, sizeof(s));
-            insert(p, s);
+    //        insert(p,s);
             in_file.close();
             return &s;
 
@@ -67,7 +69,7 @@ public:
     }
 
     FileCacheManager() {
-        this->capacity = 5;
+        this->capacity = 0;
     }
 };
 

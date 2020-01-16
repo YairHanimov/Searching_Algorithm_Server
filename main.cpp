@@ -9,12 +9,8 @@ using namespace std;
 int main() {
     auto *cm = new FileCacheManager<string,string>();
     auto *ch = new MyTestClientHandler<string,string>(cm);
-    MySerialServer<string,string> *serial_server = new MySerialServer<string,string>(5600, ch);
-    //  a->open(5600, (MyTestClientHandler)*ch);
-    string strtest = "hello world";
+    MySerialServer *serial_server = new MySerialServer(5600, ch);
+    serial_server->open();
 
-    StringReverser *rev = new StringReverser();
-
-    cout << rev->solve(strtest) << endl;
     return 0;
 }
