@@ -9,26 +9,26 @@ template<class T>
 class State {
 private:
     T *obj;
-    State<T> *parent;       //where we came from
-    bool visited;           //was visited or not
-    double cost;            //cost of visiting
-    double shortestPath;    //how much cost until now
+    State<T> *parent = nullptr;     //where we came from
+    bool visited = false;           //was visited or not
+    double cost = 0;                //cost of visiting
+    double shortestPath = 0;        //how much cost until now
 public:
-    State<T>(T *inputObj){
+    explicit State<T>(T *inputObj) {
         this->obj = inputObj;
-        this->parent = nullptr;
-        this->visited = false;
-        this->cost = 0;
-        this->shortestPath = 0;
     }
+
     void setCost(double c) {
         this->cost = c;
     }
-    T getT(){
+
+    T getT() {
         return this->obj;
     }
-    State<T> getParent(){}
-    void setShortestPath(){}
+
+    State<T> getParent() {}
+
+    void setShortestPath() {}
 };
 
 

@@ -13,10 +13,10 @@ using namespace std;
 
 class Matrix : public Searchable<Cell>{
 public:
-    vector<vector<State<Cell>>> matrix;
+    vector<vector<State<Cell>*>> matrix;
     State<Cell> *start;
     State<Cell> *end;
-    Matrix(vector<vector<State<Cell>>> m, State<Cell> *s, State<Cell> *e) {
+    Matrix(vector<vector<State<Cell>*>> m, State<Cell> *s, State<Cell> *e) {
         this->matrix = m;
         this->start = s;
         this->end = e;
@@ -25,9 +25,6 @@ public:
         return *this->start;
     }
     bool isGoalState(State<Cell> c) override{
-
-    }
-    double getCellValue(Cell c) {
 
     }
     virtual vector<State<Cell>> getAllPossibleStates(State<Cell>){}
