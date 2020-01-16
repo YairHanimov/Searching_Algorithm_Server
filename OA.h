@@ -33,12 +33,12 @@ public:
         char strToChar[n + 1];
         strcpy(strToChar, str.c_str());
         char *token = strtok(strToChar, "\n");
-        while (token != NULL) {
+        while (token != nullptr) {
 
             //   cout << token << endl;
             line.push_back(token);
 
-            token = strtok(NULL, "\n");
+            token = strtok(nullptr, "\n");
 
         }
         string lexer;
