@@ -49,7 +49,9 @@ public:
         while (row < (mysize - 3)) {
             vector<State<Cell>*> stateLine;
             lexer += line.front();
-            line.pop_back();
+            line.erase(line.begin());
+            strcpy(strToChar, lexer.c_str());
+        //    line.pop_back();
             token = strtok(strToChar, ",");
             while (token != nullptr) {
                 Cell *c = new Cell(row, col);
@@ -59,6 +61,7 @@ public:
                 col++;
                 token = strtok(nullptr, ",");
             }
+            lexer="";
             matrix.push_back(stateLine);
             row++;
         }
@@ -66,6 +69,7 @@ public:
         int start2 = 0;
         int end1 = 0;
         int end2 = 0;
+        strcpy(strToChar, line.front().c_str());
         token = strtok(strToChar, ",");
         if (token != nullptr) {
             start1 = atoi(token);
@@ -75,6 +79,10 @@ public:
             start2 = atoi(token);
             token = strtok(nullptr, ",");
         }
+        line.erase(line.begin());
+        strcpy(strToChar, line.front().c_str());
+        token = strtok(strToChar, ",");
+
         if (token != nullptr) {
             end1 = atoi(token);
             token = strtok(nullptr, ",");

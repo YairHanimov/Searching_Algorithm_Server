@@ -12,9 +12,7 @@ void MySerialServer::open() {
     int socketfd = socket(AF_INET, SOCK_STREAM, 0);
     if (socketfd == -1) {
         cerr << "Could not create a socket" << endl;
-
     }
-
     sockaddr_in address;
     address.sin_family = AF_INET;
     address.sin_addr.s_addr = INADDR_ANY;

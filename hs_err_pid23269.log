@@ -1,0 +1,377 @@
+#
+# There is insufficient memory for the Java Runtime Environment to continue.
+# Native memory allocation (mmap) failed to map 65011712 bytes for committing reserved memory.
+# Possible reasons:
+#   The system is out of physical RAM or swap space
+#   The process is running with CompressedOops enabled, and the Java Heap may be blocking the growth of the native heap
+# Possible solutions:
+#   Reduce memory load on the system
+#   Increase physical memory or swap space
+#   Check if swap backing store is full
+#   Decrease Java heap size (-Xmx/-Xms)
+#   Decrease number of Java threads
+#   Decrease Java thread stack sizes (-Xss)
+#   Set larger code cache with -XX:ReservedCodeCacheSize=
+# This output file may be truncated or incomplete.
+#
+#  Out of Memory Error (os_linux.cpp:2884), pid=23269, tid=23270
+#
+# JRE version:  (11.0.4+10) (build )
+# Java VM: OpenJDK 64-Bit Server VM (11.0.4+10-b304.77, mixed mode, aot, sharing, tiered, compressed oops, g1 gc, linux-amd64)
+# Core dump will be written. Default location: Core dumps may be processed with "/lib/systemd/systemd-coredump %P %u %g %s %t 9223372036854775808 %e" (or dumping to /home/yair/CLionProjects/Searching-Algorithm-Server/core.23269)
+#
+
+---------------  S U M M A R Y ------------
+
+Command Line: org.jetbrains.git4idea.http.GitAskPassApp Username for 'https://github.com': 
+
+Host: Intel(R) Core(TM) i5-7200U CPU @ 2.50GHz, 2 cores, 3G, Linux Mint 19.2 Tina
+Time: Fri Jan 17 12:08:10 2020 IST elapsed time: 0 seconds (0d 0h 0m 0s)
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x00007fbf5c012000):  JavaThread "Unknown thread" [_thread_in_vm, id=23270, stack(0x00007fbf66457000,0x00007fbf66558000)]
+
+Stack: [0x00007fbf66457000,0x00007fbf66558000],  sp=0x00007fbf66556220,  free space=1020k
+Native frames: (J=compiled Java code, A=aot compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [libjvm.so+0xd9777a]  VMError::report_and_die(int, char const*, char const*, __va_list_tag*, Thread*, unsigned char*, void*, void*, char const*, int, unsigned long)+0x18a
+V  [libjvm.so+0xd98613]  VMError::report_and_die(Thread*, char const*, int, unsigned long, VMErrorType, char const*, __va_list_tag*)+0x43
+V  [libjvm.so+0x698dc8]  report_vm_out_of_memory(char const*, int, unsigned long, VMErrorType, char const*, ...)+0xe8
+V  [libjvm.so+0xb9e069]  os::pd_commit_memory_or_exit(char*, unsigned long, unsigned long, bool, char const*)+0xe9
+V  [libjvm.so+0xb956bd]  os::commit_memory_or_exit(char*, unsigned long, unsigned long, bool, char const*)+0x1d
+V  [libjvm.so+0x7a0591]  G1PageBasedVirtualSpace::commit_preferred_pages(unsigned long, unsigned long)+0x71
+V  [libjvm.so+0x7a06e5]  G1PageBasedVirtualSpace::commit_internal(unsigned long, unsigned long)+0x85
+V  [libjvm.so+0x7a08da]  G1PageBasedVirtualSpace::commit(unsigned long, unsigned long)+0x10a
+V  [libjvm.so+0x7a8196]  G1RegionsLargerThanCommitSizeMapper::commit_regions(unsigned int, unsigned long, WorkGang*)+0x46
+V  [libjvm.so+0x8108a8]  HeapRegionManager::commit_regions(unsigned int, unsigned long, WorkGang*)+0x88
+V  [libjvm.so+0x811404]  HeapRegionManager::make_regions_available(unsigned int, unsigned int, WorkGang*)+0x34
+V  [libjvm.so+0x811909]  HeapRegionManager::expand_by(unsigned int, WorkGang*)+0x79
+V  [libjvm.so+0x764260]  G1CollectedHeap::expand(unsigned long, WorkGang*, double*)+0xc0
+V  [libjvm.so+0x764955]  G1CollectedHeap::initialize()+0x695
+V  [libjvm.so+0xd5ae81]  Universe::initialize_heap()+0x41
+V  [libjvm.so+0xd5b131]  universe_init()+0x41
+V  [libjvm.so+0x8271ef]  init_globals()+0x5f
+V  [libjvm.so+0xd3871c]  Threads::create_vm(JavaVMInitArgs*, bool*)+0x3dc
+V  [libjvm.so+0x8ce74c]  JNI_CreateJavaVM+0x5c
+C  [libjli.so+0x4814]  JavaMain+0x84
+
+
+---------------  P R O C E S S  ---------------
+
+Threads class SMR info:
+_java_thread_list=0x0000000001476ff0, length=0, elements={
+}
+
+Java Threads: ( => current thread )
+
+Other Threads:
+  0x00007fbf5c028000 GCTaskThread "GC Thread#0" [stack: 0x00007fbf6245d000,0x00007fbf6255d000] [id=23271]
+  0x00007fbf5c043000 ConcurrentGCThread "G1 Main Marker" [stack: 0x00007fbf60c1f000,0x00007fbf60d1f000] [id=23272]
+  0x00007fbf5c045000 ConcurrentGCThread "G1 Conc#0" [stack: 0x00007fbf60b1d000,0x00007fbf60c1d000] [id=23273]
+
+[error occurred during error reporting (printing all threads), id 0xb, SIGSEGV (0xb) at pc=0x00007fbf64a84465]
+
+VM state:not at safepoint (not fully initialized)
+
+VM Mutex/Monitor currently owned by a thread:  ([mutex/lock_event])
+[0x00007fbf5c00ea60] Heap_lock - owner thread: 0x00007fbf5c012000
+
+Heap address: 0x00000000c2400000, size: 988 MB, Compressed Oops mode: Non-zero based: 0x00000000c2400000
+Narrow klass base: 0x0000000000000000, Narrow klass shift: 0
+
+GC Heap History (0 events):
+No events
+
+Deoptimization events (0 events):
+No events
+
+Classes redefined (0 events):
+No events
+
+Internal exceptions (0 events):
+No events
+
+Events (0 events):
+No events
+
+
+Dynamic libraries:
+00400000-00401000 r-xp 00000000 08:01 574738                             /home/yair/clion-2019.2.5/jbr/bin/java
+00601000-00602000 r--p 00001000 08:01 574738                             /home/yair/clion-2019.2.5/jbr/bin/java
+00602000-00603000 rw-p 00002000 08:01 574738                             /home/yair/clion-2019.2.5/jbr/bin/java
+0145f000-01480000 rw-p 00000000 00:00 0                                  [heap]
+c6200000-100000000 ---p 00000000 00:00 0 
+7fbf3a000000-7fbf3c000000 rw-p 00000000 00:00 0 
+7fbf3c000000-7fbf3c021000 rw-p 00000000 00:00 0 
+7fbf3c021000-7fbf40000000 ---p 00000000 00:00 0 
+7fbf40000000-7fbf40021000 rw-p 00000000 00:00 0 
+7fbf40021000-7fbf44000000 ---p 00000000 00:00 0 
+7fbf44000000-7fbf44021000 rw-p 00000000 00:00 0 
+7fbf44021000-7fbf48000000 ---p 00000000 00:00 0 
+7fbf481e0000-7fbf49150000 ---p 00000000 00:00 0 
+7fbf49150000-7fbf493c0000 rwxp 00000000 00:00 0 
+7fbf493c0000-7fbf496df000 ---p 00000000 00:00 0 
+7fbf496df000-7fbf4994f000 rwxp 00000000 00:00 0 
+7fbf4994f000-7fbf50c17000 ---p 00000000 00:00 0 
+7fbf50c17000-7fbf50e87000 rwxp 00000000 00:00 0 
+7fbf50e87000-7fbf58150000 ---p 00000000 00:00 0 
+7fbf58150000-7fbf5c000000 r--s 00000000 08:01 574721                     /home/yair/clion-2019.2.5/jbr/lib/modules
+7fbf5c000000-7fbf5c05a000 rw-p 00000000 00:00 0 
+7fbf5c05a000-7fbf60000000 ---p 00000000 00:00 0 
+7fbf60595000-7fbf60b1b000 rw-p 00000000 00:00 0 
+7fbf60b1b000-7fbf60b1c000 ---p 00000000 00:00 0 
+7fbf60b1c000-7fbf60c1d000 rw-p 00000000 00:00 0 
+7fbf60c1d000-7fbf60c1e000 ---p 00000000 00:00 0 
+7fbf60c1e000-7fbf60d1f000 rw-p 00000000 00:00 0 
+7fbf60d1f000-7fbf62259000 ---p 00000000 00:00 0 
+7fbf62259000-7fbf6245b000 rw-p 00000000 00:00 0 
+7fbf6245b000-7fbf6245c000 ---p 00000000 00:00 0 
+7fbf6245c000-7fbf62562000 rw-p 00000000 00:00 0 
+7fbf62562000-7fbf62648000 ---p 00000000 00:00 0 
+7fbf62648000-7fbf6264d000 rw-p 00000000 00:00 0 
+7fbf6264d000-7fbf62733000 ---p 00000000 00:00 0 
+7fbf62733000-7fbf62738000 r-xp 00000000 08:01 574700                     /home/yair/clion-2019.2.5/jbr/lib/libjimage.so
+7fbf62738000-7fbf62938000 ---p 00005000 08:01 574700                     /home/yair/clion-2019.2.5/jbr/lib/libjimage.so
+7fbf62938000-7fbf62939000 r--p 00005000 08:01 574700                     /home/yair/clion-2019.2.5/jbr/lib/libjimage.so
+7fbf62939000-7fbf6293a000 rw-p 00006000 08:01 574700                     /home/yair/clion-2019.2.5/jbr/lib/libjimage.so
+7fbf6293a000-7fbf62941000 r-xp 00000000 08:01 574720                     /home/yair/clion-2019.2.5/jbr/lib/libzip.so
+7fbf62941000-7fbf62b40000 ---p 00007000 08:01 574720                     /home/yair/clion-2019.2.5/jbr/lib/libzip.so
+7fbf62b40000-7fbf62b41000 r--p 00006000 08:01 574720                     /home/yair/clion-2019.2.5/jbr/lib/libzip.so
+7fbf62b41000-7fbf62b42000 rw-p 00007000 08:01 574720                     /home/yair/clion-2019.2.5/jbr/lib/libzip.so
+7fbf62b42000-7fbf62b4d000 r-xp 00000000 08:01 528586                     /lib/x86_64-linux-gnu/libnss_files-2.27.so
+7fbf62b4d000-7fbf62d4c000 ---p 0000b000 08:01 528586                     /lib/x86_64-linux-gnu/libnss_files-2.27.so
+7fbf62d4c000-7fbf62d4d000 r--p 0000a000 08:01 528586                     /lib/x86_64-linux-gnu/libnss_files-2.27.so
+7fbf62d4d000-7fbf62d4e000 rw-p 0000b000 08:01 528586                     /lib/x86_64-linux-gnu/libnss_files-2.27.so
+7fbf62d4e000-7fbf62d54000 rw-p 00000000 00:00 0 
+7fbf62d54000-7fbf62d6b000 r-xp 00000000 08:01 528580                     /lib/x86_64-linux-gnu/libnsl-2.27.so
+7fbf62d6b000-7fbf62f6a000 ---p 00017000 08:01 528580                     /lib/x86_64-linux-gnu/libnsl-2.27.so
+7fbf62f6a000-7fbf62f6b000 r--p 00016000 08:01 528580                     /lib/x86_64-linux-gnu/libnsl-2.27.so
+7fbf62f6b000-7fbf62f6c000 rw-p 00017000 08:01 528580                     /lib/x86_64-linux-gnu/libnsl-2.27.so
+7fbf62f6c000-7fbf62f6e000 rw-p 00000000 00:00 0 
+7fbf62f6e000-7fbf62f79000 r-xp 00000000 08:01 528597                     /lib/x86_64-linux-gnu/libnss_nis-2.27.so
+7fbf62f79000-7fbf63178000 ---p 0000b000 08:01 528597                     /lib/x86_64-linux-gnu/libnss_nis-2.27.so
+7fbf63178000-7fbf63179000 r--p 0000a000 08:01 528597                     /lib/x86_64-linux-gnu/libnss_nis-2.27.so
+7fbf63179000-7fbf6317a000 rw-p 0000b000 08:01 528597                     /lib/x86_64-linux-gnu/libnss_nis-2.27.so
+7fbf6317a000-7fbf63182000 r-xp 00000000 08:01 528582                     /lib/x86_64-linux-gnu/libnss_compat-2.27.so
+7fbf63182000-7fbf63382000 ---p 00008000 08:01 528582                     /lib/x86_64-linux-gnu/libnss_compat-2.27.so
+7fbf63382000-7fbf63383000 r--p 00008000 08:01 528582                     /lib/x86_64-linux-gnu/libnss_compat-2.27.so
+7fbf63383000-7fbf63384000 rw-p 00009000 08:01 528582                     /lib/x86_64-linux-gnu/libnss_compat-2.27.so
+7fbf63384000-7fbf633ad000 r-xp 00000000 08:01 574690                     /home/yair/clion-2019.2.5/jbr/lib/libjava.so
+7fbf633ad000-7fbf635ac000 ---p 00029000 08:01 574690                     /home/yair/clion-2019.2.5/jbr/lib/libjava.so
+7fbf635ac000-7fbf635ad000 r--p 00028000 08:01 574690                     /home/yair/clion-2019.2.5/jbr/lib/libjava.so
+7fbf635ad000-7fbf635af000 rw-p 00029000 08:01 574690                     /home/yair/clion-2019.2.5/jbr/lib/libjava.so
+7fbf635af000-7fbf635bc000 r-xp 00000000 08:01 574719                     /home/yair/clion-2019.2.5/jbr/lib/libverify.so
+7fbf635bc000-7fbf637bb000 ---p 0000d000 08:01 574719                     /home/yair/clion-2019.2.5/jbr/lib/libverify.so
+7fbf637bb000-7fbf637bd000 r--p 0000c000 08:01 574719                     /home/yair/clion-2019.2.5/jbr/lib/libverify.so
+7fbf637bd000-7fbf637be000 rw-p 0000e000 08:01 574719                     /home/yair/clion-2019.2.5/jbr/lib/libverify.so
+7fbf637be000-7fbf637c5000 r-xp 00000000 08:01 528637                     /lib/x86_64-linux-gnu/librt-2.27.so
+7fbf637c5000-7fbf639c4000 ---p 00007000 08:01 528637                     /lib/x86_64-linux-gnu/librt-2.27.so
+7fbf639c4000-7fbf639c5000 r--p 00006000 08:01 528637                     /lib/x86_64-linux-gnu/librt-2.27.so
+7fbf639c5000-7fbf639c6000 rw-p 00007000 08:01 528637                     /lib/x86_64-linux-gnu/librt-2.27.so
+7fbf639c6000-7fbf639dd000 r-xp 00000000 08:01 528533                     /lib/x86_64-linux-gnu/libgcc_s.so.1
+7fbf639dd000-7fbf63bdc000 ---p 00017000 08:01 528533                     /lib/x86_64-linux-gnu/libgcc_s.so.1
+7fbf63bdc000-7fbf63bdd000 r--p 00016000 08:01 528533                     /lib/x86_64-linux-gnu/libgcc_s.so.1
+7fbf63bdd000-7fbf63bde000 rw-p 00017000 08:01 528533                     /lib/x86_64-linux-gnu/libgcc_s.so.1
+7fbf63bde000-7fbf63d7b000 r-xp 00000000 08:01 528559                     /lib/x86_64-linux-gnu/libm-2.27.so
+7fbf63d7b000-7fbf63f7a000 ---p 0019d000 08:01 528559                     /lib/x86_64-linux-gnu/libm-2.27.so
+7fbf63f7a000-7fbf63f7b000 r--p 0019c000 08:01 528559                     /lib/x86_64-linux-gnu/libm-2.27.so
+7fbf63f7b000-7fbf63f7c000 rw-p 0019d000 08:01 528559                     /lib/x86_64-linux-gnu/libm-2.27.so
+7fbf63f7c000-7fbf640f5000 r-xp 00000000 08:01 143251                     /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25
+7fbf640f5000-7fbf642f5000 ---p 00179000 08:01 143251                     /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25
+7fbf642f5000-7fbf642ff000 r--p 00179000 08:01 143251                     /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25
+7fbf642ff000-7fbf64301000 rw-p 00183000 08:01 143251                     /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25
+7fbf64301000-7fbf64305000 rw-p 00000000 00:00 0 
+7fbf64305000-7fbf653ae000 r-xp 00000000 08:01 574732                     /home/yair/clion-2019.2.5/jbr/lib/server/libjvm.so
+7fbf653ae000-7fbf655ae000 ---p 010a9000 08:01 574732                     /home/yair/clion-2019.2.5/jbr/lib/server/libjvm.so
+7fbf655ae000-7fbf6567c000 r--p 010a9000 08:01 574732                     /home/yair/clion-2019.2.5/jbr/lib/server/libjvm.so
+7fbf6567c000-7fbf656b6000 rw-p 01177000 08:01 574732                     /home/yair/clion-2019.2.5/jbr/lib/server/libjvm.so
+7fbf656b6000-7fbf6570f000 rw-p 00000000 00:00 0 
+7fbf6570f000-7fbf658f6000 r-xp 00000000 08:01 528496                     /lib/x86_64-linux-gnu/libc-2.27.so
+7fbf658f6000-7fbf65af6000 ---p 001e7000 08:01 528496                     /lib/x86_64-linux-gnu/libc-2.27.so
+7fbf65af6000-7fbf65afa000 r--p 001e7000 08:01 528496                     /lib/x86_64-linux-gnu/libc-2.27.so
+7fbf65afa000-7fbf65afc000 rw-p 001eb000 08:01 528496                     /lib/x86_64-linux-gnu/libc-2.27.so
+7fbf65afc000-7fbf65b00000 rw-p 00000000 00:00 0 
+7fbf65b00000-7fbf65b03000 r-xp 00000000 08:01 528519                     /lib/x86_64-linux-gnu/libdl-2.27.so
+7fbf65b03000-7fbf65d02000 ---p 00003000 08:01 528519                     /lib/x86_64-linux-gnu/libdl-2.27.so
+7fbf65d02000-7fbf65d03000 r--p 00002000 08:01 528519                     /lib/x86_64-linux-gnu/libdl-2.27.so
+7fbf65d03000-7fbf65d04000 rw-p 00003000 08:01 528519                     /lib/x86_64-linux-gnu/libdl-2.27.so
+7fbf65d04000-7fbf65d13000 r-xp 00000000 08:01 574667                     /home/yair/clion-2019.2.5/jbr/lib/jli/libjli.so
+7fbf65d13000-7fbf65f12000 ---p 0000f000 08:01 574667                     /home/yair/clion-2019.2.5/jbr/lib/jli/libjli.so
+7fbf65f12000-7fbf65f13000 r--p 0000e000 08:01 574667                     /home/yair/clion-2019.2.5/jbr/lib/jli/libjli.so
+7fbf65f13000-7fbf65f14000 rw-p 0000f000 08:01 574667                     /home/yair/clion-2019.2.5/jbr/lib/jli/libjli.so
+7fbf65f14000-7fbf65f2e000 r-xp 00000000 08:01 528629                     /lib/x86_64-linux-gnu/libpthread-2.27.so
+7fbf65f2e000-7fbf6612d000 ---p 0001a000 08:01 528629                     /lib/x86_64-linux-gnu/libpthread-2.27.so
+7fbf6612d000-7fbf6612e000 r--p 00019000 08:01 528629                     /lib/x86_64-linux-gnu/libpthread-2.27.so
+7fbf6612e000-7fbf6612f000 rw-p 0001a000 08:01 528629                     /lib/x86_64-linux-gnu/libpthread-2.27.so
+7fbf6612f000-7fbf66133000 rw-p 00000000 00:00 0 
+7fbf66133000-7fbf6614f000 r-xp 00000000 08:01 528670                     /lib/x86_64-linux-gnu/libz.so.1.2.11
+7fbf6614f000-7fbf6634e000 ---p 0001c000 08:01 528670                     /lib/x86_64-linux-gnu/libz.so.1.2.11
+7fbf6634e000-7fbf6634f000 r--p 0001b000 08:01 528670                     /lib/x86_64-linux-gnu/libz.so.1.2.11
+7fbf6634f000-7fbf66350000 rw-p 0001c000 08:01 528670                     /lib/x86_64-linux-gnu/libz.so.1.2.11
+7fbf66350000-7fbf66377000 r-xp 00000000 08:01 528468                     /lib/x86_64-linux-gnu/ld-2.27.so
+7fbf66436000-7fbf66457000 rw-p 00000000 00:00 0 
+7fbf66457000-7fbf6645b000 ---p 00000000 00:00 0 
+7fbf6645b000-7fbf6655c000 rw-p 00000000 00:00 0 
+7fbf66561000-7fbf66566000 rw-p 00000000 00:00 0 
+7fbf66566000-7fbf6656d000 ---p 00000000 00:00 0 
+7fbf6656d000-7fbf66575000 rw-s 00000000 08:01 578154                     /tmp/hsperfdata_yair/23269
+7fbf66575000-7fbf66576000 ---p 00000000 00:00 0 
+7fbf66576000-7fbf66577000 r--p 00000000 00:00 0 
+7fbf66577000-7fbf66578000 r--p 00027000 08:01 528468                     /lib/x86_64-linux-gnu/ld-2.27.so
+7fbf66578000-7fbf66579000 rw-p 00028000 08:01 528468                     /lib/x86_64-linux-gnu/ld-2.27.so
+7fbf66579000-7fbf6657a000 rw-p 00000000 00:00 0 
+7ffeaef86000-7ffeaefa7000 rw-p 00000000 00:00 0                          [stack]
+7ffeaefc5000-7ffeaefc8000 r--p 00000000 00:00 0                          [vvar]
+7ffeaefc8000-7ffeaefca000 r-xp 00000000 00:00 0                          [vdso]
+ffffffffff600000-ffffffffff601000 r-xp 00000000 00:00 0                  [vsyscall]
+
+
+VM Arguments:
+java_command: org.jetbrains.git4idea.http.GitAskPassApp Username for 'https://github.com': 
+java_class_path (initial): /home/yair/clion-2019.2.5/plugins/git4idea/lib/git4idea-rt.jar:/home/yair/clion-2019.2.5/lib/xmlrpc-2.0.1.jar:/home/yair/clion-2019.2.5/lib/commons-codec-1.13.jar:/home/yair/clion-2019.2.5/lib/util.jar
+Launcher Type: SUN_STANDARD
+
+[Global flags]
+     intx CICompilerCount                          = 2                                         {product} {ergonomic}
+     uint ConcGCThreads                            = 1                                         {product} {ergonomic}
+     uint G1ConcRefinementThreads                  = 2                                         {product} {ergonomic}
+   size_t G1HeapRegionSize                         = 1048576                                   {product} {ergonomic}
+    uintx GCDrainStackTargetSize                   = 64                                        {product} {ergonomic}
+   size_t InitialHeapSize                          = 65011712                                  {product} {ergonomic}
+   size_t MarkStackSize                            = 4194304                                   {product} {ergonomic}
+   size_t MaxHeapSize                              = 1035993088                                {product} {ergonomic}
+   size_t MinHeapDeltaBytes                        = 1048576                                   {product} {ergonomic}
+    uintx NonNMethodCodeHeapSize                   = 5824844                                {pd product} {ergonomic}
+    uintx NonProfiledCodeHeapSize                  = 122916698                              {pd product} {ergonomic}
+    uintx ProfiledCodeHeapSize                     = 122916698                              {pd product} {ergonomic}
+    uintx ReservedCodeCacheSize                    = 251658240                              {pd product} {ergonomic}
+     bool SegmentedCodeCache                       = true                                      {product} {ergonomic}
+     bool UseCompressedClassPointers               = true                                 {lp64_product} {ergonomic}
+     bool UseCompressedOops                        = true                                 {lp64_product} {ergonomic}
+     bool UseG1GC                                  = true                                      {product} {ergonomic}
+
+Logging:
+Log output configuration:
+ #0: stdout all=warning uptime,level,tags
+ #1: stderr all=off uptime,level,tags
+
+Environment Variables:
+PATH=/usr/lib/git-core:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games
+SHELL=/bin/bash
+DISPLAY=:0
+
+Signal Handlers:
+SIGSEGV: [libjvm.so+0xd98670], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGBUS: [libjvm.so+0xd98670], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGFPE: [libjvm.so+0xd98670], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGPIPE: [libjvm.so+0xb99c10], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGXFSZ: [libjvm.so+0xb99c10], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGILL: [libjvm.so+0xd98670], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGUSR2: [libjvm.so+0xb99ab0], sa_mask[0]=00100000000000000000000000000000, sa_flags=SA_RESTART|SA_SIGINFO
+SIGHUP: SIG_DFL, sa_mask[0]=00000000000000000000000000000000, sa_flags=none
+SIGINT: SIG_DFL, sa_mask[0]=00000000000000000000000000000000, sa_flags=none
+SIGTERM: SIG_DFL, sa_mask[0]=00000000000000000000000000000000, sa_flags=none
+SIGQUIT: SIG_DFL, sa_mask[0]=00000000000000000000000000000000, sa_flags=none
+
+
+---------------  S Y S T E M  ---------------
+
+OS:DISTRIB_ID=LinuxMint
+DISTRIB_RELEASE=19.2
+DISTRIB_CODENAME=tina
+DISTRIB_DESCRIPTION="Linux Mint 19.2 Tina"
+uname:Linux 4.15.0-54-generic #58-Ubuntu SMP Mon Jun 24 10:55:24 UTC 2019 x86_64
+libc:glibc 2.27 NPTL 2.27 
+rlimit: STACK 8192k, CORE 0k, NPROC 15533, NOFILE 1048576, AS infinity, DATA infinity, FSIZE infinity
+load average:0.39 0.26 0.23
+
+/proc/meminfo:
+MemTotal:        4039516 kB
+MemFree:          103892 kB
+MemAvailable:      19632 kB
+Buffers:             604 kB
+Cached:           195924 kB
+SwapCached:         9868 kB
+Active:          3142196 kB
+Inactive:         653104 kB
+Active(anon):    3127548 kB
+Inactive(anon):   624932 kB
+Active(file):      14648 kB
+Inactive(file):    28172 kB
+Unevictable:          48 kB
+Mlocked:              48 kB
+SwapTotal:        947324 kB
+SwapFree:              4 kB
+Dirty:               204 kB
+Writeback:             0 kB
+AnonPages:       3589588 kB
+Mapped:           177704 kB
+Shmem:            153636 kB
+Slab:              56512 kB
+SReclaimable:      25864 kB
+SUnreclaim:        30648 kB
+KernelStack:        9792 kB
+PageTables:        44236 kB
+NFS_Unstable:          0 kB
+Bounce:                0 kB
+WritebackTmp:          0 kB
+CommitLimit:     2967080 kB
+Committed_AS:    6951680 kB
+VmallocTotal:   34359738367 kB
+VmallocUsed:           0 kB
+VmallocChunk:          0 kB
+HardwareCorrupted:     0 kB
+AnonHugePages:         0 kB
+ShmemHugePages:        0 kB
+ShmemPmdMapped:        0 kB
+CmaTotal:              0 kB
+CmaFree:               0 kB
+HugePages_Total:       0
+HugePages_Free:        0
+HugePages_Rsvd:        0
+HugePages_Surp:        0
+Hugepagesize:       2048 kB
+DirectMap4k:      153536 kB
+DirectMap2M:     4040704 kB
+
+
+/proc/sys/kernel/threads-max (system-wide limit on the number of threads):
+31066
+
+
+/proc/sys/vm/max_map_count (maximum number of memory map areas a process may have):
+65530
+
+
+/proc/sys/kernel/pid_max (system-wide limit on number of process identifiers):
+32768
+
+
+
+container (cgroup) information:
+container_type: cgroupv1
+cpu_cpuset_cpus: 0-1
+cpu_memory_nodes: 0
+active_processor_count: 2
+cpu_quota: -1
+cpu_period: 100000
+cpu_shares: -1
+memory_limit_in_bytes: -1
+memory_and_swap_limit_in_bytes: -2
+memory_soft_limit_in_bytes: -1
+memory_usage_in_bytes: 3879317504
+memory_max_usage_in_bytes: 0
+
+Steal ticks since vm start: 0
+Steal ticks percentage since vm start:  0.000
+
+CPU:total 2 (initial active 2) (2 cores per cpu, 1 threads per core) family 6 model 142 stepping 9, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, avx, avx2, aes, clmul, 3dnowpref, lzcnt, tsc, tscinvbit
+CPU Model and flags from /proc/cpuinfo:
+model name	: Intel(R) Core(TM) i5-7200U CPU @ 2.50GHz
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall nx rdtscp lm constant_tsc rep_good nopl xtopology nonstop_tsc cpuid tsc_known_freq pni pclmulqdq ssse3 cx16 pcid sse4_1 sse4_2 x2apic movbe popcnt aes xsave avx rdrand hypervisor lahf_lm abm 3dnowprefetch invpcid_single pti fsgsbase avx2 invpcid rdseed clflushopt flush_l1d
+
+Memory: 4k page, physical 4039516k(103892k free), swap 947324k(4k free)
+
+vm_info: OpenJDK 64-Bit Server VM (11.0.4+10-b304.77) for linux-amd64 JRE (11.0.4+10-b304.77), built on Oct 10 2019 12:18:38 by "" with gcc 4.8.5 20150623 (Red Hat 4.8.5-36)
+
+END.
