@@ -96,12 +96,11 @@ public:
 
         auto* start = new State<Cell>(startCell);
         auto* end = new State<Cell>(endCell);
-        Matrix *returnMatrix;
-        returnMatrix->matrix = matrix;
-        returnMatrix->start = start;
-        returnMatrix->end = end;
+//        returnMatrix->matrix = matrix;
+//        returnMatrix->start = start;
+//        returnMatrix->end = end;
 
-//        Matrix *returnMatrix = new Matrix(matrix, *startcell, *endCell);
+        Matrix *returnMatrix = new Matrix(matrix,start1,start2,end1,end2);
         return *returnMatrix;
     }
 
