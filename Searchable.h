@@ -14,7 +14,9 @@ class Searchable {
 public:
     virtual State<T> getInitialState() {}
     virtual bool isGoalState(State<T>){}
-    virtual vector<State<T>> getAllPossibleStates(State<T>){}
+    virtual vector<State<T>> getAllPossibleStates(State<T>){
+
+    }
 };
 
 

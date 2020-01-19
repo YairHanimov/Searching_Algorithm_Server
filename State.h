@@ -29,6 +29,9 @@ public:
     T* getObj() {
         return this->*obj;
     }
+    State<T> getme(){
+        return this;
+    }
 
     void setParent(State<T> *p) {
         this->*parent = *p;

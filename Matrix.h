@@ -30,6 +30,7 @@ public:
         Cell *endedCell = new Cell(end1, end2);
         this->start=new State<Cell>(starterCell);
         this->end= new State<Cell>(endedCell);
+
     }
 //    Matrix(vector<vector<State<Cell> *>> m, State<Cell> *s, State<Cell> *e) {
 //        this->matrix = m;
@@ -45,7 +46,20 @@ public:
 
     }
 
-    virtual vector<State<Cell>> getAllPossibleStates(State<Cell>) {}
+    virtual vector<State<Cell>> getAllPossibleStates(State<Cell> c) {
+        vector<State<Cell>> myoptionvector;
+            int row=0;
+            int cell=0;
+            int size=0;
+            int mysize= this->matrix.size();
+            row=c.getObj()->getRow();
+            cell=c.getObj()->getCol();
+            if ((cell!=mysize)&&((matrix[cell+1][row]->getCost())!= (-1))){
+                myoptionvector.push_back(matrix[cell+1][row]->getme());
+            }
+
+
+    }
 };
 
 #endif //SEARCHING_ALGORITHM_SERVER_MATRIX_H

@@ -101,6 +101,7 @@ public:
 //        returnMatrix->end = end;
 
         Matrix *returnMatrix = new Matrix(matrix,start1,start2,end1,end2);
+        int test = matrix.size();
         return *returnMatrix;
     }
 
