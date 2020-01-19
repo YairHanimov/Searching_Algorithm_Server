@@ -10,7 +10,7 @@
 template<class T>
 class Searcher {
 public:
-    virtual T search (Searchable<T>){};
+    virtual T search (Searchable<T>*){};
 };
 
 

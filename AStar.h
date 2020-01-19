@@ -11,7 +11,7 @@ using namespace std;
 template<class T>
 class AStar : public Searcher<T>{
 public:
-    virtual T search (Searchable<T>){
+    virtual T search (Searchable<T>*){
 
     };
 };
