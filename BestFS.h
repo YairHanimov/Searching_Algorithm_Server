@@ -33,6 +33,10 @@ public:
             } else {
                 vector<State<T>> *neighbors = searchable->getAllPossibleStates(n);
                 for (typename vector<State<T>>::iterator it = neighbors->begin(); it != neighbors->end(); it++) {
+                    if(closedNodesSet.find(it) == closedNodesSet.end() && openNodesPQ.find(it) == openNodesPQ.end()) {
+
+                    }
+
                 }
             }
         }

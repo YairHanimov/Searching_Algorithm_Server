@@ -23,8 +23,8 @@ public:
         this->cost = c;
     }
 
-    T getT() {
-        return this->obj;
+    T* getObj() {
+        return this->*obj;
     }
 
     State<T> getParent() {}

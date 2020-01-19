@@ -38,7 +38,7 @@ public:
 //    }
 
     State<Cell> getInitialState() override {
-       // return *this->start;
+       return *this->start;
     }
 
     bool isGoalState(State<Cell> c) override {
