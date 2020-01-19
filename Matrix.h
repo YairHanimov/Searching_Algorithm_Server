@@ -55,7 +55,7 @@ public:
             row=c.getObj()->getRow();
             cell=c.getObj()->getCol();
             if ((cell!=mysize)&&((matrix[cell+1][row]->getCost())!= (-1))){
-                myoptionvector.push_back(matrix[cell+1][row]->getme());
+                myoptionvector.push_back(matrix[cell + 1][row]->getMe());
             }
 
 
