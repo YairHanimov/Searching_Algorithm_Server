@@ -14,7 +14,7 @@ using namespace std;
 template<class T>
 class BestFS : public Searcher<T> {
 public:
-    vector<vector<T> *> search(Searchable<State<T>> *searchable) override {
+    vector<vector<T> *> search(Searchable<T> *searchable) override {
         vector<State<T> *> path;
         double minPath = -1;
         double currentPathCost = 0;
@@ -47,7 +47,7 @@ public:
                         currentNeighbor->setShortestPath(currentPathCost);
                     } else {
                         currentPathCost += currentNeighbor->getCost();
-                        if(currentPathCost < currentNeighbor->getShortestPath()) {
+                        if (currentPathCost < currentNeighbor->getShortestPath()) {
                             currentNeighbor->setShortestPath(currentPathCost);
                         }
                     }

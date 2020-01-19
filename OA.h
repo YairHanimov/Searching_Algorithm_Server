@@ -13,6 +13,8 @@
 #include <unistd.h>
 #include "Cell.h"
 #include "State.h"
+#include "Searcher.h"
+#include "BestFS.h"
 
 using namespace std;
 
@@ -23,6 +25,8 @@ public:
 
     string solve(string p) override {
         Matrix m = stringToMatrix(p);
+        Searcher<Cell>* bestFS = new BestFS<Cell>();
+        bestFS->search(m);
         cout << "bla bla" << endl;
     }
 

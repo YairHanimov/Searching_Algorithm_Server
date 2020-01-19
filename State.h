@@ -27,10 +27,10 @@ public:
     }
 
     T* getObj() {
-        return this->*obj;
+        return this->obj;
     }
     State<T> getMe(){
-        return this;
+        return *this;
     }
 
     void setParent(State<T> *p) {
