@@ -36,14 +36,19 @@ public:
             } else {
                 vector<State<T>> *neighbors = searchable->getAllPossibleStates(n);
                 for (typename vector<State<T>>::iterator it = neighbors->begin(); it != neighbors->end(); it++) {
-                    State<T> currentNode = *it;
+                    State<T> *currentNode = *it;
                     if (closedNodesSet.find(currentNode) == closedNodesSet.end() &&
                         openNodesPQ.find(currentNode) == openNodesPQ.end()) {
-                        currentNode.setParent(n);
+                        currentNode->setParent(n);
                         openNodesPQ.push(currentNode);
-                        currentPath += currentNode.getCost();
-                    } else if () {
+                        currentPath += currentNode->getCost();
+                        currentNode->setShortestPath(currentPath);
 
+                    } else {
+                        currentPath += currentNode->getCost();
+                        if(currentPath < currentNode->getShortestPath()) {
+                            currentNode->setShortestPath(currentPath);
+                        }
                     }
                 }
             }

@@ -12,8 +12,8 @@ private:
     State<T> *parent = nullptr;     //where we came from
     bool visited = false;           //was visited or not
     double cost = 0;                //cost of visiting
-    double shortestPath = 0;        //how much cost until now
-    //int state = 0;                  //one-to-one value of state in the Searchable
+    double shortestPathCost = 0;    //how much cost until now
+    //int state = 0;                //one-to-one value of state in the Searchable
 public:
     explicit State<T>(T *inputObj) {
         this->obj = inputObj;
@@ -29,7 +29,7 @@ public:
     T* getObj() {
         return this->*obj;
     }
-    State<T> getme(){
+    State<T> getMe(){
         return this;
     }
 
@@ -38,7 +38,12 @@ public:
     }
     State<T> getParent() {}
 
-    void setShortestPath() {}
+    double getShortestPath() {
+        return this->shortestPathCost;
+    }
+    void setShortestPath(double sp) {
+        this->shortestPathCost = sp;
+    }
 };
 
 
