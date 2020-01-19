@@ -15,6 +15,10 @@ private:
     double shortestPathCost = 0;    //how much cost until now
     //int state = 0;                //one-to-one value of state in the Searchable
 public:
+    bool operator==(State<T> other) {
+        bool isEqual = this->obj == other.getObj();
+        return isEqual;
+    }
     explicit State<T>(T *inputObj) {
         this->obj = inputObj;
     }
