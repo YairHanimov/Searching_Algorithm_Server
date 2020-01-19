@@ -5,9 +5,12 @@
 #ifndef SEARCHING_ALGORITHM_SERVER_SEARCHER_H
 #define SEARCHING_ALGORITHM_SERVER_SEARCHER_H
 
+#include "Searchable.h"
+
 template<class T>
 class Searcher {
-
+public:
+    virtual T search (Searchable<T>){};
 };
 
 

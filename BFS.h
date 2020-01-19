@@ -10,7 +10,10 @@ using namespace std;
 
 template<class T>
 class BFS : public Searcher<T>{
+public:
+    virtual T search (Searchable<T>){
 
+    };
 };
 
 
