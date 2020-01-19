@@ -14,7 +14,8 @@ using namespace std;
 template<class T>
 class BestFS : public Searcher<T> {
 public:
-    T search(Searchable<T>* searchable) override {
+    vector<vector<T>*> search(Searchable<T>* searchable) override {
+        vector<State<T>*> path;
         priority_queue<T> open;                    // a priority queue of states to be evaluated
         open.push(searchable->getInitialState());
 
@@ -30,7 +31,10 @@ public:
             if(searchable->isGoalState(n)) {
 
             }
+            vector<T> * neighbors = searchable->getAllPossibleStates(n);
+            for(typename vector<T>::iterator it = neighbors->begin() ; it != neighbors->end() ; it++) {
 
+            }
         }
     };
 };
