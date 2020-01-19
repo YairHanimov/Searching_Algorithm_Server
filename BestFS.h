@@ -16,8 +16,8 @@ class BestFS : public Searcher<T> {
 public:
     vector<vector<T> *> search(Searchable<State<T>> *searchable) override {
         vector<State<T> *> path;
-        double minPath = -2;
-        double currentPath = 0;
+        double minPath = -1;
+        double currentPathCost = 0;
         priority_queue<State<T>> openNodesPQ;            // a priority queue of states to be evaluated
         openNodesPQ.push(searchable->getInitialState());
 
@@ -26,31 +26,33 @@ public:
         while (!openNodesPQ.empty()) {
 
             // remove the best node from openNodesPQ
-            State<T> n = openNodesPQ.top();
+            State<T> currentNode = openNodesPQ.top();
             openNodesPQ.pop();
-            currentPath = 0;
-            closedNodesSet.insert(n);       // so we won't check n again
+            currentPathCost = currentNode.getShortestPath();
+            closedNodesSet.insert(currentNode);       // so we won't check currentNode again
 
-            if (searchable->isGoalState(n)) {
-                path = backtrace(n);
+            if (searchable->isGoalState(currentNode)) {
+                path = backtrace(currentNode);
             } else {
-                vector<State<T>> *neighbors = searchable->getAllPossibleStates(n);
-                for (typename vector<State<T>>::iterator it = neighbors->begin(); it != neighbors->end(); it++) {
-                    State<T> *currentNode = *it;
-                    if (closedNodesSet.find(currentNode) == closedNodesSet.end() &&
-                        openNodesPQ.find(currentNode) == openNodesPQ.end()) {
-                        currentNode->setParent(n);
-                        openNodesPQ.push(currentNode);
-                        currentPath += currentNode->getCost();
-                        currentNode->setShortestPath(currentPath);
+                vector<State<T>> *neighbors = searchable->getAllPossibleStates(currentNode);
 
+                //go over all neighbors of current nude
+                for (typename vector<State<T>>::iterator it = neighbors->begin(); it != neighbors->end(); it++) {
+                    State<T> *currentNeighbor = *it;
+                    if (closedNodesSet.find(currentNeighbor) == closedNodesSet.end() &&
+                        openNodesPQ.find(currentNeighbor) == openNodesPQ.end()) {
+                        currentNeighbor->setParent(currentNode);
+                        openNodesPQ.push(currentNeighbor);
+                        currentPathCost += currentNeighbor->getCost();
+                        currentNeighbor->setShortestPath(currentPathCost);
                     } else {
-                        currentPath += currentNode->getCost();
-                        if(currentPath < currentNode->getShortestPath()) {
-                            currentNode->setShortestPath(currentPath);
+                        currentPathCost += currentNeighbor->getCost();
+                        if(currentPathCost < currentNeighbor->getShortestPath()) {
+                            currentNeighbor->setShortestPath(currentPathCost);
                         }
                     }
                 }
+
             }
         }
         return path;
