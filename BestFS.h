@@ -6,13 +6,32 @@
 #define SEARCHING_ALGORITHM_SERVER_BESTFS_H
 
 #include "Searcher.h"
+#include "queue"
+#include "set"
+
 using namespace std;
 
 template<class T>
-class BestFS : public Searcher<T>{
+class BestFS : public Searcher<T> {
 public:
-    virtual T search (Searchable<T>*){
+    T search(Searchable<T>* searchable) override {
+        priority_queue<T> open;                    // a priority queue of states to be evaluated
+        open.push(searchable->getInitialState());
 
+        set<T> closed;                             // a set of states already evaluated
+
+        while(!open.empty()) {
+            // remove the best node from open
+            T n = open.top();
+            open.pop();
+
+            closed.insert(n); // so we won't check n again
+
+            if(searchable->isGoalState(n)) {
+
+            }
+
+        }
     };
 };
 

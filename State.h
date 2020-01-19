@@ -13,7 +13,7 @@ private:
     bool visited = false;           //was visited or not
     double cost = 0;                //cost of visiting
     double shortestPath = 0;        //how much cost until now
-    int state = 0;                  //one-to-one value of state in the Searchable
+    //int state = 0;                  //one-to-one value of state in the Searchable
 public:
     explicit State<T>(T *inputObj) {
         this->obj = inputObj;
