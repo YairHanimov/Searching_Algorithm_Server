@@ -58,16 +58,15 @@ public:
                 myoptionvector.push_back(matrix[cell + 1][row]->getMe());
             }
            if ((cell!=0)&&((matrix[cell-1][row]->getCost())!= (-1))){
-            myoptionvector.push_back(matrix[cell-1][row]->getme());
+            myoptionvector.push_back(matrix[cell-1][row]->getMe());
         }
         if ((row!=mysize)&&((matrix[cell][row+1]->getCost())!= (-1))){
-            myoptionvector.push_back(matrix[cell][row+1]->getme());
+            myoptionvector.push_back(matrix[cell][row+1]->getMe());
         }
         if ((row!=0)&&((matrix[cell][row-1]->getCost())!= (-1))){
-            myoptionvector.push_back(matrix[cell][row-1]->getme());
+            myoptionvector.push_back(matrix[cell][row-1]->getMe());
         }
-
-
+        return  myoptionvector;
     }
 };
 
