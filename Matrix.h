@@ -57,6 +57,15 @@ public:
             if ((cell!=mysize)&&((matrix[cell+1][row]->getCost())!= (-1))){
                 myoptionvector.push_back(matrix[cell+1][row]->getme());
             }
+           if ((cell!=0)&&((matrix[cell-1][row]->getCost())!= (-1))){
+            myoptionvector.push_back(matrix[cell-1][row]->getme());
+        }
+        if ((row!=mysize)&&((matrix[cell][row+1]->getCost())!= (-1))){
+            myoptionvector.push_back(matrix[cell][row+1]->getme());
+        }
+        if ((row!=0)&&((matrix[cell][row-1]->getCost())!= (-1))){
+            myoptionvector.push_back(matrix[cell][row-1]->getme());
+        }
 
 
     }
