@@ -19,6 +19,9 @@ public:
         this->obj = inputObj;
     }
 
+    double getCost(){
+        return this->cost;
+    }
     void setCost(double c) {
         this->cost = c;
     }
@@ -27,6 +30,9 @@ public:
         return this->*obj;
     }
 
+    void setParent(State<T> *p) {
+        this->*parent = *p;
+    }
     State<T> getParent() {}
 
     void setShortestPath() {}

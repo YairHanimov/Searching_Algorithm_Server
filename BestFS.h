@@ -16,27 +16,35 @@ class BestFS : public Searcher<T> {
 public:
     vector<vector<T> *> search(Searchable<State<T>> *searchable) override {
         vector<State<T> *> path;
-        priority_queue<State<T>> openNodesPQ;                    // a priority queue of states to be evaluated
+        double minPath = -2;
+        double currentPath = 0;
+        priority_queue<State<T>> openNodesPQ;            // a priority queue of states to be evaluated
         openNodesPQ.push(searchable->getInitialState());
 
-        set<State<T>> closedNodesSet;                             // a set of states already evaluated
+        set<State<T>> closedNodesSet;                    // a set of states already evaluated
 
         while (!openNodesPQ.empty()) {
+
             // remove the best node from openNodesPQ
             State<T> n = openNodesPQ.top();
             openNodesPQ.pop();
-
-            closedNodesSet.insert(n); // so we won't check n again
+            currentPath = 0;
+            closedNodesSet.insert(n);       // so we won't check n again
 
             if (searchable->isGoalState(n)) {
                 path = backtrace(n);
             } else {
                 vector<State<T>> *neighbors = searchable->getAllPossibleStates(n);
                 for (typename vector<State<T>>::iterator it = neighbors->begin(); it != neighbors->end(); it++) {
-                    if(closedNodesSet.find(it) == closedNodesSet.end() && openNodesPQ.find(it) == openNodesPQ.end()) {
+                    State<T> currentNode = *it;
+                    if (closedNodesSet.find(currentNode) == closedNodesSet.end() &&
+                        openNodesPQ.find(currentNode) == openNodesPQ.end()) {
+                        currentNode.setParent(n);
+                        openNodesPQ.push(currentNode);
+                        currentPath += currentNode.getCost();
+                    } else if () {
 
                     }
-
                 }
             }
         }
