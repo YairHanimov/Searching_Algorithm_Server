@@ -14,12 +14,16 @@ using namespace std;
 template<class T>
 class BestFS : public Searcher<T> {
 public:
-    vector<vector<T> *> search(Searchable<T> *searchable) override {
+    Searchable<T> problem;
+    explicit BestFS(Searchable<T> *p) {
+        this->problem = *p;
+    }
+    vector<vector<T> *> search() override {
         vector<State<T> *> path;
         double minPath = -1;
         double currentPathCost = 0;
         priority_queue<State<T>> openNodesPQ;            // a priority queue of states to be evaluated
-        openNodesPQ.push(searchable->getInitialState());
+        openNodesPQ.push(this->problem.getInitialState());
 
         set<State<T>> closedNodesSet;                    // a set of states already evaluated
 
@@ -31,14 +35,14 @@ public:
             currentPathCost = currentNode.getShortestPath();
             closedNodesSet.insert(currentNode);       // so we won't check currentNode again
 
-            if (searchable->isGoalState(currentNode)) {
-                path = backtrace(currentNode);
+            if (this->problem.isGoalState(currentNode)) {
+                return backtrace(currentNode);
             } else {
-                vector<State<T>> *neighbors = searchable->getAllPossibleStates(currentNode);
+                vector<State<T>> neighbors = this->problem.getAllPossibleStates(currentNode);
 
-                //go over all neighbors of current nude
-                for (typename vector<State<T>>::iterator it = neighbors->begin(); it != neighbors->end(); it++) {
-                    State<T> *currentNeighbor = *it;
+                //go over all neighbors of current node
+                for (typename vector<State<T>>::iterator it = neighbors.begin(); it != neighbors.end(); it++) {
+                    State<T> currentNeighbor = *it;
                     if (closedNodesSet.find(currentNeighbor) == closedNodesSet.end() &&
                         openNodesPQ.find(currentNeighbor) == openNodesPQ.end()) {
                         currentNeighbor->setParent(currentNode);
@@ -58,7 +62,10 @@ public:
         return path;
     };
 
-    vector<vector<State<T>> *> backtrace(State<T> *goal) {
+    bool findInPQ (priority_queue<T> pq, State<T> current) {
+
+    }
+    vector<vector<T>*> backtrace(State<T> goal) {
         vector<vector<T> *> path;
         path.push_back(goal);
         State<T> *parent = goal->getParent();

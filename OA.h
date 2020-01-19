@@ -24,13 +24,13 @@ public:
     OA() = default;
 
     string solve(string p) override {
-        Matrix m = stringToMatrix(p);
-        Searcher<Cell>* bestFS = new BestFS<Cell>();
-        bestFS->search(m);
+        Matrix *m = stringToMatrix(p);
+        Searcher<Cell>* bestFS = new BestFS<Cell>(m);
+        bestFS->search();
         cout << "bla bla" << endl;
     }
 
-    Matrix stringToMatrix(const string str) {
+    Matrix* stringToMatrix(const string str) {
         vector<string> line;
         int n = str.length();
 
@@ -106,7 +106,7 @@ public:
 
         Matrix *returnMatrix = new Matrix(matrix,start1,start2,end1,end2);
         int test = matrix.size();
-        return *returnMatrix;
+        return returnMatrix;
     }
 
 
