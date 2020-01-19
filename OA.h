@@ -91,11 +91,11 @@ public:
             end2 = atoi(token);
             token = strtok(nullptr, ",");
         }
-        Cell *startCell = new Cell(start1, start2);
-        Cell *endCell = new Cell(end1, end2);
-
-        auto* start = new State<Cell>(startCell);
-        auto* end = new State<Cell>(endCell);
+//        Cell *startCell = new Cell(start1, start2);
+//        Cell *endCell = new Cell(end1, end2);
+//
+//        auto* start = new State<Cell>(startCell);
+//        auto* end = new State<Cell>(endCell);
 //        returnMatrix->matrix = matrix;
 //        returnMatrix->start = start;
 //        returnMatrix->end = end;
