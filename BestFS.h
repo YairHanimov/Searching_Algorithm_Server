@@ -30,8 +30,9 @@ public:
        auto k =this->problem.getInitialState();
         mypq.push(k);
 //
-        vector<State<T>> closedNodesSet;                    // a set of states already evaluated
-
+        set<State<T>,compar> closedNodesSet;                    // a set of states already evaluated
+        set<State<T>,compar> spicialsearchq;
+        spicialsearchq.insert(k);
       while (!mypq.empty()) {
 //
 //            // remove the best node from openNodesPQ
@@ -44,9 +45,11 @@ public:
          //   currentNode.setShortestPath(openNodesPQ.top().getShortestPath());
          //   currentNode.setviseted(openNodesPQ.top().areviseted());
 //            currentPathCost = openNodesPQ.top().getShortestPath();
-           mypq.pop();
-        //    currentPathCost = currentNode.getShortestPath();
-        //    closedNodesSet.insert(currentNode);       // so we won't check currentNode again
+             spicialsearchq.erase(mypq.top());
+
+               mypq.pop();
+            currentPathCost = currentNode.getShortestPath();
+             closedNodesSet.insert(currentNode);       // so we won't check currentNode again
 
             if (this->problem.isGoalState(currentNode)) {
                 return backtrace(currentNode);
