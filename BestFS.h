@@ -11,6 +11,7 @@
 #include "PriorityQueueState.h"
 #include "Cell.h"
 #include "compar.h"
+#include "Matrix.h"
 using namespace std;
 
 template<class T>
@@ -18,7 +19,7 @@ class BestFS : public Searcher<T> {
 public:
     Searchable<T> problem;
     explicit BestFS(Searchable<T> *p) {
-        this->problem = *p;
+       this->problem = *p;
     }
     vector<State<T>> search() override {
         vector<State<T>> path;

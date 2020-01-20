@@ -50,7 +50,7 @@ public:
         return this->end;
     }
 
-    vector<State<Cell>> getAllPossibleStates(State<Cell> c) override{
+    virtual  vector<State<Cell>> getAllPossibleStates(State<Cell> c) override  {
         vector<State<Cell>> myoptionvector;
         int row = 0;
         int cell = 0;

@@ -19,11 +19,11 @@ public:
         bool isEqual = this->obj == other.getObj();
         return isEqual;
     }
-    State<T>(T *obj, State<T> *parent,bool visitef, double shorted, double cos){
+    State<T>(T *obj, double cos){
         this->obj=obj;
         this->parent=parent;
-        this->visited=visitef;
-        this->shortestPathCost=shorted;
+        this->visited= false;
+        this->shortestPathCost=cos;
         this->cost=cos;
     }
     State<T>(){
