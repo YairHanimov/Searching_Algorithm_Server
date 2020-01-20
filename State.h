@@ -19,6 +19,23 @@ public:
         bool isEqual = this->obj == other.getObj();
         return isEqual;
     }
+    State<T>(T *obj, State<T> *parent,bool visitef, double shorted, double cos){
+        this->obj=obj;
+        this->parent=parent;
+        this->visited=visitef;
+        this->shortestPathCost=shorted;
+        this->cost=cos;
+    }
+    State<T>(){
+
+    }
+    State<T>(State<T> *mystate){
+        this->obj=mystate->obj;
+        this->shortestPathCost=mystate->shortestPathCost;
+        this->visited=mystate->visited;
+        this->parent=mystate->parent;
+        this->cost=mystate->cost;
+    }
     explicit State<T>(T *inputObj) {
         this->obj = inputObj;
     }
@@ -33,12 +50,15 @@ public:
     T* getObj() {
         return this->obj;
     }
+    void setobj(T *objj){
+        this->obj=objj;
+    };
     State<T> getMe(){
         return *this;
     }
 
-    void setParent(State<T> *p) {
-        this->*parent = *p;
+    void setParent(State<T> p) {
+        this->*parent = p;
     }
     State<T> getParent() {}
 
@@ -48,6 +68,12 @@ public:
     void setShortestPath(double sp) {
         this->shortestPathCost = sp;
     }
+    bool areviseted(){
+        return this->visited;
+    }
+    void setviseted(bool t){
+        this->visited=t;
+    };
 };
 
 

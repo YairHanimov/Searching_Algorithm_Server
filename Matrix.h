@@ -40,7 +40,7 @@ public:
 //        this->end = e;
 //    }
 
-    State<Cell> getInitialState() override {
+    virtual State<Cell> getInitialState() override {
         return *this->start;
     }
 
