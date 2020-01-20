@@ -25,9 +25,7 @@ public:
         return isEqual;
     }
 
-    virtual    vector<State<T>> getAllPossibleStates(State<T> l)  {
-
-    };
+    virtual    vector<State<T>> getAllPossibleStates(State<T> l)=0;
 
      virtual void setstartt(State<T> *s){
          this->start=s;

@@ -47,7 +47,7 @@ public:
     }
 
     bool isGoalState(State<Cell> c) override {
-        return this->end;
+        return (this->end->getObj()==c.getObj());
     }
 
     virtual  vector<State<Cell>> getAllPossibleStates(State<Cell> c) override  {

@@ -26,7 +26,7 @@ public:
     string solve(string p) override {
         Matrix *m = stringToMatrix(p);
         Searcher<Cell>* bestFS = new BestFS<Cell>(m);
-        bestFS->search();
+        bestFS->search(m);
         cout << "bla bla" << endl;
     }
 
@@ -111,7 +111,7 @@ public:
 
 
 private:
-    Searcher<problem> oa_searcher;
+//    Searcher<problem> oa_searcher;
 };
 
 

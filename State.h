@@ -4,6 +4,8 @@
 
 #ifndef SEARCHING_ALGORITHM_SERVER_STATE_H
 #define SEARCHING_ALGORITHM_SERVER_STATE_H
+# include<vector>
+#include "Cell.h"
 
 template<class T>
 class State {
@@ -14,6 +16,7 @@ private:
     double cost = 0;                //cost of visiting
     double shortestPathCost = 0;    //how much cost until now
     //int state = 0;                //one-to-one value of state in the Searchable
+    std::vector<State<Cell>> myalloption;
 public:
     bool operator==(State<T> other) {
         bool isEqual = this->obj == other.getObj();
@@ -77,6 +80,12 @@ public:
     void setviseted(bool t){
         this->visited=t;
     };
+    void setmyalloption(std::vector<State<Cell>> k){
+        this->myalloption=k;
+    }
+    std::vector<State<Cell>>  getmyalloption(){
+        return this->myalloption;
+    }
 };
 
 

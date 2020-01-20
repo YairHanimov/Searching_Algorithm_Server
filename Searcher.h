@@ -6,11 +6,12 @@
 #define SEARCHING_ALGORITHM_SERVER_SEARCHER_H
 
 #include "Searchable.h"
+#include "Matrix.h"
 
 template<class T>
 class Searcher {
 public:
-    virtual vector<State<T>>  search (){};
+    virtual vector<State<T>> search(Matrix *pMatrix)=0;
 };
 
 

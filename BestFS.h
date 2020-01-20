@@ -17,18 +17,20 @@ using namespace std;
 template<class T>
 class BestFS : public Searcher<T> {
 public:
-    Searchable<T> problem;
+
+//    Searchable<T> problem;
     explicit BestFS(Searchable<T> *p) {
-       this->problem = *p;
+//       this->problem = *p;
+//       auto  kk=p;
     }
-    vector<State<T>> search() override {
+    vector<State<T>> search(Matrix *problem)   {
         vector<State<T>> path;
         double minPath = -1;
         double currentPathCost = 0;
      //   PriorityQueueState<State<T>> openNodesPQ;            // a priority queue of states to be evaluated
       priority_queue<State<T>,vector<State<T>>,compar> mypq;
     //   bool test= openNodesPQ.empty();
-       auto k =this->problem.getInitialState();
+       auto k =problem->getInitialState();
         mypq.push(k);
 //
         set<State<T>,compar> closedNodesSet;                    // a set of states already evaluated
@@ -52,10 +54,10 @@ public:
             currentPathCost = currentNode.getShortestPath();
              closedNodesSet.insert(currentNode);       // so we won't check currentNode again
 
-            if (this->problem.isGoalState(currentNode)) {
+            if (problem->isGoalState(currentNode)) {
                 return backtrace(currentNode);
             } else {
-                vector<State<T>> neighbors = this->problem.getAllPossibleStates(currentNode);
+                vector<State<T>> neighbors = problem->getAllPossibleStates(currentNode);
 
                 //go over all neighbors of current node
                 for (typename vector<State<T>>::iterator it = neighbors.begin(); it != neighbors.end(); it++) {
