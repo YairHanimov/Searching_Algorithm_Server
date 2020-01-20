@@ -20,8 +20,8 @@ public:
     explicit BestFS(Searchable<T> *p) {
         this->problem = *p;
     }
-    vector<vector<T> *> search() override {
-        vector<State<T> *> path;
+    vector<State<T>> search() override {
+        vector<State<T>> path;
         double minPath = -1;
         double currentPathCost = 0;
      //   PriorityQueueState<State<T>> openNodesPQ;            // a priority queue of states to be evaluated
@@ -30,7 +30,7 @@ public:
        auto k =this->problem.getInitialState();
         mypq.push(k);
 //
-        set<State<T>> closedNodesSet;                    // a set of states already evaluated
+        vector<State<T>> closedNodesSet;                    // a set of states already evaluated
 
       while (!mypq.empty()) {
 //
@@ -47,44 +47,45 @@ public:
            mypq.pop();
         //    currentPathCost = currentNode.getShortestPath();
         //    closedNodesSet.insert(currentNode);       // so we won't check currentNode again
-////
-////            if (this->problem.isGoalState(currentNode)) {
-////                return backtrace(currentNode);
-////            } else {
-////                vector<State<T>> neighbors = this->problem.getAllPossibleStates(currentNode);
-////
-////                //go over all neighbors of current node
-////                for (typename vector<State<T>>::iterator it = neighbors.begin(); it != neighbors.end(); it++) {
-////                    State<T> currentNeighbor = *it;
-//////                   if (closedNodesSet.find(currentNeighbor) == closedNodesSet.end() &&
-////                     //   openNodesPQ.isInPQ(currentNeighbor)) {
-////                    if(2<4){
-////                        currentNeighbor.setParent(currentNode);
-//////                        openNodesPQ.push(currentNeighbor);
-////                        currentPathCost += currentNeighbor.getCost();
-////                        currentNeighbor.setShortestPath(currentPathCost);
-////                    } else {
-////                        currentPathCost += currentNeighbor.getCost();
-////                        if (currentPathCost < currentNeighbor.getShortestPath()) {
-////                            currentNeighbor.setShortestPath(currentPathCost);
-////                        }
-////                    }
-////                }
-////
-                }
-//        }
-////        return path;
+
+            if (this->problem.isGoalState(currentNode)) {
+                return backtrace(currentNode);
+            } else {
+                vector<State<T>> neighbors = this->problem.getAllPossibleStates(currentNode);
+
+                //go over all neighbors of current node
+                for (typename vector<State<T>>::iterator it = neighbors.begin(); it != neighbors.end(); it++) {
+                    State<T> currentNeighbor = *it;
+//                    (closedNodesSet.find(currentNeighbor) == closedNodesSet.end() &&
+                     //   openNodesPQ.isInPQ(currentNeighbor)) {
+                   if (3<4){
+                        currentNeighbor.setParent(&currentNode);
+                        mypq.push(currentNeighbor);
+                        currentPathCost += currentNeighbor.getCost();
+                        currentNeighbor.setShortestPath(currentPathCost);
+                    } else {
+                        currentPathCost += currentNeighbor.getCost();
+                        if (currentPathCost < currentNeighbor.getShortestPath()) {
+                            currentNeighbor.setShortestPath(currentPathCost);
+                      }
+                   }
+               }
+
+               }
+     }
+      return path;
     };
 
-    vector<vector<T>*> backtrace(State<T> goal) {
-        vector<vector<T> *> path;
+    vector<State<T>> backtrace(State<T> goal) {
+        vector<State<T>> path;
         path.push_back(goal);
-        State<T> *parent = goal->getParent();
+        State<T> *parent = goal.getParent();
 
         while (parent != nullptr) {
             path.push_back(parent);
-            parent = parent->getParent();
+            *parent = parent->getParent();
         }
+        return path;
     }
 };
 

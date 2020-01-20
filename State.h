@@ -57,10 +57,12 @@ public:
         return *this;
     }
 
-    void setParent(State<T> p) {
-        this->*parent = p;
+    void setParent(State<T>* p) {
+        this->parent = p;
     }
-    State<T> getParent() {}
+    State<T>* getParent() {
+        return parent;
+    }
 
     double getShortestPath() {
         return this->shortestPathCost;

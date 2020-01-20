@@ -10,7 +10,7 @@
 template<class T>
 class Searcher {
 public:
-    virtual vector<vector<T> *> search (){};
+    virtual vector<State<T>>  search (){};
 };
 
 
