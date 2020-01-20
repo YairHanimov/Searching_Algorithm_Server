@@ -11,12 +11,23 @@ using namespace std;
 
 template<class T>
 class Searchable {
+protected:
+    State<T> *start;
+    State<T> *end;
 public:
-    virtual State<T> getInitialState() {}
-    virtual bool isGoalState(State<T>){}
-    virtual vector<State<T>> getAllPossibleStates(State<T>){
-
+    virtual State<T> getInitialState() {
+        return this->start;
     }
+    virtual bool isGoalState(State<T> k){
+    }
+    virtual vector<State<T>> getAllPossibleStates(State<T>){}
+     virtual void setstartt(State<T> *s){
+         this->start=s;
+     }
+    virtual void setendd(State<T> *e){
+        this->start=e;
+    }
+
 };
 
 

@@ -32,6 +32,8 @@ public:
         Cell *endedCell = new Cell(end1, end2);
         this->start = new State<Cell>(starterCell);
         this->end = new State<Cell>(endedCell);
+        setstartt(this->start);
+        setendd(this->end);
 
     }
 //    Matrix(vector<vector<State<Cell> *>> m, State<Cell> *s, State<Cell> *e) {
