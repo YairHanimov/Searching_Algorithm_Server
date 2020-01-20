@@ -68,6 +68,7 @@ public:
             lexer="";
             matrix.push_back(stateLine);
             row++;
+            col=0;
         }
         int start1 = 0;
         int start2 = 0;

@@ -63,7 +63,7 @@ public:
                 for (typename vector<State<T>>::iterator it = neighbors.begin(); it != neighbors.end(); it++) {
                     State<T> currentNeighbor = *it;
                 if    (closedNodesSet.find(currentNeighbor) == closedNodesSet.end() &&
-                            (spicialsearchq.find(currentNeighbor)!=spicialsearchq.end())) {
+                            (spicialsearchq.find(currentNeighbor)==spicialsearchq.end())) {
 
                         currentNeighbor.setParent(&currentNode);
                         mypq.push(currentNeighbor);
