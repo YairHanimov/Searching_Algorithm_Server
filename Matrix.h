@@ -40,12 +40,12 @@ public:
 //        this->end = e;
 //    }
 
-    virtual State<Cell> getInitialState() override {
-        return *this->start;
+     State<Cell> getInitialState() override {
+        return this->start;
     }
 
     bool isGoalState(State<Cell> c) override {
-
+        return this->end;
     }
 
     vector<State<Cell>> getAllPossibleStates(State<Cell> c) override{

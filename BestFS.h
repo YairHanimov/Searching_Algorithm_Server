@@ -59,11 +59,12 @@ public:
                 //go over all neighbors of current node
                 for (typename vector<State<T>>::iterator it = neighbors.begin(); it != neighbors.end(); it++) {
                     State<T> currentNeighbor = *it;
-//                    (closedNodesSet.find(currentNeighbor) == closedNodesSet.end() &&
-                     //   openNodesPQ.isInPQ(currentNeighbor)) {
-                   if (3<4){
+                if    (closedNodesSet.find(currentNeighbor) == closedNodesSet.end() &&
+                            (spicialsearchq.find(currentNeighbor)!=spicialsearchq.end())) {
+
                         currentNeighbor.setParent(&currentNode);
                         mypq.push(currentNeighbor);
+                        spicialsearchq.insert(currentNeighbor);
                         currentPathCost += currentNeighbor.getCost();
                         currentNeighbor.setShortestPath(currentPathCost);
                     } else {
