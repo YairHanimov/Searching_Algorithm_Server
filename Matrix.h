@@ -61,34 +61,34 @@ public:
         cell = c.getObj()->getCol();
         c.setVisited();
         if ((cell != mysize) && ((matrix[row][cell + 1]->getCost()) != (-1))) {
-             if(!matrix[row][cell + 1]->areviseted()) {
+             if(!matrix[row][cell + 1]->isVisited()) {
                  myoptionvector.push_back(matrix[row][cell + 1]->getMe());
              }
         }
         if ((cell != 0) && ((matrix[row][cell - 1]->getCost()) != (-1))) {
-            if(!matrix[row][cell - 1]->areviseted()) {
+            if(!matrix[row][cell - 1]->isVisited()) {
 
                 myoptionvector.push_back(matrix[row][cell - 1]->getMe());
             }
         }
         if ((row != mysize) && ((matrix[row + 1][cell]->getCost()) != (-1))) {
-            if(!matrix[row+1][cell]->areviseted()) {
+            if(!matrix[row + 1][cell]->isVisited()) {
 
                 myoptionvector.push_back(matrix[row + 1][cell]->getMe());
             }
         }
         if ((row != 0) && ((matrix[row - 1][cell]->getCost()) != (-1))) {
-            if(!matrix[row-1][cell]->areviseted()) {
+            if(!matrix[row - 1][cell]->isVisited()) {
 
                 myoptionvector.push_back(matrix[row - 1][cell]->getMe());
             }
         }
         return myoptionvector;
     }
-    virtual void makeMeVistetd(State<Cell> c) override {
-        c.setVisited();
-
-    }
+//    virtual void makeMeVistetd(State<Cell> c) override {
+//        c.setVisited();
+//
+//    }
 };
 
 #endif //SEARCHING_ALGORITHM_SERVER_MATRIX_H

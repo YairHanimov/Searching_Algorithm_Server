@@ -51,14 +51,11 @@ public:
             this->obj = myState->obj;
             this->shortestPathCost = myState->shortestPathCost;
             //this->visited = mystate->visited;
-            //        State<T> dammmy= new State(mystate->getParent() , 0);
-            //        this->parent =dammmy;
 
             this->cost = myState->cost;
 
-            this->parent = nullptr;
-            //this->parent = mystate->parent;
-            //this->setParent(mystate->getParent());
+            //this->parent = nullptr;
+            this->parent = myState->parent;
         }
 
     }
@@ -85,7 +82,7 @@ public:
         this->visited = true;
     }
 
-    bool getVisited() {
+    bool gotVisited() {
         return this->visited;
     }
     void setObj(T *objj) {
@@ -97,10 +94,6 @@ public:
     }
 
     void setParent(State<T> *p) {
-//       if (this==p){
-//           cout<<"wy they =??"<<endl;
-//       }
-//       else {
         if(p->parent == this) {
             cerr<<"Luke, I am your father"<<endl;
         }
@@ -123,7 +116,7 @@ public:
         this->shortestPathCost = sp;
     }
 
-    bool areviseted() {
+    bool isVisited() {
         return this->visited;
     }
 

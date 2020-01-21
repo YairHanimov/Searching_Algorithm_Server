@@ -41,14 +41,13 @@ public:
         while (!mypq.empty()) {
 
             State<T> currentNode = new State<T>(mypq.top());
-            currentNode.setVisited();
-            problem->makeMeVistetd(currentNode);
 
-            mypq.pop();
-            currentPathCost = currentNode.getShortestPath();
-            closedNodesSet.insert(currentNode);       // so we won't check currentNode again
             currentNode.setVisited();
-            problem->makeMeVistetd(currentNode);
+            closedNodesSet.insert(currentNode);       // so we won't check currentNode again
+            mypq.pop();
+
+            currentPathCost = currentNode.getShortestPath();
+
             if (problem->isGoalState(currentNode)) {
                 return backtrace(currentNode);
             } else {
@@ -57,14 +56,14 @@ public:
                 for (typename vector<State<T>>::iterator it = neighbors.begin(); it != neighbors.end(); it++) {
                     State<T> currentNeighbor = *it;
                     //todo : BUG: cell 0x0 passed this test even though it was in closedNoseSet
-                    if ((closedNodesSet.find(currentNeighbor) == closedNodesSet.end()) &&
-                        !currentNeighbor.getVisited()) {
+                    if ((closedNodesSet.find(currentNeighbor) == closedNodesSet.end()) ||
+                        !currentNeighbor.gotVisited()) {
                         currentNeighbor.setParent(&currentNode);
                         currentPathCost += currentNeighbor.getCost();
                         currentNeighbor.setShortestPath(currentPathCost);
                         mypq.push(currentNeighbor);
                         specialSearchSet.insert(currentNeighbor);
-                    } else {
+                    } else if(!currentNeighbor.gotVisited()) {
 //                        currentPathCost += currentNeighbor.getCost()+currentNeighbor.getParent()->getShortestPath();
                         if (currentNeighbor.getShortestPath() >
                             currentNode.getShortestPath() + currentNeighbor.getCost()) {
@@ -75,7 +74,6 @@ public:
                         }
                     }
                 }
-
             }
         }
         return path;
