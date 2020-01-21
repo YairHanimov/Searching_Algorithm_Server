@@ -12,7 +12,7 @@
 #include "Cell.h"
 #include "compar.h"
 #include "Matrix.h"
-
+#include "comparforset.h"
 using namespace std;
 
 template<class T>
@@ -35,13 +35,14 @@ public:
         auto k = problem->getInitialState();
         mypq.push(k);
 //
-        set<State<T>, compar> closedNodesSet;                    // a set of states already evaluated
-        set<State<T>, compar> specialSearchSet;
+        set<State<T>, comparforset> closedNodesSet;                    // a set of states already evaluated
+        set<State<T>, comparforset> specialSearchSet;
         specialSearchSet.insert(k);
         while (!mypq.empty()) {
 //
 //            // remove the best node from openNodesPQ
             State<T> currentNode = mypq.top();
+
             //         State<T> currentNode = new State<T>();
             //  currentNode.setCost(openNodesPQ.top().getCost());
             //   auto test=mypq.top().getObj();
@@ -50,6 +51,7 @@ public:
             //   currentNode.setShortestPath(openNodesPQ.top().getShortestPath());
             //   currentNode.setviseted(openNodesPQ.top().areviseted());
 //            currentPathCost = openNodesPQ.top().getShortestPath();
+
             specialSearchSet.erase(mypq.top());
 
             mypq.pop();
@@ -65,8 +67,8 @@ public:
                 for (typename vector<State<T>>::iterator it = neighbors.begin(); it != neighbors.end(); it++) {
                     State<T> currentNeighbor = *it;
                     //todo : BUG: cell 0x0 passed this test even though it was in closedNoseSet
-                    if (!inStateInSet(closedNodesSet, currentNeighbor) &&
-                        !inStateInSet(specialSearchSet, currentNeighbor)) {
+                    if ((closedNodesSet.find(currentNeighbor)==closedNodesSet.end())&&
+                            (specialSearchSet.find(currentNeighbor)==specialSearchSet.end())){
 
                         currentNeighbor.setParent(&currentNode);
                         mypq.push(currentNeighbor);
@@ -86,15 +88,15 @@ public:
         return path;
     };
 
-    bool inStateInSet(set<State<T>, compar> closedNodesSet, State<T> toFind) {
-        for(typename set<State<T>, compar>::iterator it = closedNodesSet.begin() ; it != closedNodesSet.end() ; it++) {
-            if(it == toFind){
-                return true;
-            }
-            return false;
-        }
-
-    }
+//    bool inStateInSet(set<State<T>, compar> closedNodesSet, State<T> toFind) {
+//        for(typename set<State<T>, compar>::iterator it = closedNodesSet.begin() ; it != closedNodesSet.end() ; it++) {
+//            if(it == toFind){
+//                return true;
+//            }
+//            return false;
+//        }
+//
+//    }
     vector<State<T>> backtrace(State<T> goal) {
         vector<State<T>> path;
         path.push_back(goal);
