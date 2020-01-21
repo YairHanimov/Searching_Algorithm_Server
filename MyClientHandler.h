@@ -57,6 +57,7 @@ public:
 //                afterfix += rev->solve(buffer);
 //                cout << "reverse are comiing";
 //                cout << afterfix << endl;
+
                 this->cache_manager->insert(testbuffer, afterfix);
             } else {
                 string s = *solu;
