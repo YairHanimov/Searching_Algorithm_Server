@@ -86,8 +86,8 @@ public:
         this->obj = objj;
     };
 
-    State<T> getMe() {
-        return *this;
+    State<T*> getMe() {
+        return this;
     }
 
     void setParent(State<T> *p) {

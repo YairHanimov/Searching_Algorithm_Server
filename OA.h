@@ -53,9 +53,9 @@ public:
         int row = 0;
         int col = 0;
         int mysize = line.size();
-        vector<vector<State<Cell>*>> matrix;
+        vector<vector<State<Cell*>*>> matrix;
         while (row < (mysize - 3)) {
-            vector<State<Cell>*> stateLine;
+            vector<State<Cell*>*> stateLine;
             lexer += line.front();
             line.erase(line.begin());
             strcpy(strToChar, lexer.c_str());
@@ -63,7 +63,7 @@ public:
             token = strtok(strToChar, ",");
             while (token != nullptr) {
                 Cell *c = new Cell(row, col);
-                auto* st = new State<Cell>(*c);
+                auto* st = new State<Cell*>(c);
                 st->setCost(stod(token));
                 stateLine.push_back(st);
                 col++;
