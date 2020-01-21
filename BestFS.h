@@ -36,8 +36,8 @@ public:
         mypq.push(k);
 //
         set<State<T>, compar> closedNodesSet;                    // a set of states already evaluated
-        set<State<T>, compar> spicialsearchq;
-        spicialsearchq.insert(k);
+        set<State<T>, compar> specialSearchSet;
+        specialSearchSet.insert(k);
         while (!mypq.empty()) {
 //
 //            // remove the best node from openNodesPQ
@@ -50,7 +50,7 @@ public:
             //   currentNode.setShortestPath(openNodesPQ.top().getShortestPath());
             //   currentNode.setviseted(openNodesPQ.top().areviseted());
 //            currentPathCost = openNodesPQ.top().getShortestPath();
-            spicialsearchq.erase(mypq.top());
+            specialSearchSet.erase(mypq.top());
 
             mypq.pop();
             currentPathCost = currentNode.getShortestPath();
@@ -65,12 +65,12 @@ public:
                 for (typename vector<State<T>>::iterator it = neighbors.begin(); it != neighbors.end(); it++) {
                     State<T> currentNeighbor = *it;
                     //todo : BUG: cell 0x0 passed this test even though it was in closedNoseSet
-                    if (closedNodesSet.find(currentNeighbor) == closedNodesSet.end() &&
-                        (spicialsearchq.find(currentNeighbor) == spicialsearchq.end())) {
+                    if (!inStateInSet(closedNodesSet, currentNeighbor) &&
+                        !inStateInSet(specialSearchSet, currentNeighbor)) {
 
                         currentNeighbor.setParent(&currentNode);
                         mypq.push(currentNeighbor);
-                        spicialsearchq.insert(currentNeighbor);
+                        specialSearchSet.insert(currentNeighbor);
                         currentPathCost += currentNeighbor.getCost();
                         currentNeighbor.setShortestPath(currentPathCost);
                     } else {
@@ -86,6 +86,15 @@ public:
         return path;
     };
 
+    bool inStateInSet(set<State<T>, compar> closedNodesSet, State<T> toFind) {
+        for(typename set<State<T>, compar>::iterator it = closedNodesSet.begin() ; it != closedNodesSet.end() ; it++) {
+            if(it == toFind){
+                return true;
+            }
+            return false;
+        }
+
+    }
     vector<State<T>> backtrace(State<T> goal) {
         vector<State<T>> path;
         path.push_back(goal);

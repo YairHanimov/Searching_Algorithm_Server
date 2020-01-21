@@ -11,6 +11,12 @@ private:
     int row;
     int col;
 public:
+    bool operator==(Cell other) {
+        if(this->row == other.getRow() && this->col == other.getCol()) {
+            return true;
+        }
+        return false;
+    }
     Cell(int row_input, int col_input){
         this->row = row_input;
         this->col = col_input;

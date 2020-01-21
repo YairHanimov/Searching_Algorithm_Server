@@ -4,8 +4,11 @@
 
 #ifndef SEARCHING_ALGORITHM_SERVER_STATE_H
 #define SEARCHING_ALGORITHM_SERVER_STATE_H
-# include<vector>
+
+#include <vector>
 #include "Cell.h"
+
+using namespace std;
 
 template<class T>
 class State {
@@ -16,74 +19,87 @@ private:
     double cost = 0;                //cost of visiting
     double shortestPathCost = 0;    //how much cost until now
     //int state = 0;                //one-to-one value of state in the Searchable
-    std::vector<State<Cell>> myalloption;
+    vector<State<Cell>> myalloption;
 public:
     bool operator==(State<T> other) {
-        bool isEqual = this->obj == other.getObj();
+        bool isEqual = obj == other.getObj();
         return isEqual;
     }
-    State<T>(T *obj, double cos){
-        this->obj=obj;
-        this->parent=parent;
-        this->visited= false;
-        this->shortestPathCost=cos;
-        this->cost=cos;
+
+    State<T>(T *obj, double cos) {
+        this->obj = obj;
+        this->parent = parent;
+        this->visited = false;
+        this->shortestPathCost = cos;
+        this->cost = cos;
     }
-    State<T>(){
+
+    State<T>() {
 
     }
-    State<T>(State<T> *mystate){
-        this->obj=mystate->obj;
-        this->shortestPathCost=mystate->shortestPathCost;
-        this->visited=mystate->visited;
-        this->parent=mystate->parent;
-        this->cost=mystate->cost;
+
+    State<T>(State<T> *mystate) {
+        this->obj = mystate->obj;
+        this->shortestPathCost = mystate->shortestPathCost;
+        this->visited = mystate->visited;
+        this->parent = mystate->parent;
+        this->cost = mystate->cost;
     }
+
     explicit State<T>(T *inputObj) {
         this->obj = inputObj;
     }
 
-    double getCost(){
+    double getCost() {
         return this->cost;
     }
+
     void setCost(double c) {
         this->cost = c;
     }
 
-    T* getObj() {
-        return this->obj;
+    T *getObj() {
+        return obj;
 
     }
-    void setobj(T *objj){
-        this->obj=objj;
+
+    void setobj(T *objj) {
+        this->obj = objj;
     };
-    State<T> getMe(){
+
+    State<T> getMe() {
         return *this;
     }
 
-    void setParent(State<T>* p) {
+    void setParent(State<T> *p) {
         this->parent = p;
     }
-    State<T>* getParent() {
+
+    State<T> *getParent() {
         return parent;
     }
 
     double getShortestPath() {
         return this->shortestPathCost;
     }
+
     void setShortestPath(double sp) {
         this->shortestPathCost = sp;
     }
-    bool areviseted(){
+
+    bool areviseted() {
         return this->visited;
     }
-    void setviseted(bool t){
-        this->visited=t;
+
+    void setviseted(bool t) {
+        this->visited = t;
     };
-    void setmyalloption(std::vector<State<Cell>> k){
-        this->myalloption=k;
+
+    void setmyalloption(std::vector<State<Cell>> k) {
+        this->myalloption = k;
     }
-    std::vector<State<Cell>>  getmyalloption(){
+
+    std::vector<State<Cell>> getmyalloption() {
         return this->myalloption;
     }
 };
