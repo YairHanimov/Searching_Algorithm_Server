@@ -82,12 +82,12 @@ public:
     }
 
     void setParent(State<T> *p) {
-       if (this==p){
-           cout<<"wy they =??"<<endl;
-       }
-       else {
+//       if (this==p){
+//           cout<<"wy they =??"<<endl;
+//       }
+//       else {
            this->parent = p;
-       }
+//       }
     }
 
     State<T> *getParent() {
