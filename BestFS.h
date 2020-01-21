@@ -42,13 +42,10 @@ public:
 
             State<T> currentNode =   new State <T>(mypq.top());
             currentNode.setVisited();
-  //          problem->makeMeVistetd(currentNode);
 
-            mypq.pop();
             currentPathCost = currentNode.getShortestPath();
             closedNodesSet.insert(currentNode);       // so we won't check currentNode again
             currentNode.setVisited();
-            problem->makeMeVistetd(currentNode);
             if (problem->isGoalState(currentNode)) {
                 return backtrace(currentNode);
             } else {
@@ -57,8 +54,8 @@ public:
                 for (typename vector<State<T>>::iterator it = neighbors.begin(); it != neighbors.end(); it++) {
                     State<T> currentNeighbor = *it;
                     //todo : BUG: cell 0x0 passed this test even though it was in closedNoseSet
-                    if ((closedNodesSet.find(currentNeighbor) == closedNodesSet.end()) &&
-                            (!currentNeighbor.getVisited())) {
+                    if ((closedNodesSet.find(currentNeighbor) == closedNodesSet.end())
+                            ) {
                         currentNeighbor.setParent(&currentNode);
                         currentPathCost += currentNeighbor.getCost()+currentNode.getCost();
                         currentNeighbor.setShortestPath(currentPathCost);
