@@ -13,56 +13,42 @@
 #include "compar.h"
 #include "Matrix.h"
 #include "comparforset.h"
+
 using namespace std;
 
 template<class T>
 class BestFS : public Searcher<T> {
 public:
 
-//    Searchable<T> problem;
     explicit BestFS(Searchable<T> *p) {
-//       this->problem = *p;
-//       auto  kk=p;
+
     }
 
     vector<State<T>> search(Matrix *problem) {
         vector<State<T>> path;
         double minPath = -1;
         double currentPathCost = 0;
-        //   PriorityQueueState<State<T>> openNodesPQ;            // a priority queue of states to be evaluated
-        priority_queue<State<T>, vector<State<T>>, compar> mypq;
-        //   bool test= openNodesPQ.empty();
-        auto k = problem->getInitialState();
-        mypq.push(k);
-        k.setviseted(true);
-//
+
+        priority_queue<State<T>, vector<State<T>>, compar> mypq; // a priority queue of states to be evaluated
+        auto initialNode = problem->getInitialState();
+        mypq.push(initialNode);
+        initialNode.setVisited();
+
         set<State<T>, comparforset> closedNodesSet;                    // a set of states already evaluated
         set<State<T>, comparforset> specialSearchSet;
-        specialSearchSet.insert(k);
+        specialSearchSet.insert(initialNode);
 
         while (!mypq.empty()) {
-//
-//            // remove the best node from openNodesPQ
-            State<T> currentNode = new State<T>(mypq.top());
-             currentNode.setviseted(true);
-            problem->makemevistetd(currentNode);
-    //        currentNode.setParent(mypq.top().getParent()->getMe());
-            //         State<T> currentNode = new State<T>();
-            //  currentNode.setCost(openNodesPQ.top().getCost());
-            //   auto test=mypq.top().getObj();
-//            currentNode.setobj(openNodesPQ.top().getObj());
-            //           currentNode.setParent(openNodesPQ.top().getParent());
-            //   currentNode.setShortestPath(openNodesPQ.top().getShortestPath());
-            //   currentNode.setviseted(openNodesPQ.top().areviseted());
-//            currentPathCost = openNodesPQ.top().getShortestPath();
 
-            specialSearchSet.erase(mypq.top());
+            State<T> currentNode = new State<T>(mypq.top());
+            currentNode.setVisited();
+            problem->makeMeVistetd(currentNode);
 
             mypq.pop();
             currentPathCost = currentNode.getShortestPath();
             closedNodesSet.insert(currentNode);       // so we won't check currentNode again
             currentNode.setVisited();
-            problem->makemevistetd(currentNode);
+            problem->makeMeVistetd(currentNode);
             if (problem->isGoalState(currentNode)) {
                 return backtrace(currentNode);
             } else {
@@ -71,17 +57,18 @@ public:
                 for (typename vector<State<T>>::iterator it = neighbors.begin(); it != neighbors.end(); it++) {
                     State<T> currentNeighbor = *it;
                     //todo : BUG: cell 0x0 passed this test even though it was in closedNoseSet
-                    if ((closedNodesSet.find(currentNeighbor)==closedNodesSet.end())&&
-                            (specialSearchSet.find(currentNeighbor)==specialSearchSet.end()) && !currentNeighbor.getVisited()){
-                        currentNeighbor.setParent(& currentNode);
+                    if ((closedNodesSet.find(currentNeighbor) == closedNodesSet.end()) &&
+                        !currentNeighbor.getVisited()) {
+                        currentNeighbor.setParent(&currentNode);
                         currentPathCost += currentNeighbor.getCost();
                         currentNeighbor.setShortestPath(currentPathCost);
                         mypq.push(currentNeighbor);
                         specialSearchSet.insert(currentNeighbor);
                     } else {
 //                        currentPathCost += currentNeighbor.getCost()+currentNeighbor.getParent()->getShortestPath();
-                        if (currentNeighbor.getShortestPath()> currentNode.getShortestPath()+currentNeighbor.getCost()) {
-                            currentNeighbor.setShortestPath(currentNode.getShortestPath()+currentNeighbor.getCost());
+                        if (currentNeighbor.getShortestPath() >
+                            currentNode.getShortestPath() + currentNeighbor.getCost()) {
+                            currentNeighbor.setShortestPath(currentNode.getShortestPath() + currentNeighbor.getCost());
                             currentNeighbor.setParent(&currentNode);
                             mypq.push(currentNeighbor);
                             specialSearchSet.insert(currentNeighbor);

@@ -39,24 +39,27 @@ public:
 
     }
 
-    State<T>(State<T> *mystate, int k) {
-        this->setParent(mystate);
+    State<T>(State<T> *myState, int k) {
+        this->setParent(myState);
     }
 
-    State<T>(State<T> *mystate) {
-        if(mystate->parent == this) {
+    State<T>(State<T> *myState) {
+        if(myState->parent == this) {
             cerr<<"Luke, I am your father"<<endl;
         }
-        this->obj = mystate->obj;
-        this->shortestPathCost = mystate->shortestPathCost;
-        //this->visited = mystate->visited;
-//        State<T> dammmy= new State(mystate->getParent() , 0);
-//        this->parent =dammmy;
+        else {
+            this->obj = myState->obj;
+            this->shortestPathCost = myState->shortestPathCost;
+            //this->visited = mystate->visited;
+            //        State<T> dammmy= new State(mystate->getParent() , 0);
+            //        this->parent =dammmy;
 
-        this->cost = mystate->cost;
+            this->cost = myState->cost;
 
-        this->parent = mystate->parent;
-        //this->setParent(mystate->getParent());
+            this->parent = nullptr;
+            //this->parent = mystate->parent;
+            //this->setParent(mystate->getParent());
+        }
 
     }
 
@@ -85,7 +88,7 @@ public:
     bool getVisited() {
         return this->visited;
     }
-    void setobj(T *objj) {
+    void setObj(T *objj) {
         this->obj = objj;
     };
 
@@ -98,8 +101,13 @@ public:
 //           cout<<"wy they =??"<<endl;
 //       }
 //       else {
-        this->parent = p;
-        this->visited = true;
+        if(p->parent == this) {
+            cerr<<"Luke, I am your father"<<endl;
+        }
+        else {
+            this->parent = p;
+            this->visited = true;
+        }
 //       }
     }
 
@@ -118,10 +126,6 @@ public:
     bool areviseted() {
         return this->visited;
     }
-
-    void setviseted(bool t) {
-        this->visited = true;
-    };
 
     void setmyalloption(std::vector<State<Cell>> k) {
         this->myalloption = k;

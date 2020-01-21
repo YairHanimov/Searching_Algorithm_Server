@@ -59,7 +59,7 @@ public:
         int mysize = this->matrix.size()-1;
         row = c.getObj()->getRow();
         cell = c.getObj()->getCol();
-        c.setviseted(true);
+        c.setVisited();
         if ((cell != mysize) && ((matrix[row][cell + 1]->getCost()) != (-1))) {
              if(!matrix[row][cell + 1]->areviseted()) {
                  myoptionvector.push_back(matrix[row][cell + 1]->getMe());
@@ -85,8 +85,8 @@ public:
         }
         return myoptionvector;
     }
-    virtual void makemevistetd(State<Cell> c){
-        c.setviseted(true);
+    virtual void makeMeVistetd(State<Cell> c) override {
+        c.setVisited();
 
     }
 };
