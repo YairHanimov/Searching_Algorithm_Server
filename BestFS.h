@@ -41,8 +41,8 @@ public:
         while (!mypq.empty()) {
 //
 //            // remove the best node from openNodesPQ
-            State<T> currentNode = mypq.top();
-
+            State<T> currentNode = new State<T>(mypq.top());
+    //        currentNode.setParent(mypq.top().getParent()->getMe());
             //         State<T> currentNode = new State<T>();
             //  currentNode.setCost(openNodesPQ.top().getCost());
             //   auto test=mypq.top().getObj();
@@ -70,15 +70,18 @@ public:
                     if ((closedNodesSet.find(currentNeighbor)==closedNodesSet.end())&&
                             (specialSearchSet.find(currentNeighbor)==specialSearchSet.end())){
 
-                        currentNeighbor.setParent(&currentNode);
-                        mypq.push(currentNeighbor);
-                        specialSearchSet.insert(currentNeighbor);
+                        currentNeighbor.setParent(& currentNode);
                         currentPathCost += currentNeighbor.getCost();
                         currentNeighbor.setShortestPath(currentPathCost);
+                        mypq.push(currentNeighbor);
+                        specialSearchSet.insert(currentNeighbor);
                     } else {
-                        currentPathCost += currentNeighbor.getCost();
-                        if (currentPathCost < currentNeighbor.getShortestPath()) {
-                            currentNeighbor.setShortestPath(currentPathCost);
+//                        currentPathCost += currentNeighbor.getCost()+currentNeighbor.getParent()->getShortestPath();
+                        if (currentNeighbor.getShortestPath()> currentNode.getShortestPath()+currentNeighbor.getCost()) {
+                            currentNeighbor.setShortestPath(currentNode.getShortestPath()+currentNeighbor.getCost());
+                            currentNeighbor.setParent(&currentNode);
+                            mypq.push(currentNeighbor);
+                            specialSearchSet.insert(currentNeighbor);
                         }
                     }
                 }

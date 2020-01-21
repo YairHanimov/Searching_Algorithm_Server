@@ -6,6 +6,7 @@
 #define SEARCHING_ALGORITHM_SERVER_STATE_H
 
 #include <vector>
+#include <iostream>
 #include "Cell.h"
 
 using namespace std;
@@ -26,27 +27,36 @@ public:
         return isEqual;
     }
 
-    State<T>(T *obj, double cos) {
-        this->obj = obj;
-        this->parent = parent;
-        this->visited = false;
-        this->shortestPathCost = cos;
-        this->cost = cos;
-    }
-
+//    State<T>(T *obj, double cos) {
+//        this->obj = obj;
+//        this->parent = parent;
+//        this->visited = false;
+//        this->shortestPathCost = cos;
+//        this->cost = cos;
+//    }
+//
     State<T>() {
 
     }
-
+    State<T>(State<T> *mystate,int k) {
+        this->setParent(mystate);
+    }
     State<T>(State<T> *mystate) {
         this->obj = mystate->obj;
         this->shortestPathCost = mystate->shortestPathCost;
         this->visited = mystate->visited;
-        this->parent = mystate->parent;
+//        State<T> dammmy= new State(mystate->getParent() , 0);
+//        this->parent =dammmy;
+
         this->cost = mystate->cost;
+
+            this->setParent(mystate->getParent());
+
     }
 
-    explicit State<T>(T *inputObj) {
+
+
+        explicit State<T>(T *inputObj) {
         this->obj = inputObj;
     }
 
@@ -72,7 +82,12 @@ public:
     }
 
     void setParent(State<T> *p) {
-        this->parent = p;
+       if (this==p){
+           cout<<"wy they =??"<<endl;
+       }
+       else {
+           this->parent = p;
+       }
     }
 
     State<T> *getParent() {
