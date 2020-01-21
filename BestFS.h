@@ -38,6 +38,7 @@ public:
         set<State<T>, comparforset> closedNodesSet;                    // a set of states already evaluated
         set<State<T>, comparforset> specialSearchSet;
         specialSearchSet.insert(k);
+
         while (!mypq.empty()) {
 //
 //            // remove the best node from openNodesPQ
@@ -57,7 +58,7 @@ public:
             mypq.pop();
             currentPathCost = currentNode.getShortestPath();
             closedNodesSet.insert(currentNode);       // so we won't check currentNode again
-
+            currentNode.setVisited();
             if (problem->isGoalState(currentNode)) {
                 return backtrace(currentNode);
             } else {
@@ -68,8 +69,7 @@ public:
                     State<T> currentNeighbor = *it;
                     //todo : BUG: cell 0x0 passed this test even though it was in closedNoseSet
                     if ((closedNodesSet.find(currentNeighbor)==closedNodesSet.end())&&
-                            (specialSearchSet.find(currentNeighbor)==specialSearchSet.end())){
-
+                            (specialSearchSet.find(currentNeighbor)==specialSearchSet.end()) && !currentNeighbor.getVisited()){
                         currentNeighbor.setParent(& currentNode);
                         currentPathCost += currentNeighbor.getCost();
                         currentNeighbor.setShortestPath(currentPathCost);

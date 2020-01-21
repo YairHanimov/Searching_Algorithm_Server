@@ -38,25 +38,30 @@ public:
     State<T>() {
 
     }
-    State<T>(State<T> *mystate,int k) {
+
+    State<T>(State<T> *mystate, int k) {
         this->setParent(mystate);
     }
+
     State<T>(State<T> *mystate) {
+        if(mystate->parent == this) {
+            cerr<<"Luke, I am your father"<<endl;
+        }
         this->obj = mystate->obj;
         this->shortestPathCost = mystate->shortestPathCost;
-        this->visited = mystate->visited;
+        //this->visited = mystate->visited;
 //        State<T> dammmy= new State(mystate->getParent() , 0);
 //        this->parent =dammmy;
 
         this->cost = mystate->cost;
 
-            this->setParent(mystate->getParent());
+        this->parent = mystate->parent;
+        //this->setParent(mystate->getParent());
 
     }
 
 
-
-        explicit State<T>(T *inputObj) {
+    explicit State<T>(T *inputObj) {
         this->obj = inputObj;
     }
 
@@ -73,6 +78,13 @@ public:
 
     }
 
+    void setVisited() {
+        this->visited = true;
+    }
+
+    bool getVisited() {
+        return this->visited;
+    }
     void setobj(T *objj) {
         this->obj = objj;
     };
@@ -86,7 +98,8 @@ public:
 //           cout<<"wy they =??"<<endl;
 //       }
 //       else {
-           this->parent = p;
+        this->parent = p;
+        this->visited = true;
 //       }
     }
 
@@ -107,7 +120,7 @@ public:
     }
 
     void setviseted(bool t) {
-        this->visited = t;
+        this->visited = true;
     };
 
     void setmyalloption(std::vector<State<Cell>> k) {
