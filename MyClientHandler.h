@@ -46,6 +46,7 @@ public:
             string testbuffer ="";
             testbuffer+=line1+"\n"+line2+"\n"+line3+"\n"+line4+"\n"+enter+exit+end;
 
+
             auto solu = this->cache_manager->get(testbuffer);
             if (solu == NULL) {
                 // calling to oa because we dont have solution

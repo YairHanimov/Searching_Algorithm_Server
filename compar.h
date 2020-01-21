@@ -11,7 +11,7 @@
 class compar {
 public:
     bool operator()(State<Cell> a,State<Cell> b) {
-    return (a.getCost() <  b.getCost());
+    return (a.getCost() >  b.getCost());
 }
 };
 
