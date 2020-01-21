@@ -16,7 +16,7 @@ protected:
     State<T> *start;
     State<T> *end;
 public:
-    virtual State<T> getInitialState() {
+    virtual State<T>* getInitialState() {
         return this->start;
     }
 
@@ -27,13 +27,13 @@ public:
 
     virtual vector<State<T>> getAllPossibleStates(State<T> l) = 0;
 
-    virtual void setStart(State<T> *s) {
-        this->start = s;
-    }
-
-    virtual void setEnd(State<T> *e) {
-        this->end = e;
-    }
+//    virtual void setStart(State<T> *s) {
+//        this->start = s;
+//    }
+//
+//    virtual void setEnd(State<T> *e) {
+//        this->end = e;
+//    }
 
 };
 

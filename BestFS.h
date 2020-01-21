@@ -40,7 +40,7 @@ public:
 
         while (!mypq.empty()) {
 
-            State<T> currentNode = new State<T>(mypq.top());
+            State<T> currentNode = mypq.top();
             specialSearchSet.erase(mypq.top());
             mypq.pop();
             currentNode.setVisited();

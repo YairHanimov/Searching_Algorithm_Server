@@ -28,12 +28,12 @@ public:
 //        this->start2=start2;
 //        this->end1=end1;
 //        this->end2=end2;
-        Cell *starterCell = new Cell(start1, start2);
-        Cell *endedCell = new Cell(end1, end2);
-        this->start = new State<Cell>(starterCell);
-        this->end = new State<Cell>(endedCell);
-        setStart(this->start);
-        setEnd(this->end);
+        //Cell starterCell = new Cell(start1, start2);
+        //Cell endedCell = new Cell(end1, end2);
+        this->start = m[start1][start2];
+        this->end = m[end1][end2];
+        //setStart(this->start);
+        //setEnd(this->end);
 
     }
 //    Matrix(vector<vector<State<Cell> *>> m, State<Cell> *s, State<Cell> *e) {
@@ -42,13 +42,13 @@ public:
 //        this->end = e;
 //    }
 
-    State<Cell> getInitialState() override {
+    State<Cell>* getInitialState() override {
         return this->start;
     }
 
     bool isGoalState(State<Cell> c) override {
-        return ((this->end->getObj()->getCol() == c.getObj()->getCol()) &&
-                (this->end->getObj()->getRow() == c.getObj()->getRow()));
+        return ((this->end->getObj().getCol() == c.getObj().getCol()) &&
+                (this->end->getObj().getRow() == c.getObj().getRow()));
     }
 
     virtual vector<State<Cell>> getAllPossibleStates(State<Cell> c) override {
@@ -57,8 +57,8 @@ public:
         int cell = 0;
         int size = 0;
         int mysize = this->matrix.size() - 1;
-        row = c.getObj()->getRow();
-        cell = c.getObj()->getCol();
+        row = c.getObj().getRow();
+        cell = c.getObj().getCol();
         c.setVisited();
         if ((cell != mysize) && ((matrix[row][cell + 1]->getCost()) != (-1))) {
             {

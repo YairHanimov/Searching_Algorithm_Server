@@ -14,13 +14,13 @@ using namespace std;
 template<class T>
 class State {
 private:
-    T *obj;
+    T obj;
     State<T> *parent = nullptr;     //where we came from
     bool visited = false;           //was visited or not
     double cost = 0;                //cost of visiting
     double shortestPathCost = 0;    //how much cost until now
     //int state = 0;                //one-to-one value of state in the Searchable
-    vector<State<Cell>> myalloption;
+    //vector<State<Cell>> myalloption;
 public:
     bool operator==(State<T> other) {
         bool isEqual = obj == other.getObj();
@@ -43,7 +43,7 @@ public:
         this->setParent(myState);
     }
 
-    State<T>(State<T> *myState) {
+    explicit State<T>(State<T> *myState) {
 
 
             this->obj = myState->obj;
@@ -58,7 +58,7 @@ public:
     }
 
 
-    explicit State<T>(T *inputObj) {
+    explicit State<T>(T inputObj) {
         this->obj = inputObj;
     }
 
@@ -70,7 +70,7 @@ public:
         this->cost = c;
     }
 
-    T *getObj() {
+    T getObj() {
         return obj;
 
     }

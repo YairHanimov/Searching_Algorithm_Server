@@ -10,7 +10,7 @@
 class comparforset {
 public:
     bool operator()(State<Cell> a,State<Cell> b) {
-        return (a.getObj() <  b.getObj());
+        return (a.getObj() < b.getObj());
     }
 };
 
