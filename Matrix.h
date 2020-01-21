@@ -85,6 +85,10 @@ public:
         }
         return myoptionvector;
     }
+    virtual void makemevistetd(State<Cell> c){
+        c.setviseted(true);
+
+    }
 };
 
 #endif //SEARCHING_ALGORITHM_SERVER_MATRIX_H

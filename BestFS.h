@@ -45,7 +45,7 @@ public:
 //            // remove the best node from openNodesPQ
             State<T> currentNode = new State<T>(mypq.top());
              currentNode.setviseted(true);
-
+            problem->makemevistetd(currentNode);
     //        currentNode.setParent(mypq.top().getParent()->getMe());
             //         State<T> currentNode = new State<T>();
             //  currentNode.setCost(openNodesPQ.top().getCost());
@@ -62,6 +62,7 @@ public:
             currentPathCost = currentNode.getShortestPath();
             closedNodesSet.insert(currentNode);       // so we won't check currentNode again
             currentNode.setVisited();
+            problem->makemevistetd(currentNode);
             if (problem->isGoalState(currentNode)) {
                 return backtrace(currentNode);
             } else {
