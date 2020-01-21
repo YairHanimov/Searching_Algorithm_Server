@@ -63,7 +63,7 @@ public:
             token = strtok(strToChar, ",");
             while (token != nullptr) {
                 Cell *c = new Cell(row, col);
-                auto* st = new State<Cell>(c);
+                auto* st = new State<Cell>(*c);
                 st->setCost(stod(token));
                 stateLine.push_back(st);
                 col++;

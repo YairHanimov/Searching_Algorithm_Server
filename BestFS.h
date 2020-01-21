@@ -32,7 +32,7 @@ public:
         priority_queue<State<T>, vector<State<T>>, compar> mypq; // a priority queue of states to be evaluated
         auto initialNode = problem->getInitialState();
         mypq.push(initialNode);
-        initialNode.setVisited();
+        initialNode->setVisited();
 
         set<State<T>, comparforset> closedNodesSet;                    // a set of states already evaluated
         set<State<T>, comparforset> specialSearchSet;
