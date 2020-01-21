@@ -34,6 +34,7 @@ public:
         //   bool test= openNodesPQ.empty();
         auto k = problem->getInitialState();
         mypq.push(k);
+        k.setviseted(true);
 //
         set<State<T>, comparforset> closedNodesSet;                    // a set of states already evaluated
         set<State<T>, comparforset> specialSearchSet;
@@ -43,6 +44,8 @@ public:
 //
 //            // remove the best node from openNodesPQ
             State<T> currentNode = new State<T>(mypq.top());
+             currentNode.setviseted(true);
+
     //        currentNode.setParent(mypq.top().getParent()->getMe());
             //         State<T> currentNode = new State<T>();
             //  currentNode.setCost(openNodesPQ.top().getCost());
@@ -63,7 +66,6 @@ public:
                 return backtrace(currentNode);
             } else {
                 vector<State<T>> neighbors = problem->getAllPossibleStates(currentNode);
-
                 //go over all neighbors of current node
                 for (typename vector<State<T>>::iterator it = neighbors.begin(); it != neighbors.end(); it++) {
                     State<T> currentNeighbor = *it;

@@ -59,17 +59,29 @@ public:
         int mysize = this->matrix.size()-1;
         row = c.getObj()->getRow();
         cell = c.getObj()->getCol();
+        c.setviseted(true);
         if ((cell != mysize) && ((matrix[row][cell + 1]->getCost()) != (-1))) {
-            myoptionvector.push_back(matrix[row][cell + 1]->getMe());
+             if(!matrix[row][cell + 1]->areviseted()) {
+                 myoptionvector.push_back(matrix[row][cell + 1]->getMe());
+             }
         }
         if ((cell != 0) && ((matrix[row][cell - 1]->getCost()) != (-1))) {
-            myoptionvector.push_back(matrix[row][cell - 1]->getMe());
+            if(!matrix[row][cell - 1]->areviseted()) {
+
+                myoptionvector.push_back(matrix[row][cell - 1]->getMe());
+            }
         }
         if ((row != mysize) && ((matrix[row + 1][cell]->getCost()) != (-1))) {
-            myoptionvector.push_back(matrix[row + 1][cell]->getMe());
+            if(!matrix[row+1][cell]->areviseted()) {
+
+                myoptionvector.push_back(matrix[row + 1][cell]->getMe());
+            }
         }
         if ((row != 0) && ((matrix[row - 1][cell]->getCost()) != (-1))) {
-            myoptionvector.push_back(matrix[row - 1][cell]->getMe());
+            if(!matrix[row-1][cell]->areviseted()) {
+
+                myoptionvector.push_back(matrix[row - 1][cell]->getMe());
+            }
         }
         return myoptionvector;
     }
