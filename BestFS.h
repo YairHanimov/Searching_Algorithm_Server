@@ -12,6 +12,7 @@
 #include "Cell.h"
 #include "compar.h"
 #include "Matrix.h"
+
 using namespace std;
 
 template<class T>
@@ -23,36 +24,37 @@ public:
 //       this->problem = *p;
 //       auto  kk=p;
     }
-    vector<State<T>> search(Matrix *problem)   {
+
+    vector<State<T>> search(Matrix *problem) {
         vector<State<T>> path;
         double minPath = -1;
         double currentPathCost = 0;
-     //   PriorityQueueState<State<T>> openNodesPQ;            // a priority queue of states to be evaluated
-      priority_queue<State<T>,vector<State<T>>,compar> mypq;
-    //   bool test= openNodesPQ.empty();
-       auto k =problem->getInitialState();
+        //   PriorityQueueState<State<T>> openNodesPQ;            // a priority queue of states to be evaluated
+        priority_queue<State<T>, vector<State<T>>, compar> mypq;
+        //   bool test= openNodesPQ.empty();
+        auto k = problem->getInitialState();
         mypq.push(k);
 //
-        set<State<T>,compar> closedNodesSet;                    // a set of states already evaluated
-        set<State<T>,compar> spicialsearchq;
+        set<State<T>, compar> closedNodesSet;                    // a set of states already evaluated
+        set<State<T>, compar> spicialsearchq;
         spicialsearchq.insert(k);
-      while (!mypq.empty()) {
+        while (!mypq.empty()) {
 //
 //            // remove the best node from openNodesPQ
-           State<T> currentNode = mypq.top();
-   //         State<T> currentNode = new State<T>();
-          //  currentNode.setCost(openNodesPQ.top().getCost());
-         //   auto test=mypq.top().getObj();
+            State<T> currentNode = mypq.top();
+            //         State<T> currentNode = new State<T>();
+            //  currentNode.setCost(openNodesPQ.top().getCost());
+            //   auto test=mypq.top().getObj();
 //            currentNode.setobj(openNodesPQ.top().getObj());
- //           currentNode.setParent(openNodesPQ.top().getParent());
-         //   currentNode.setShortestPath(openNodesPQ.top().getShortestPath());
-         //   currentNode.setviseted(openNodesPQ.top().areviseted());
+            //           currentNode.setParent(openNodesPQ.top().getParent());
+            //   currentNode.setShortestPath(openNodesPQ.top().getShortestPath());
+            //   currentNode.setviseted(openNodesPQ.top().areviseted());
 //            currentPathCost = openNodesPQ.top().getShortestPath();
-             spicialsearchq.erase(mypq.top());
+            spicialsearchq.erase(mypq.top());
 
-               mypq.pop();
+            mypq.pop();
             currentPathCost = currentNode.getShortestPath();
-             closedNodesSet.insert(currentNode);       // so we won't check currentNode again
+            closedNodesSet.insert(currentNode);       // so we won't check currentNode again
 
             if (problem->isGoalState(currentNode)) {
                 return backtrace(currentNode);
@@ -62,8 +64,9 @@ public:
                 //go over all neighbors of current node
                 for (typename vector<State<T>>::iterator it = neighbors.begin(); it != neighbors.end(); it++) {
                     State<T> currentNeighbor = *it;
-                if    (closedNodesSet.find(currentNeighbor) == closedNodesSet.end() &&
-                            (spicialsearchq.find(currentNeighbor)==spicialsearchq.end())) {
+                    //todo : BUG: cell 0x0 passed this test even though it was in closedNoseSet
+                    if (closedNodesSet.find(currentNeighbor) == closedNodesSet.end() &&
+                        (spicialsearchq.find(currentNeighbor) == spicialsearchq.end())) {
 
                         currentNeighbor.setParent(&currentNode);
                         mypq.push(currentNeighbor);
@@ -74,13 +77,13 @@ public:
                         currentPathCost += currentNeighbor.getCost();
                         if (currentPathCost < currentNeighbor.getShortestPath()) {
                             currentNeighbor.setShortestPath(currentPathCost);
-                      }
-                   }
-               }
+                        }
+                    }
+                }
 
-               }
-     }
-      return path;
+            }
+        }
+        return path;
     };
 
     vector<State<T>> backtrace(State<T> goal) {
