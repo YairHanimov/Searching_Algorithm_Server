@@ -40,9 +40,9 @@ public:
 
         while (!mypq.empty()) {
 
-            State<T> currentNode = new State<T>(mypq.top());
+            State<T> currentNode =   new State <T>(mypq.top());
             currentNode.setVisited();
-            problem->makeMeVistetd(currentNode);
+  //          problem->makeMeVistetd(currentNode);
 
             mypq.pop();
             currentPathCost = currentNode.getShortestPath();
@@ -58,9 +58,9 @@ public:
                     State<T> currentNeighbor = *it;
                     //todo : BUG: cell 0x0 passed this test even though it was in closedNoseSet
                     if ((closedNodesSet.find(currentNeighbor) == closedNodesSet.end()) &&
-                        !currentNeighbor.getVisited()) {
+                            (!currentNeighbor.getVisited())) {
                         currentNeighbor.setParent(&currentNode);
-                        currentPathCost += currentNeighbor.getCost();
+                        currentPathCost += currentNeighbor.getCost()+currentNode.getCost();
                         currentNeighbor.setShortestPath(currentPathCost);
                         mypq.push(currentNeighbor);
                         specialSearchSet.insert(currentNeighbor);

@@ -44,22 +44,16 @@ public:
     }
 
     State<T>(State<T> *myState) {
-        if(myState->parent == this) {
-            cerr<<"Luke, I am your father"<<endl;
-        }
-        else {
+
+
             this->obj = myState->obj;
             this->shortestPathCost = myState->shortestPathCost;
-            //this->visited = mystate->visited;
-            //        State<T> dammmy= new State(mystate->getParent() , 0);
-            //        this->parent =dammmy;
 
             this->cost = myState->cost;
 
-            this->parent = nullptr;
-            //this->parent = mystate->parent;
-            //this->setParent(mystate->getParent());
-        }
+//            this->parent = myState->parent;
+
+
 
     }
 
