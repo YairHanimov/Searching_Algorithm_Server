@@ -32,8 +32,8 @@ public:
         Cell *endedCell = new Cell(end1, end2);
         this->start = new State<Cell>(starterCell);
         this->end = new State<Cell>(endedCell);
-        setstartt(this->start);
-        setendd(this->end);
+        setStart(this->start);
+        setEnd(this->end);
 
     }
 //    Matrix(vector<vector<State<Cell> *>> m, State<Cell> *s, State<Cell> *e) {
@@ -42,37 +42,37 @@ public:
 //        this->end = e;
 //    }
 
-     State<Cell> getInitialState() override {
+    State<Cell> getInitialState() override {
         return this->start;
     }
 
     bool isGoalState(State<Cell> c) override {
-        return ((this->end->getObj()->getCol()==c.getObj()->getCol())&&
-                (this->end->getObj()->getRow()==c.getObj()->getRow()));
+        return ((this->end->getObj()->getCol() == c.getObj()->getCol()) &&
+                (this->end->getObj()->getRow() == c.getObj()->getRow()));
     }
 
-    virtual  vector<State<Cell>> getAllPossibleStates(State<Cell> c) override  {
+    virtual vector<State<Cell>> getAllPossibleStates(State<Cell> c) override {
         vector<State<Cell>> myoptionvector;
         int row = 0;
         int cell = 0;
         int size = 0;
-        int mysize = this->matrix.size()-1;
+        int mysize = this->matrix.size() - 1;
         row = c.getObj()->getRow();
         cell = c.getObj()->getCol();
         c.setVisited();
         if ((cell != mysize) && ((matrix[row][cell + 1]->getCost()) != (-1))) {
-             {
-                 myoptionvector.push_back(matrix[row][cell + 1]->getMe());
-             }
+            {
+                myoptionvector.push_back(matrix[row][cell + 1]->getMe());
+            }
         }
         if ((cell != 0) && ((matrix[row][cell - 1]->getCost()) != (-1))) {
-          {
+            {
 
                 myoptionvector.push_back(matrix[row][cell - 1]->getMe());
             }
         }
         if ((row != mysize) && ((matrix[row + 1][cell]->getCost()) != (-1))) {
-             {
+            {
 
                 myoptionvector.push_back(matrix[row + 1][cell]->getMe());
             }

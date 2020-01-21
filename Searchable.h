@@ -27,11 +27,11 @@ public:
 
     virtual vector<State<T>> getAllPossibleStates(State<T> l) = 0;
 
-    virtual void setstartt(State<T> *s) {
+    virtual void setStart(State<T> *s) {
         this->start = s;
     }
 
-    virtual void setendd(State<T> *e) {
+    virtual void setEnd(State<T> *e) {
         this->end = e;
     }
 

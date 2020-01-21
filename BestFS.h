@@ -70,7 +70,7 @@ public:
                             currentNode.getShortestPath() + currentNeighbor.getCost()) {
                             currentNeighbor.setShortestPath(currentNode.getShortestPath() + currentNeighbor.getCost());
                             currentNeighbor.setParent(&currentNode);
-                            mypq.push(currentNeighbor);
+                            //mypq.push(currentNeighbor);
                             specialSearchSet.insert(currentNeighbor);
                         }
                     }

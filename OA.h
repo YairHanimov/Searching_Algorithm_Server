@@ -26,10 +26,14 @@ public:
     string solve(string p) override {
         Matrix *m = stringToMatrix(p);
         Searcher<Cell>* bestFS = new BestFS<Cell>(m);
-        bestFS->search(m);
+        vector<State<Cell>> bestFS_solution = bestFS->search(m);
+        return solutionTOString(bestFS_solution);
         cout << "bla bla" << endl;
     }
-
+    string solutionTOString (vector<State<Cell>> sol) {
+        string stringSol = to_string(sol.back().getShortestPath());
+        return stringSol;
+    }
     Matrix* stringToMatrix(const string str) {
         vector<string> line;
         int n = str.length();
