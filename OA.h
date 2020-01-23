@@ -26,14 +26,10 @@ public:
     string solve(string p) override {
         Matrix *m = stringToMatrix(p);
         Searcher<Cell>* bestFS = new BestFS<Cell>(m);
-        vector<State<Cell>> bestFS_solution = bestFS->search(m);
-        return solutionTOString(bestFS_solution);
+        bestFS->search(m);
         cout << "bla bla" << endl;
     }
-    string solutionTOString (vector<State<Cell>> sol) {
-        string stringSol = to_string(sol.back().getShortestPath());
-        return stringSol;
-    }
+
     Matrix* stringToMatrix(const string str) {
         vector<string> line;
         int n = str.length();
@@ -53,9 +49,9 @@ public:
         int row = 0;
         int col = 0;
         int mysize = line.size();
-        vector<vector<State<Cell*>*>> matrix;
+        vector<vector<State<Cell>*>> matrix;
         while (row < (mysize - 3)) {
-            vector<State<Cell*>*> stateLine;
+            vector<State<Cell>*> stateLine;
             lexer += line.front();
             line.erase(line.begin());
             strcpy(strToChar, lexer.c_str());
@@ -63,7 +59,7 @@ public:
             token = strtok(strToChar, ",");
             while (token != nullptr) {
                 Cell *c = new Cell(row, col);
-                auto* st = new State<Cell*>(c);
+                auto* st = new State<Cell>(c);
                 st->setCost(stod(token));
                 stateLine.push_back(st);
                 col++;

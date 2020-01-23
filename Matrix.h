@@ -13,27 +13,27 @@ using namespace std;
 
 class Matrix : public Searchable<Cell> {
 public:
-    vector<vector<State<Cell*>*>> matrix;
-    State<Cell*> *start;
-    State<Cell*> *end;
+    vector<vector<State<Cell>*>> matrix;
+    State<Cell> *start;
+    State<Cell> *end;
 
 //    int start1;
 //    int start2;
 //    int end1;
 //    int end2;
 
-    Matrix(vector<vector<State<Cell*>*>> m, int start1, int start2, int end1, int end2) {
+    Matrix(vector<vector<State<Cell>*>> m, int start1, int start2, int end1, int end2) {
         this->matrix = m;
 //        this->start1=start1;
 //        this->start2=start2;
 //        this->end1=end1;
 //        this->end2=end2;
-        //Cell starterCell = new Cell(start1, start2);
-        //Cell endedCell = new Cell(end1, end2);
+        Cell *starterCell = new Cell(start1, start2);
+        Cell *endedCell = new Cell(end1, end2);
         this->start = m[start1][start2];
         this->end = m[end1][end2];
-        //setStart(this->start);
-        //setEnd(this->end);
+        setstartt(this->start);
+        setendd(this->end);
 
     }
 //    Matrix(vector<vector<State<Cell> *>> m, State<Cell> *s, State<Cell> *e) {
@@ -42,17 +42,17 @@ public:
 //        this->end = e;
 //    }
 
-    State<Cell*>* getInitialState() override {
+    State<Cell> getInitialState() override {
         return this->start;
     }
 
-    bool isGoalState(State<Cell*> c) override {
+    bool isGoalState(State<Cell> c) override {
         return ((this->end->getObj()->getCol() == c.getObj()->getCol()) &&
                 (this->end->getObj()->getRow() == c.getObj()->getRow()));
     }
 
-    virtual vector<State<Cell*>> getAllPossibleStates(State<Cell*> c) override {
-        vector<State<Cell*>> myoptionvector;
+    virtual list<State<Cell>*> getAllPossibleStates(State<Cell> c) override {
+        list<State<Cell>*> myoptionvector;
         int row = 0;
         int cell = 0;
         int size = 0;
@@ -62,25 +62,25 @@ public:
         c.setVisited();
         if ((cell != mysize) && ((matrix[row][cell + 1]->getCost()) != (-1))) {
             {
-                myoptionvector.push_back(*matrix[row][cell + 1]);
+                myoptionvector.push_back(matrix[row][cell + 1]);
             }
         }
         if ((cell != 0) && ((matrix[row][cell - 1]->getCost()) != (-1))) {
             {
 
-                myoptionvector.push_back(*matrix[row][cell - 1]);
+                myoptionvector.push_back(matrix[row][cell - 1]);
             }
         }
         if ((row != mysize) && ((matrix[row + 1][cell]->getCost()) != (-1))) {
             {
 
-                myoptionvector.push_back(*matrix[row + 1][cell]);
+                myoptionvector.push_back(matrix[row + 1][cell]);
             }
         }
         if ((row != 0) && ((matrix[row - 1][cell]->getCost()) != (-1))) {
             {
 
-                myoptionvector.push_back(*matrix[row - 1][cell]);
+                myoptionvector.push_back(matrix[row - 1][cell]);
             }
         }
         return myoptionvector;

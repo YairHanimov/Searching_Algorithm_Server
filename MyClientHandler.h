@@ -58,7 +58,7 @@ public:
             if (solu == NULL) {
                 // calling to oa because we dont have solution
                 auto *object_adapter = new OA<string,string>();
-                string afterfix;
+                string afterfix= "";
                 afterfix=object_adapter->solve(testbuffer);
 //                StringReverser *rev = new StringReverser();
 //                string afterfix = "";
@@ -68,8 +68,10 @@ public:
 
                 this->cache_manager->insert(testbuffer, afterfix);
             } else {
-                cout << "problem found in cache" << endl;
-                //todo: read solution from file
+                string s=*solu;
+                cout<<"ia am going print"<<endl;
+                cout <<s<< endl;
+
             }
 
 

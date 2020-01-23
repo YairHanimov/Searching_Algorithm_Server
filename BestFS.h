@@ -40,8 +40,10 @@ public:
 
         while (!mypq.empty()) {
 
-            State<T> *currentNode =(mypq.top());
-   //         State<T> currentNode =   new State <T>(mypq.top());
+            State<T> *currentNode =new State <T>(mypq.top());
+
+
+            //         State<T> currentNode =   new State <T>(mypq.top());
             specialSearchSet.erase(mypq.top());
             (mypq.pop());
             currentNode->setVisited();
@@ -52,26 +54,25 @@ public:
             if (problem->isGoalState(currentNode)) {
                 return backtrace(currentNode);
             } else {
-                vector<State<T>> neighbors = problem->getAllPossibleStates(currentNode);
+                list<State<T>*> neighbors = problem->getAllPossibleStates(currentNode);
                 //go over all neighbors of current node
-                for (typename vector<State<T>>::iterator it = neighbors.begin(); it != neighbors.end(); it++) {
-                    State<T> currentNeighbor = *it;
+                for (State<T> *currentNeighbor:neighbors) {
                     //todo : BUG: cell 0x0 passed this test even though it was in closedNoseSet
                     if ((closedNodesSet.find(currentNeighbor) == closedNodesSet.end())&&
-                            (specialSearchSet.find(currentNeighbor) == specialSearchSet.end())  ) {
-                        currentNeighbor.setParent(currentNode);
-                        currentPathCost += currentNeighbor.getCost()+currentNode->getCost();
-                        currentNeighbor.setShortestPath(currentPathCost);
-                        mypq.push(&currentNeighbor);
+                        (specialSearchSet.find(currentNeighbor) == specialSearchSet.end())  ) {
+                        currentNeighbor->setParent(currentNode);
+                        currentPathCost += currentNeighbor->getCost()+currentNode->getCost();
+                        currentNeighbor->setShortestPath(currentPathCost);
+                        mypq.push(currentNeighbor);
                         specialSearchSet.insert(currentNeighbor);
 
                     } else {
 //                        currentPathCost += currentNeighbor.getCost()+currentNeighbor.getParent()->getShortestPath();
-                        if (currentNeighbor.getShortestPath() >
-                            currentNode->getShortestPath() + currentNeighbor.getCost()) {
-                            currentNeighbor.setShortestPath(currentNode->getShortestPath() + currentNeighbor.getCost());
-                            currentNeighbor.setParent(currentNode);
-                            mypq.push(&currentNeighbor);
+                        if (currentNeighbor->getShortestPath() >
+                            currentNode->getShortestPath() + currentNeighbor->getCost()) {
+                            currentNeighbor->setShortestPath(currentNode->getShortestPath() + currentNeighbor->getCost());
+                            currentNeighbor->setParent(currentNode);
+                            mypq.push(currentNeighbor);
                             specialSearchSet.insert(currentNeighbor);
                         }
                     }

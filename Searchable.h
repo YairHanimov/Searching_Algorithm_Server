@@ -7,6 +7,8 @@
 
 #include "State.h"
 #include "vector"
+#include "list"
+
 
 using namespace std;
 
@@ -25,7 +27,7 @@ public:
         return isEqual;
     }
 
-    virtual vector<State<T>> getAllPossibleStates(State<T> l) = 0;
+    virtual list<State<T>*> getAllPossibleStates(State<T> l) = 0;
 
     virtual void setstartt(State<T> *s) {
         this->start = s;
