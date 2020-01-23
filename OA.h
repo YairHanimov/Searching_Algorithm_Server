@@ -28,8 +28,8 @@ public:
         Matrix *m = stringToMatrix(p);
 //        Searcher<Cell>* bestFS = new BestFS<Cell>(m);
 //        bestFS->search(m);
-        Searcher<Cell>* bfs = new BFS<Cell>(m);
-        bfs->search(m);
+        Searcher<Cell>* best = new BestFS<Cell>(m);
+        best->search(m);
         cout << "bla bla" << endl;
     }
 

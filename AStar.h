@@ -18,8 +18,10 @@ public:
 
     }
 
-    vector<State<T>> search(Matrix *problem) {
+    string search(Matrix *problem) {
         vector<State<T>> path;
+        vector<string> direct;
+
         double minPath = -1;
         double currentPathCost = 0;
 
@@ -52,11 +54,40 @@ public:
             if (problem->isGoalState(currentNode)) {
                 int mytotalcost=0;
                 while(currentNode->getParent()!=NULL){
-                    mytotalcost +=currentNode->getCost();
+                    Cell *d =currentNode->getObj();
+                    Cell *dp =currentNode->getParent()->getObj();
+                    if (d->getCol()<dp->getCol()){
+                        int total=  currentNode->getShortestPath();
+                        string s=to_string(total);
+                        direct.push_back("Left("+s+")");
+                    }
+                    if (d->getCol()>dp->getCol()){
+                        int total=  currentNode->getShortestPath();
+                        string s=to_string(total);
+                        direct.push_back("Right("+s+")");
+                    }
+                    if (d->getRow()<dp->getRow()){
+                        int total=  currentNode->getShortestPath();
+                        string s=to_string(total);
+                        direct.push_back("Up("+s+")");
+                    }
+                    if (d->getRow()>dp->getRow()){
+                        int total=  currentNode->getShortestPath();
+                        string s=to_string(total);
+                        direct.push_back("Down("+s+")");
+                    }
+                    // mytotalcost +=currentNode->getCost();
                     currentNode=currentNode->getParent();
+
                 }
+                string plas ="";
+                for (int jj=direct.size();jj>0;jj--){
+                    plas += direct[jj-1];
+                }
+                //cout<<plas<<endl;
                 mytotalcost+=currentNode->getCost();
-                return backtrace(currentNode);
+                return plas;
+                //return backtrace(currentNode);
             } else {
                 list<State<T>*> neighbors = problem->getAllPossibleStates(currentNode);
                 //go over all neighbors of current node

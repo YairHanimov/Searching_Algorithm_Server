@@ -19,6 +19,7 @@ private:
     //int state = 0;                //one-to-one value of state in the Searchable
     //vector<State<Cell>> myalloption;
     int urist=0;
+
 public:
     bool operator==(State<T> other) {
         bool isEqual = obj == other.getObj();

@@ -22,13 +22,14 @@ public:
 
     }
 
-    vector<State<T>> search(Matrix *problem) {
+    string search(Matrix *problem) {
         vector<State<T>> path;
         double minPath = -1;
         double currentPathCost = 0;
-
+        string plas ="";
         priority_queue<State<T>*, vector<State<T>*>, compar> mypq; // a priority queue of states to be evaluated
         auto initialNode = problem->getInitialState();
+        initialNode.setShortestPath(initialNode.getCost());
         mypq.push(&initialNode);
         initialNode.setVisited();
 
@@ -53,12 +54,42 @@ public:
           //  currentNode->setVisited();
             if (problem->isGoalState(currentNode)) {
                 unsigned long mytotalcost=0;
+                vector<string> direct;
+                vector<int> number;
               while(currentNode->getParent()!=NULL){
-                   mytotalcost +=currentNode->getCost();
+                   Cell *d =currentNode->getObj();
+                 Cell *dp =currentNode->getParent()->getObj();
+                 if (d->getCol()<dp->getCol()){
+                   int total=  currentNode->getShortestPath();
+                     string s=to_string(total);
+                     direct.push_back("Left("+s+")");
+                 }
+                  if (d->getCol()>dp->getCol()){
+                      int total=  currentNode->getShortestPath();
+                      string s=to_string(total);
+                      direct.push_back("Right("+s+")");
+                  }
+                  if (d->getRow()<dp->getRow()){
+                      int total=  currentNode->getShortestPath();
+                      string s=to_string(total);
+                      direct.push_back("Up("+s+")");
+                  }
+                  if (d->getRow()>dp->getRow()){
+                      int total=  currentNode->getShortestPath();
+                      string s=to_string(total);
+                      direct.push_back("Down("+s+")");
+                  }
+                 // mytotalcost +=currentNode->getCost();
                   currentNode=currentNode->getParent();
               }
-              mytotalcost+=currentNode->getCost();
-                return backtrace(currentNode);
+
+                for (int jj=direct.size();jj>0;jj--){
+                     plas += direct[jj-1];
+                }
+            //  mytotalcost+=currentNode->getCost();
+                  cout<<plas<<endl;
+               return plas;
+                // return backtrace(currentNode);
             } else {
                 list<State<T>*> neighbors = problem->getAllPossibleStates(currentNode);
                 //go over all neighbors of current node
@@ -91,7 +122,7 @@ public:
 
             }
         }
-        return path;
+//        return path;
     };
 
 //    bool inStateInSet(set<State<T>, compar> closedNodesSet, State<T> toFind) {

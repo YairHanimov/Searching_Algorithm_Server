@@ -11,7 +11,7 @@
 template<class T>
 class Searcher {
 public:
-    virtual vector<State<T>> search(Matrix *pMatrix)=0;
+    virtual string search(Matrix *pMatrix)=0;
 };
 
 
