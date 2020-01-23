@@ -36,23 +36,17 @@ public:
                 break;
             }
 
-//            string line1 = "1,2,3,4";
-//            string line2 = "5,6,7,8";
-//            string line3 = "9,10,11,12";
-//            string line4 = "13,14,15,16";
-//            string enter = "0,0\n";
-//            string exit = "3,3\n";
-//            string end = "end\n";
-//            string testbuffer ="";
-//            testbuffer+=line1+"\n"+line2+"\n"+line3+"\n"+line4+"\n"+enter+exit+end;
-
-            string line1 = "1,2";
-            string line2 = "5,6";
+            string line1 = "1,2,3,4";
+            string line2 = "5,6,7,8";
+            string line3 = "9,10,11,12";
+            string line4 = "13,14,15,16";
             string enter = "0,0\n";
-            string exit = "0,1\n";
+            string exit = "3,3\n";
             string end = "end\n";
             string testbuffer ="";
-            testbuffer+=line1+"\n"+line2+"\n"+enter+exit+end;
+            testbuffer+=line1+"\n"+line2+"\n"+line3+"\n"+line4+"\n"+enter+exit+end;
+
+
 
             auto solu = this->cache_manager->get(testbuffer);
             if (solu == NULL) {
