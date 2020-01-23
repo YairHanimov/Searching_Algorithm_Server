@@ -45,9 +45,8 @@ void MyParallelServer::start(int socketfd, ClientHandler *ch, sockaddr_in addres
         //accepting a client
         socklen_t addrlen = sizeof(sockaddr_in);
         int client_socket = accept(socketfd, (struct sockaddr *) &address, &addrlen);
-
-        this->threadPool[currentThreadNum] = thread(this->client_handler->clone(),
-                                                    client_socket);
+        ClientHandler* newC = this->client_handler->clone();
+        this->threadPool[currentThreadNum] (newC->handleClient, client_socket, client_socket);
         this->client_handler->handleClient(client_socket, client_socket);
     }
     //closing the listening socket
