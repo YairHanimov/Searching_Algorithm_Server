@@ -12,13 +12,17 @@
 
 using namespace server_side;
 
+#define DEFAULT_PORT 5600
 class MySerialServer : public Server {
 private:
-    int port = 0;
+    int port = DEFAULT_PORT;
     ClientHandler *client_handler;
 public:
     MySerialServer(int port, ClientHandler *ch) {
         this->port = port;
+        this->client_handler = ch;
+    }
+    MySerialServer(ClientHandler *ch) {
         this->client_handler = ch;
     }
 
