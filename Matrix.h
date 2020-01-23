@@ -54,33 +54,33 @@ public:
     virtual list<State<Cell>*> getAllPossibleStates(State<Cell> c) override {
         list<State<Cell>*> myoptionvector;
         int row = 0;
-        int cell = 0;
+        int col = 0;
         int size = 0;
         int mysize = this->matrix.size() - 1;
         row = c.getObj()->getRow();
-        cell = c.getObj()->getCol();
+        col = c.getObj()->getCol();
         c.setVisited();
-        if ((cell != mysize) && ((matrix[row][cell + 1]->getCost()) != (-1))) {
+        if ((col != mysize) && ((matrix[row][col + 1]->getCost()) != (-1))) {
             {
-                myoptionvector.push_back(matrix[row][cell + 1]);
+                myoptionvector.push_back(matrix[row][col + 1]);
             }
         }
-        if ((cell != 0) && ((matrix[row][cell - 1]->getCost()) != (-1))) {
+        if ((col != 0) && ((matrix[row][col - 1]->getCost()) != (-1))) {
             {
 
-                myoptionvector.push_back(matrix[row][cell - 1]);
+                myoptionvector.push_back(matrix[row][col - 1]);
             }
         }
-        if ((row != mysize) && ((matrix[row + 1][cell]->getCost()) != (-1))) {
+        if ((row != mysize) && ((matrix[row + 1][col]->getCost()) != (-1))) {
             {
 
-                myoptionvector.push_back(matrix[row + 1][cell]);
+                myoptionvector.push_back(matrix[row + 1][col]);
             }
         }
-        if ((row != 0) && ((matrix[row - 1][cell]->getCost()) != (-1))) {
+        if ((row != 0) && ((matrix[row - 1][col]->getCost()) != (-1))) {
             {
 
-                myoptionvector.push_back(matrix[row - 1][cell]);
+                myoptionvector.push_back(matrix[row - 1][col]);
             }
         }
         return myoptionvector;
