@@ -1,6 +1,3 @@
-//
-// Created by eyal on 16.1.2020.
-//
 
 #ifndef SEARCHING_ALGORITHM_SERVER_STATE_H
 #define SEARCHING_ALGORITHM_SERVER_STATE_H
@@ -21,6 +18,7 @@ private:
     double shortestPathCost = 0;    //how much cost until now
     //int state = 0;                //one-to-one value of state in the Searchable
     //vector<State<Cell>> myalloption;
+    int urist=0;
 public:
     bool operator==(State<T> other) {
         bool isEqual = obj == other.getObj();
@@ -43,13 +41,13 @@ public:
         this->setParent(myState);
     }
 
-     State<T>(State<T> *myState) {
+    State<T>(State<T> *myState) {
 
 
-            this->obj = myState->obj;
-            this->shortestPathCost = myState->shortestPathCost;
+        this->obj = myState->obj;
+        this->shortestPathCost = myState->shortestPathCost;
 
-            this->cost = myState->cost;
+        this->cost = myState->cost;
 
 //            this->parent = myState->parent;
 
@@ -104,7 +102,16 @@ public:
         }
 //       }
     }
-
+    void seturistic(Cell *p ,Cell *goal ) {
+        int re= abs((goal->getRow()-p->getRow()))+abs((goal->getCol()-p->getCol()));
+        this->urist=re;
+    }
+    void seturistic(int g ) {
+        this->urist=g;
+    }
+    int  geturistic( ) {
+        return  this->urist;
+    }
     State<T> *getParent() {
         return parent;
     }
@@ -129,6 +136,4 @@ public:
         return this->myalloption;
     }
 };
-
-
 #endif //SEARCHING_ALGORITHM_SERVER_STATE_H

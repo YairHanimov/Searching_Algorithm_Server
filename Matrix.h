@@ -1,6 +1,3 @@
-//
-// Created by eyal on 16.1.2020.
-//
 
 #ifndef SEARCHING_ALGORITHM_SERVER_MATRIX_H
 #define SEARCHING_ALGORITHM_SERVER_MATRIX_H
@@ -51,6 +48,9 @@ public:
                 (this->end->getObj()->getRow() == c.getObj()->getRow()));
     }
 
+    State<Cell> givemegoalcell(){
+        return this->end;
+    }
     virtual list<State<Cell>*> getAllPossibleStates(State<Cell> c) override {
         list<State<Cell>*> myoptionvector;
         int row = 0;
