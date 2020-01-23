@@ -6,9 +6,10 @@
 #define SEARCHING_ALGORITHM_SERVER_CLIENTHANDLER_H
 
 class ClientHandler {
- public:
-  virtual void handleClient(int inputStream, int outputStream){}
-  virtual ClientHandler* clone() = 0;
+public:
+
+    virtual void handleClient(int inputStream, int outputStream) = 0;
+    virtual ClientHandler *clone() = 0;
 };
 
 #endif //SEARCHING_ALGORITHM_SERVER_CLIENTHANDLER_H
