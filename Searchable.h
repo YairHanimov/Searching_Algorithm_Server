@@ -34,6 +34,9 @@ public:
     virtual void setendd(State<T> *e) {
         this->end = e;
     }
+    virtual State<T> * getendddd(State<T> *e) {
+        return this->end;
+    }
 
 };
 

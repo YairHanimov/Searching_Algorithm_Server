@@ -35,9 +35,9 @@ public:
 //        this->cost = cos;
 //    }
 //
-    State<T>() {
-
-    }
+//    State<T>() {
+//
+//    }
 
     State<T>(State<T> *myState, int k) {
         this->setParent(myState);

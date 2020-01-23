@@ -29,9 +29,9 @@ public:
         double minPath = -1;
         double currentPathCost = 0;
 
-        priority_queue<State<T>, vector<State<T>>, compar> mypq; // a priority queue of states to be evaluated
+        priority_queue<State<T>*, vector<State<T>*>, compar> mypq; // a priority queue of states to be evaluated
         auto initialNode = problem->getInitialState();
-        mypq.push(initialNode);
+        mypq.push(&initialNode);
         initialNode.setVisited();
 
         set<State<T>, comparforset> closedNodesSet;                    // a set of states already evaluated
@@ -40,14 +40,15 @@ public:
 
         while (!mypq.empty()) {
 
-            State<T> currentNode =   new State <T>(mypq.top());
+            State<T> *currentNode =(mypq.top());
+   //         State<T> currentNode =   new State <T>(mypq.top());
             specialSearchSet.erase(mypq.top());
             (mypq.pop());
-            currentNode.setVisited();
+            currentNode->setVisited();
 
-            currentPathCost = currentNode.getShortestPath();
+            currentPathCost = currentNode->getShortestPath();
             closedNodesSet.insert(currentNode);       // so we won't check currentNode again
-            currentNode.setVisited();
+            currentNode->setVisited();
             if (problem->isGoalState(currentNode)) {
                 return backtrace(currentNode);
             } else {
@@ -58,19 +59,19 @@ public:
                     //todo : BUG: cell 0x0 passed this test even though it was in closedNoseSet
                     if ((closedNodesSet.find(currentNeighbor) == closedNodesSet.end())&&
                             (specialSearchSet.find(currentNeighbor) == specialSearchSet.end())  ) {
-                        currentNeighbor.setParent(&currentNode);
-                        currentPathCost += currentNeighbor.getCost()+currentNode.getCost();
+                        currentNeighbor.setParent(currentNode);
+                        currentPathCost += currentNeighbor.getCost()+currentNode->getCost();
                         currentNeighbor.setShortestPath(currentPathCost);
-                        mypq.push(currentNeighbor);
+                        mypq.push(&currentNeighbor);
                         specialSearchSet.insert(currentNeighbor);
 
                     } else {
 //                        currentPathCost += currentNeighbor.getCost()+currentNeighbor.getParent()->getShortestPath();
                         if (currentNeighbor.getShortestPath() >
-                            currentNode.getShortestPath() + currentNeighbor.getCost()) {
-                            currentNeighbor.setShortestPath(currentNode.getShortestPath() + currentNeighbor.getCost());
-                            currentNeighbor.setParent(&currentNode);
-                            mypq.push(currentNeighbor);
+                            currentNode->getShortestPath() + currentNeighbor.getCost()) {
+                            currentNeighbor.setShortestPath(currentNode->getShortestPath() + currentNeighbor.getCost());
+                            currentNeighbor.setParent(currentNode);
+                            mypq.push(&currentNeighbor);
                             specialSearchSet.insert(currentNeighbor);
                         }
                     }
