@@ -35,7 +35,7 @@ public:
         set<State<T>, comparforset> closedNodesSet;                    // a set of states already evaluated
         set<State<T>, comparforset> specialSearchSet;
         specialSearchSet.insert(initialNode);
-        int counterrrr=0;
+        unsigned long counterrrr=0;
         while (!mypq.empty()) {
 
             counterrrr++;
@@ -52,7 +52,7 @@ public:
             closedNodesSet.insert(currentNode);       // so we won't check currentNode again
           //  currentNode->setVisited();
             if (problem->isGoalState(currentNode)) {
-                int mytotalcost=0;
+                unsigned long mytotalcost=0;
               while(currentNode->getParent()!=NULL){
                    mytotalcost +=currentNode->getCost();
                   currentNode=currentNode->getParent();
