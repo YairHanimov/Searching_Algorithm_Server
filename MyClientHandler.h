@@ -111,6 +111,11 @@ public:
 
         }
     }
+
+    MyClientHandler* clone() override {
+        auto* newHandler = new MyClientHandler(this->cache_manager, this->sol->clone());
+        return newHandler;
+    }
 };
 
 
