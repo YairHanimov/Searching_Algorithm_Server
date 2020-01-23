@@ -59,6 +59,10 @@ public:
         }
         return path;
     }
+
+    DFS<T>* clone() override {
+        return new DFS<T>();
+    }
 };
 
 

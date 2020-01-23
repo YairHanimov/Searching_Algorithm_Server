@@ -142,6 +142,10 @@ public:
         }
         return path;
     }
+
+    AStar<T>* clone() override {
+        return new AStar<T>();
+    }
 };
 
 

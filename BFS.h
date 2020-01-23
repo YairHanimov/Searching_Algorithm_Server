@@ -59,7 +59,10 @@ public:
         }
         return path;
     }
-};
 
+    BFS<T>* clone() override {
+        return new BFS<T>();
+    }
+};
 
 #endif //SEARCHING_ALGORITHM_SERVER_BFS_H
