@@ -35,9 +35,10 @@ public:
         set<State<T>, comparforset> closedNodesSet;                    // a set of states already evaluated
         set<State<T>, comparforset> specialSearchSet;
         specialSearchSet.insert(initialNode);
-
+        int counterrrr=0;
         while (!mypq.empty()) {
 
+            counterrrr++;
             State<T> *currentNode =(mypq.top());
 
 
@@ -56,6 +57,7 @@ public:
                    mytotalcost +=currentNode->getCost();
                   currentNode=currentNode->getParent();
               }
+              mytotalcost+=currentNode->getCost();
                 return backtrace(currentNode);
             } else {
                 list<State<T>*> neighbors = problem->getAllPossibleStates(currentNode);
@@ -74,12 +76,15 @@ public:
 //                        currentPathCost += currentNeighbor.getCost()+currentNeighbor.getParent()->getShortestPath();
                         if (currentNeighbor->getShortestPath() >
                             currentNode->getShortestPath() + currentNeighbor->getCost()) {
+
                             currentNeighbor->setShortestPath(currentNode->getShortestPath() + currentNeighbor->getCost());
                             currentNeighbor->setParent(currentNode);
                             if (specialSearchSet.find(currentNeighbor) == specialSearchSet.end()) {
                                 mypq.push(currentNeighbor);
                                 specialSearchSet.insert(currentNeighbor);
                             }
+//                            mypq.push(currentNeighbor);
+//                            specialSearchSet.insert(currentNeighbor);
                         }
                     }
                 }
