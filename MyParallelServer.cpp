@@ -31,7 +31,10 @@ void MyParallelServer::open() {
 }
 
 void MyParallelServer::start(int socketfd, ClientHandler *ch, sockaddr_in address) {
-
+    for(int currentThread = 0; currentThread<this->threadNum ; currentThread++) {
+        this->threadPool[currentThread].join();
+    }
+    this->stopServer = true;
 }
 
 void MyParallelServer::stop() {
