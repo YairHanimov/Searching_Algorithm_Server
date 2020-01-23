@@ -15,6 +15,7 @@
 #include "State.h"
 #include "Searcher.h"
 #include "BestFS.h"
+#include "BFS.h"
 
 using namespace std;
 
@@ -25,8 +26,10 @@ public:
 
     string solve(string p) override {
         Matrix *m = stringToMatrix(p);
-        Searcher<Cell>* bestFS = new BestFS<Cell>(m);
-        bestFS->search(m);
+//        Searcher<Cell>* bestFS = new BestFS<Cell>(m);
+//        bestFS->search(m);
+        Searcher<Cell>* bfs = new BFS<Cell>(m);
+        bfs->search(m);
         cout << "bla bla" << endl;
     }
 

@@ -22,23 +22,42 @@ public:
         int evaluations = 0;
         queue<State<T>*> bfsQueue;
 
-        State<T>* currentNode = problem->getInitialState();
-        bfsQueue.push(currentNode);
-        currentNode->setVisited();
+        auto initialNode = problem->getInitialState();
+        bfsQueue.push(&initialNode);
+        initialNode.setVisited();
 
-        while(!bfsQueue.empty()) {
+        while (!bfsQueue.empty()) {
             evaluations++;
-            list<State<T>*> neighbors = problem->getAllPossibleStates(currentNode);
+            State<T> *currentNode = bfsQueue.front();
+            bfsQueue.pop();
+            if (problem->isGoalState(currentNode)) {
+                cout<<evaluations<<endl;
+                cout<<currentNode->getShortestPath()<<endl;
+                return backtrace(currentNode);
+            }
+
+            list<State<T> *> neighbors = problem->getAllPossibleStates(currentNode);
             for (State<T> *currentNeighbor:neighbors) {
-                if(!currentNeighbor->getVisited()) {
+                if (!currentNeighbor->getVisited()) {
                     currentNeighbor->setVisited();
-                    currentNeighbor->setShortestPath(currentNode->getShortestPath()+currentNeighbor->getCost());
+                    currentNeighbor->setShortestPath(currentNode->getShortestPath() + currentNeighbor->getCost());
                     currentNeighbor->setParent(currentNode);
-                    bfsQueue.pop();
+                    bfsQueue.push(currentNeighbor);
                 }
             }
         }
+    }
 
+    vector<State<T>> backtrace(State<T> goal) {
+        vector<State<T>> path;
+        path.push_back(goal);
+        State<T> *parent = goal.getParent();
+
+        while (parent != nullptr) {
+            path.push_back(parent);
+            *parent = parent->getParent();
+        }
+        return path;
     }
 };
 
