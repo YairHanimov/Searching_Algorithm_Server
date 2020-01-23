@@ -12,6 +12,7 @@ template<class T>
 class Searcher {
 public:
     virtual vector<State<T>> search(Matrix *pMatrix)=0;
+    virtual Searcher<T>* clone() = 0;
 };
 
 

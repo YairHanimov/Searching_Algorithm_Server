@@ -114,6 +114,10 @@ public:
         }
         return path;
     }
+
+    BestFS<T>* clone() override {
+        return new BestFS<T>();
+    }
 };
 
 
