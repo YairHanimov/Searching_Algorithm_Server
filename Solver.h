@@ -13,6 +13,7 @@ template<class problem, class solution>
 class Solver {
 public:
     virtual solution solve(problem) = 0;
+    virtual Solver<problem, solution>* clone() = 0;
 };
 
 #endif //SEARCHING_ALGORITHM_SERVER_SOLVER_H

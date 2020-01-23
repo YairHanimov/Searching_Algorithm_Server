@@ -13,6 +13,7 @@ class StringReverser : public Solver <string,string> {
 public:
     StringReverser() = default;
     string solve(string problem) override;
+    Solver<string, string>* clone(){}
 };
 
 

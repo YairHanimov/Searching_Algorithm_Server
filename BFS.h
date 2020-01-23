@@ -14,7 +14,7 @@ using namespace std;
 template<class T>
 class BFS : public Searcher<T> {
 public:
-    explicit BFS(Searchable<T> *p) {
+    explicit BFS() {
 
     }
 
