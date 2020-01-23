@@ -26,8 +26,11 @@ void MyParallelServer::open() {
         cerr << "Could not bind the socket to an IP" << endl;
     }
 
-    thread handler([this, socketfd, address] { start(socketfd, this->client_handler, address); });
-    handler.join();
+    thread handler(&MyParallelServer::start, this, socketfd, this->client_handler, address);
+    handler.detach();
+    this->start(socketfd, this->client_handler, address);
+    //thread handler([this, socketfd, address] { start(socketfd, this->client_handler, address); });
+    //handler.join();
 }
 
 void MyParallelServer::start(int socketfd, ClientHandler *ch, sockaddr_in address) {
@@ -45,17 +48,25 @@ void MyParallelServer::start(int socketfd, ClientHandler *ch, sockaddr_in addres
         //accepting a client
         socklen_t addrlen = sizeof(sockaddr_in);
         int client_socket = accept(socketfd, (struct sockaddr *) &address, &addrlen);
-        ClientHandler* newC = this->client_handler->clone();
-        this->threadPool[currentThreadNum] (newC->handleClient, client_socket, client_socket);
-        this->client_handler->handleClient(client_socket, client_socket);
+        //ClientHandler* newC = this->client_handler->clone();
+        //this->threadPool[currentThreadNum]
+       // thread currentThread(&MyParallelServer::lunchThread, this, this->client_handler, client_socket, client_socket);
+    //    currentThread.detach();
+        //this->threadPool.push_back(currentThread);
+        //(&ClientHandler::handleClient, this->client_handler->clone(), client_socket, client_socket);
+        //this->client_handler->handleClient(client_socket, client_socket);
     }
     //closing the listening socket
     close(socketfd);
+    this->stop();
 }
 
+void MyParallelServer::lunchThread(ClientHandler *c, int client_socket1, int client_socket2) {
+    c->handleClient(client_socket1, client_socket2);
+}
 void MyParallelServer::stop() {
-    for (int currentThread = 0; currentThread < this->threadNum; currentThread++) {
-        this->threadPool[currentThread].join();
+    for (auto & currentThread : threadPool) {
+        currentThread.join();
     }
     this->stopServer = true;
 }

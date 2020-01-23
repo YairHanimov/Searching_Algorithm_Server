@@ -19,13 +19,16 @@ using namespace server_side;
 #define DEFAULT_PORT 5600
 #define DEFAULT_THREAD_NUM 10
 
+#include "list"
+using namespace std;
+
 class MyParallelServer : public Server {
 
 private:
     int port = DEFAULT_PORT;
     static const int threadNum = DEFAULT_THREAD_NUM;
     int currentThreadNum = 0;
-    thread threadPool[threadNum];
+    list<thread> threadPool;
     bool stopServer;
     ClientHandler *client_handler;
 public:
@@ -45,6 +48,8 @@ public:
     void stop() override;
 
     void start(int socketfd, ClientHandler *pHandler, sockaddr_in in);
+
+    void lunchThread(ClientHandler *c, int client_socket1, int client_socket2);
 };
 
 #endif //SEARCHING_ALGORITHM_SERVER_MYPARALLELSERVER_H
