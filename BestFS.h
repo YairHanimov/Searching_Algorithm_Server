@@ -1,10 +1,8 @@
 //
 // Created by eyal on 16.1.2020.
 //
-
 #ifndef SEARCHING_ALGORITHM_SERVER_BESTFS_H
 #define SEARCHING_ALGORITHM_SERVER_BESTFS_H
-
 #include "Searcher.h"
 #include "queue"
 #include "set"
@@ -61,7 +59,7 @@ public:
                     if ((closedNodesSet.find(currentNeighbor) == closedNodesSet.end())&&
                         (specialSearchSet.find(currentNeighbor) == specialSearchSet.end())  ) {
                         currentNeighbor->setParent(currentNode);
-                        currentPathCost += currentNeighbor->getCost()+currentNode->getCost();
+                       // currentPathCost += currentNeighbor->getCost()+currentNode->getCost();
                         currentNeighbor->setShortestPath(currentPathCost);
                         mypq.push(currentNeighbor);
                         specialSearchSet.insert(currentNeighbor);
