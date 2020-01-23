@@ -91,7 +91,6 @@ public:
 
             }
         }
-        return path;
     };
 
 //    bool inStateInSet(set<State<T>, compar> closedNodesSet, State<T> toFind) {

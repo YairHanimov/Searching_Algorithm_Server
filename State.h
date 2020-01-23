@@ -21,6 +21,7 @@ private:
     double shortestPathCost = 0;    //how much cost until now
     //int state = 0;                //one-to-one value of state in the Searchable
     //vector<State<Cell>> myalloption;
+    int urist=0;
 public:
     bool operator==(State<T> other) {
         bool isEqual = obj == other.getObj();
@@ -104,7 +105,16 @@ public:
         }
 //       }
     }
-
+    void seturistic(Cell *p ,Cell *goal ) {
+       int re= abs((goal->getRow()-p->getRow()))+abs((goal->getCol()-p->getCol()));
+         this->urist=re;
+    }
+    void seturistic(int g ) {
+          this->urist=g;
+    }
+    int  geturistic( ) {
+        return  this->urist;
+    }
     State<T> *getParent() {
         return parent;
     }

@@ -51,6 +51,9 @@ public:
                 (this->end->getObj()->getRow() == c.getObj()->getRow()));
     }
 
+    State<Cell> givemegoalcell(){
+        return this->end;
+    }
     virtual list<State<Cell>*> getAllPossibleStates(State<Cell> c) override {
         list<State<Cell>*> myoptionvector;
         int row = 0;
