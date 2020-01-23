@@ -72,8 +72,10 @@ public:
                             currentNode->getShortestPath() + currentNeighbor->getCost()) {
                             currentNeighbor->setShortestPath(currentNode->getShortestPath() + currentNeighbor->getCost());
                             currentNeighbor->setParent(currentNode);
-                            mypq.push(currentNeighbor);
-                            specialSearchSet.insert(currentNeighbor);
+                            if (specialSearchSet.find(currentNeighbor) == specialSearchSet.end()) {
+                                mypq.push(currentNeighbor);
+                                specialSearchSet.insert(currentNeighbor);
+                            }
                         }
                     }
                 }
