@@ -18,25 +18,30 @@ using namespace server_side;
 
 #define DEFAULT_PORT 5600
 #define DEFAULT_THREAD_NUM 10
-class MyParallelServer : public Server{
+
+class MyParallelServer : public Server {
 
 private:
     int port = DEFAULT_PORT;
     static const int threadNum = DEFAULT_THREAD_NUM;
+    int currentThreadNum = 0;
     thread threadPool[threadNum];
     bool stopServer;
     ClientHandler *client_handler;
- public:
-  explicit MyParallelServer(int input_port, ClientHandler *ch) {
-      this->port = input_port;
-      this->client_handler = ch;
-      this->stopServer = false;
-  }
-  MyParallelServer(ClientHandler *ch) {
-      this->client_handler = ch;
-      this->stopServer = false;
-  }
+public:
+    explicit MyParallelServer(int input_port, ClientHandler *ch) {
+        this->port = input_port;
+        this->client_handler = ch;
+        this->stopServer = false;
+    }
+
+    MyParallelServer(ClientHandler *ch) {
+        this->client_handler = ch;
+        this->stopServer = false;
+    }
+
     void open() override;
+
     void stop() override;
 
     void start(int socketfd, ClientHandler *pHandler, sockaddr_in in);
