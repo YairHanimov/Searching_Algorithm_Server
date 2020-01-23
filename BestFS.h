@@ -44,12 +44,18 @@ public:
             //         State<T> currentNode =   new State <T>(mypq.top());
             specialSearchSet.erase(mypq.top());
             (mypq.pop());
-            currentNode->setVisited();
 
-            currentPathCost = currentNode->getShortestPath();
+            //currentNode->setVisited();
+
+            //currentPathCost = currentNode->getShortestPath();
             closedNodesSet.insert(currentNode);       // so we won't check currentNode again
-            currentNode->setVisited();
+          //  currentNode->setVisited();
             if (problem->isGoalState(currentNode)) {
+                int mytotalcost=0;
+              while(currentNode->getParent()!=NULL){
+                   mytotalcost +=currentNode->getCost();
+                  currentNode=currentNode->getParent();
+              }
                 return backtrace(currentNode);
             } else {
                 list<State<T>*> neighbors = problem->getAllPossibleStates(currentNode);
@@ -60,7 +66,7 @@ public:
                         (specialSearchSet.find(currentNeighbor) == specialSearchSet.end())  ) {
                         currentNeighbor->setParent(currentNode);
                        // currentPathCost += currentNeighbor->getCost()+currentNode->getCost();
-                        currentNeighbor->setShortestPath(currentPathCost);
+                        currentNeighbor->setShortestPath(currentNode->getShortestPath()+currentNeighbor->getCost());
                         mypq.push(currentNeighbor);
                         specialSearchSet.insert(currentNeighbor);
 
