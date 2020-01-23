@@ -24,15 +24,17 @@ private:
     int port = DEFAULT_PORT;
     static const int threadNum = DEFAULT_THREAD_NUM;
     thread threadPool[threadNum];
+    bool stopServer;
     ClientHandler *client_handler;
  public:
   explicit MyParallelServer(int input_port, ClientHandler *ch) {
       this->port = input_port;
       this->client_handler = ch;
+      this->stopServer = false;
   }
   MyParallelServer(ClientHandler *ch) {
       this->client_handler = ch;
-
+      this->stopServer = false;
   }
     void open() override;
     void stop() override;
