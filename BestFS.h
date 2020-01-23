@@ -18,7 +18,7 @@ template<class T>
 class BestFS : public Searcher<T> {
 public:
 
-    explicit BestFS(Searchable<T> *p) {
+    explicit BestFS() {
 
     }
 

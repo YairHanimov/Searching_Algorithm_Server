@@ -26,10 +26,10 @@ public:
 
     string solve(string p) override {
         Matrix *m = stringToMatrix(p);
-//        Searcher<Cell>* bestFS = new BestFS<Cell>(m);
-//        bestFS->search(m);
-        Searcher<Cell>* best = new BestFS<Cell>(m);
-        best->search(m);
+        Searcher<Cell>* bestFS = new BestFS<Cell>();
+        bestFS->search(m);
+        Searcher<Cell>* bfs = new BFS<Cell>();
+        bfs->search(m);
         cout << "bla bla" << endl;
     }
 
@@ -111,6 +111,12 @@ public:
         Matrix *returnMatrix = new Matrix(matrix,start1,start2,end1,end2);
         int test = matrix.size();
         return returnMatrix;
+    }
+
+    OA* clone() override {
+        Searcher<Cell>* clonedSearcher;
+        OA* clonedOA = new OA<string, string>();
+        return clonedOA;
     }
 
 
