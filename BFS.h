@@ -6,14 +6,13 @@
 #define SEARCHING_ALGORITHM_SERVER_BFS_H
 
 #include "Searcher.h"
+#include <list>
 using namespace std;
 
 template<class T>
 class BFS : public Searcher<T>{
 public:
-    virtual T search (Searchable<T>*){
-
-    };
+   
 };
 
 

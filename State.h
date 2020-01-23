@@ -14,7 +14,7 @@ using namespace std;
 template<class T>
 class State {
 private:
-    T obj;
+    T *obj;
     State<T> *parent = nullptr;     //where we came from
     bool visited = false;           //was visited or not
     double cost = 0;                //cost of visiting
@@ -35,15 +35,15 @@ public:
 //        this->cost = cos;
 //    }
 //
-    State<T>() {
-
-    }
+//    State<T>() {
+//
+//    }
 
     State<T>(State<T> *myState, int k) {
         this->setParent(myState);
     }
 
-    explicit State<T>(State<T> *myState) {
+     State<T>(State<T> *myState) {
 
 
             this->obj = myState->obj;
@@ -58,7 +58,7 @@ public:
     }
 
 
-    explicit State<T>(T inputObj) {
+    explicit State<T>(T *inputObj) {
         this->obj = inputObj;
     }
 
@@ -70,7 +70,7 @@ public:
         this->cost = c;
     }
 
-    T getObj() {
+    T *getObj() {
         return obj;
 
     }
@@ -86,8 +86,8 @@ public:
         this->obj = objj;
     };
 
-    State<T*> getMe() {
-        return this;
+    State<T> getMe() {
+        return *this;
     }
 
     void setParent(State<T> *p) {
