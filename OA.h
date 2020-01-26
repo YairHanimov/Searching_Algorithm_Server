@@ -28,6 +28,7 @@ public:
     string solve(string p) override {
         Matrix *m = stringToMatrix(p);
         Searcher<Cell> *aStart = new AStar<Cell>();
+        cout<<"im trying to solve with AStar"<<endl;
         string strAstar = aStart->search(m);
         return strAstar;
         cout << "-----finish OA solvers-----" << endl;

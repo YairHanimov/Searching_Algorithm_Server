@@ -26,17 +26,17 @@ void MyParallelServer::open() {
         cerr << "Could not bind the socket to an IP" << endl;
     }
 
-    thread handler(&MyParallelServer::start, this, socketfd, this->client_handler, address);
-    handler.detach();
-    this->start(socketfd, this->client_handler, address);
-    //thread handler([this, socketfd, address] { start(socketfd, this->client_handler, address); });
-    //handler.join();
+    //thread handler(&MyParallelServer::start, this, socketfd, this->client_handler, address);
+    //handler.detach();
+    //this->start(socketfd, this->client_handler, address);
+    thread handler([this, socketfd, address] { start(socketfd, this->client_handler, address); });
+    handler.join();
 }
 
 void MyParallelServer::start(int socketfd, ClientHandler *ch, sockaddr_in address) {
     int i = 0;
     while (!stopServer) {
-        if (listen(socketfd, 1) == -1) {
+        if (listen(socketfd, 10) == -1) {
             cerr << "Error during listening command" << endl;
         }
 
@@ -50,14 +50,18 @@ void MyParallelServer::start(int socketfd, ClientHandler *ch, sockaddr_in addres
         socklen_t addrlen = sizeof(sockaddr_in);
         int client_socket = accept(socketfd, (struct sockaddr *) &address, &addrlen);
         ClientHandler* newC = this->client_handler->clone();
-
-        threadPool[i] = thread(&MyParallelServer::lunchThread, this, newC, client_socket, client_socket);
+        cout<<"i am before threads"<<endl;
+        //threadPool[i] = thread(&MyParallelServer::lunchThread, this, newC, client_socket, client_socket);
+        thread *t = new thread(&ClientHandler::handleClient, this->client_handler->clone(), client_socket, client_socket);
+        t->detach();
+        threadPool.push_back(t);
         i++;
-
+        if(i == 10) {
+            this->stop();
+        }
     }
     //closing the listening socket
     close(socketfd);
-    this->stop();
 }
 
 void MyParallelServer::lunchThread(ClientHandler *c, int client_socket1, int client_socket2) {
@@ -65,7 +69,7 @@ void MyParallelServer::lunchThread(ClientHandler *c, int client_socket1, int cli
 }
 void MyParallelServer::stop() {
     for (auto & currentThread : threadPool) {
-        currentThread.join();
+        currentThread->join();
     }
     this->stopServer = true;
 }

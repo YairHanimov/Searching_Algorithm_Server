@@ -16,7 +16,7 @@
 
 using namespace server_side;
 
-#define DEFAULT_PORT 5600
+#define DEFAULT_PORT 5400
 #define DEFAULT_THREAD_NUM 10
 
 #include "list"
@@ -28,7 +28,7 @@ private:
     int port = DEFAULT_PORT;
     static const int threadNum = DEFAULT_THREAD_NUM;
     int currentThreadNum = 0;
-    vector<thread> threadPool;
+    vector<thread*> threadPool;
     bool stopServer;
     ClientHandler *client_handler;
 public:
