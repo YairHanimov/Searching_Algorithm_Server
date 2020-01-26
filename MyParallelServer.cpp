@@ -34,6 +34,7 @@ void MyParallelServer::open() {
 }
 
 void MyParallelServer::start(int socketfd, ClientHandler *ch, sockaddr_in address) {
+    int i = 0;
     while (!stopServer) {
         if (listen(socketfd, 1) == -1) {
             cerr << "Error during listening command" << endl;
@@ -48,13 +49,11 @@ void MyParallelServer::start(int socketfd, ClientHandler *ch, sockaddr_in addres
         //accepting a client
         socklen_t addrlen = sizeof(sockaddr_in);
         int client_socket = accept(socketfd, (struct sockaddr *) &address, &addrlen);
-        //ClientHandler* newC = this->client_handler->clone();
-        //this->threadPool[currentThreadNum]
-       // thread currentThread(&MyParallelServer::lunchThread, this, this->client_handler, client_socket, client_socket);
-    //    currentThread.detach();
-        //this->threadPool.push_back(currentThread);
-        //(&ClientHandler::handleClient, this->client_handler->clone(), client_socket, client_socket);
-        //this->client_handler->handleClient(client_socket, client_socket);
+        ClientHandler* newC = this->client_handler->clone();
+
+        threadPool[i] = thread(&MyParallelServer::lunchThread, this, newC, client_socket, client_socket);
+        i++;
+
     }
     //closing the listening socket
     close(socketfd);

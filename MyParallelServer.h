@@ -28,7 +28,7 @@ private:
     int port = DEFAULT_PORT;
     static const int threadNum = DEFAULT_THREAD_NUM;
     int currentThreadNum = 0;
-    list<thread> threadPool;
+    vector<thread> threadPool;
     bool stopServer;
     ClientHandler *client_handler;
 public:
