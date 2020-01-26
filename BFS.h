@@ -31,8 +31,10 @@ public:
             State<T> *currentNode = bfsQueue.front();
             bfsQueue.pop();
             if (problem->isGoalState(currentNode)) {
-                cout<<evaluations<<endl;
-                cout<<currentNode->getShortestPath()<<endl;
+//                cout<<evaluations<<endl;
+//                cout<<currentNode->getShortestPath()<<endl;
+                cout<<"bfs:"<<endl;
+                cout <<evaluations<<endl;
                 return "bla";
 //                return backtrace(currentNode);
             }

@@ -87,7 +87,9 @@ public:
                      plas += direct[jj-1];
                 }
             //  mytotalcost+=currentNode->getCost();
-                  cout<<plas<<endl;
+                cout<<"bestt:"<<endl;
+                cout <<counterrrr<<endl;
+
                return plas;
                 // return backtrace(currentNode);
             } else {

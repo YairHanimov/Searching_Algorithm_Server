@@ -14,11 +14,11 @@ template<class T>
 class DFS : public Searcher<T>{
 public:
 public:
-    explicit DFS(Searchable<T> *p) {
+    explicit DFS() {
 
     }
 
-    vector<State<T>> search(Matrix *problem) {
+   string search(Matrix *problem) {
         int evaluations = 0;
         stack<State<T>*> dfsStack;
 
@@ -28,12 +28,15 @@ public:
 
         while (!dfsStack.empty()) {
             evaluations++;
-            State<T> *currentNode = dfsStack.front();
+            State<T> *currentNode = dfsStack.top();
             dfsStack.pop();
             if (problem->isGoalState(currentNode)) {
-                cout<<evaluations<<endl;
-                cout<<currentNode->getShortestPath()<<endl;
-                return backtrace(currentNode);
+//                cout<<evaluations<<endl;
+//                cout<<currentNode->getShortestPath()<<endl;
+                cout<<"dfs:"<<endl;
+                cout <<evaluations<<endl;
+                return to_string(evaluations);
+                //                return backtrace(currentNode);
             }
 
             list<State<T> *> neighbors = problem->getAllPossibleStates(currentNode);

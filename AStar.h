@@ -14,7 +14,7 @@ using namespace std;
 template<class T>
 class AStar : public Searcher<T>{
 public:
-    explicit AStar(Searchable<T> *p) {
+    explicit AStar() {
 
     }
 
@@ -86,6 +86,8 @@ public:
                 }
                 //cout<<plas<<endl;
                 mytotalcost+=currentNode->getCost();
+               cout<<"astar:"<<endl;
+                cout <<counterrrr<<endl;
                 return plas;
                 //return backtrace(currentNode);
             } else {

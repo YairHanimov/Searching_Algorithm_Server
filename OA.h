@@ -16,6 +16,8 @@
 #include "Searcher.h"
 #include "BestFS.h"
 #include "BFS.h"
+#include "AStar.h"
+#include "DFS.h"
 
 using namespace std;
 
@@ -25,11 +27,23 @@ public:
     OA() = default;
 
     string solve(string p) override {
-        Matrix *m = stringToMatrix(p);
-        Searcher<Cell>* bestFS = new BestFS<Cell>();
-        bestFS->search(m);
+        Matrix *m1 = stringToMatrix(p);
+        Searcher<Cell>* dfs = new DFS<Cell>();
+        string strDFS=  dfs->search(m1);
+        Matrix *m2 = stringToMatrix(p);
         Searcher<Cell>* bfs = new BFS<Cell>();
-        bfs->search(m);
+        string strBFS=   bfs->search(m2);
+        Matrix *m3 = stringToMatrix(p);
+        Searcher<Cell>* bestFS = new BestFS<Cell>();
+        string strBestFS= bestFS->search(m3);
+        Matrix *m4 = stringToMatrix(p);
+        Searcher<Cell>* aStart = new AStar<Cell>();
+        string strAstar= aStart->search(m4);
+
+
+
+//        Searcher<Cell>* a = new AStar<Cell>();
+//        string blsafasfabla=    a->search(m);
         cout << "bla bla" << endl;
     }
 

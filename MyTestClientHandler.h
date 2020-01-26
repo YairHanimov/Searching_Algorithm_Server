@@ -63,6 +63,10 @@ public:
             }
         }
     }
+    MyTestClientHandler *clone() override {
+        auto *newHandler = new MyTestClientHandler(this->cache_manager, this->sol->clone());
+        return newHandler;
+    }
 };
 
 #endif //SEARCHING_ALGORITHM_SERVER_MYTESTCLIENTHANDLER_H
