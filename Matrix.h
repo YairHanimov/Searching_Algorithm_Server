@@ -10,7 +10,7 @@ using namespace std;
 
 class Matrix : public Searchable<Cell> {
 public:
-    vector<vector<State<Cell>*>> matrix;
+    vector<vector<State<Cell> *>> matrix;
     State<Cell> *start;
     State<Cell> *end;
 
@@ -19,7 +19,7 @@ public:
 //    int end1;
 //    int end2;
 
-    Matrix(vector<vector<State<Cell>*>> m, int start1, int start2, int end1, int end2) {
+    Matrix(vector<vector<State<Cell> *>> m, int start1, int start2, int end1, int end2) {
         this->matrix = m;
 //        this->start1=start1;
 //        this->start2=start2;
@@ -48,11 +48,12 @@ public:
                 (this->end->getObj()->getRow() == c.getObj()->getRow()));
     }
 
-    State<Cell> givemegoalcell(){
+    State<Cell> givemegoalcell() {
         return this->end;
     }
-    virtual list<State<Cell>*> getAllPossibleStates(State<Cell> c) override {
-        list<State<Cell>*> myoptionvector;
+
+    virtual list<State<Cell> *> getAllPossibleStates(State<Cell> c) override {
+        list<State<Cell> *> myoptionvector;
         int row = 0;
         int col = 0;
         int size = 0;

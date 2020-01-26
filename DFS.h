@@ -4,23 +4,25 @@
 
 #ifndef SEARCHING_ALGORITHM_SERVER_DFS_H
 #define SEARCHING_ALGORITHM_SERVER_DFS_H
+
 #include "Searcher.h"
 #include <list>
 #include <stack>
 #include "Searcher.h"
+
 using namespace std;
 
 template<class T>
-class DFS : public Searcher<T>{
+class DFS : public Searcher<T> {
 public:
 public:
     explicit DFS() {
 
     }
 
-   string search(Matrix *problem) {
+    string search(Matrix *problem) {
         int evaluations = 0;
-        stack<State<T>*> dfsStack;
+        stack<State<T> *> dfsStack;
 
         auto initialNode = problem->getInitialState();
         dfsStack.push(&initialNode);
@@ -33,8 +35,8 @@ public:
             if (problem->isGoalState(currentNode)) {
 //                cout<<evaluations<<endl;
 //                cout<<currentNode->getShortestPath()<<endl;
-                cout<<"dfs:"<<endl;
-                cout <<evaluations<<endl;
+                cout << "DFS:" << endl;
+                cout << evaluations << endl;
                 return to_string(evaluations);
                 //                return backtrace(currentNode);
             }
@@ -63,7 +65,7 @@ public:
         return path;
     }
 
-    DFS<T>* clone() override {
+    DFS<T> *clone() override {
         return new DFS<T>();
     }
 };

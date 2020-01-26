@@ -21,14 +21,18 @@ public:
 
     void insert(problem p, solution s) override {
 
+        //create file with the problem as it's name
         string problemName = p;
         problemName += ".txt";
         string solutionName = s;
         ofstream problemFile(problemName);
 
+        //check file created successfuly
         if (!problemFile) {
             throw "error opening file";
         }
+
+        //write solution to file
         problemFile << solutionName.c_str() << endl;
 
         problemFile.close();

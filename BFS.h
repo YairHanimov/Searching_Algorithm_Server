@@ -33,9 +33,8 @@ public:
             if (problem->isGoalState(currentNode)) {
 //                cout<<evaluations<<endl;
 //                cout<<currentNode->getShortestPath()<<endl;
-                cout<<"bfs:"<<endl;
+                cout<<"BFS:"<<endl;
                 cout <<evaluations<<endl;
-                return "bla";
 //                return backtrace(currentNode);
             }
 
