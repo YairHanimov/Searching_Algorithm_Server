@@ -10,9 +10,9 @@
 
 class compar {
 public:
-    bool operator()(State<Cell> a,State<Cell> b) {
-    return (a.getShortestPath() >  b.getShortestPath());
-}
+    bool operator()(State<Cell> a, State<Cell> b) {
+        return (a.getShortestPath() > b.getShortestPath());
+    }
 };
 
 

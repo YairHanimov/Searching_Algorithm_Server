@@ -17,17 +17,25 @@ public:
 
     list<pair<problem, solution>> dq;
     unordered_map<problem, typename list<pair<problem, solution>>::iterator> cache;
-    unsigned long capacity = 10;
+    unsigned long capacity = 1;
 
     void insert(problem p, solution s) override {
-        ofstream in_file;
-        string filename = p;
-        in_file.open(filename, ios::binary);
-        if (!in_file) {
-            throw "error open file";
+
+        //create file with the problem as it's name
+        string problemName = p;
+        problemName += ".txt";
+        string solutionName = s;
+        ofstream problemFile(problemName);
+
+        //check file created successfuly
+        if (!problemFile) {
+            throw "error opening file";
         }
-        in_file.write((char *) &s, sizeof(s));
-        in_file.close();
+
+        //write solution to file
+        problemFile << solutionName.c_str() << endl;
+
+        problemFile.close();
         auto it = cache.find(p);
         dq.push_front(pair<problem, solution>(p, s));
         if (it != cache.end()) {
@@ -45,18 +53,22 @@ public:
     }
 
     solution *get(problem p) override {
-        this->s;
         auto it = cache.find(p);
         if (it == cache.end()) {
-            // if (cache.find(p)==cache.end){
+
             fstream in_file;
             string filename = p;
+            filename += ".txt";
             in_file.open(filename);
-            if (!in_file) {
+            if (!in_file.is_open()) {
                 return nullptr;
             }
-            in_file.read((char *) &s, sizeof(s));
-    //        insert(p,s);
+            string line = "";
+            while(getline(in_file,line)) {
+                s += line;
+            }
+            //in_file.read((char *) &s, sizeof(s));
+
             in_file.close();
             return &s;
 

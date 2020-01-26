@@ -5,7 +5,6 @@
 
 #ifndef SEARCHING_ALGORITHM_SERVER_OA_H
 #define SEARCHING_ALGORITHM_SERVER_OA_H
-
 #include <cstring>
 #include "Solver.h"
 #include "Searcher.h"
@@ -16,6 +15,8 @@
 #include "Searcher.h"
 #include "BestFS.h"
 #include "BFS.h"
+#include "AStar.h"
+#include "DFS.h"
 
 using namespace std;
 
@@ -25,15 +26,23 @@ public:
     OA() = default;
 
     string solve(string p) override {
-        Matrix *m = stringToMatrix(p);
-        Searcher<Cell>* bestFS = new BestFS<Cell>();
-        bestFS->search(m);
-        Searcher<Cell>* bfs = new BFS<Cell>();
-        bfs->search(m);
-        cout << "bla bla" << endl;
+        Matrix *m1 = stringToMatrix(p);
+        Searcher<Cell> *dfs = new DFS<Cell>();
+        string strDFS = dfs->search(m1);
+        Matrix *m2 = stringToMatrix(p);
+        Searcher<Cell> *bfs = new BFS<Cell>();
+        string strBFS = bfs->search(m2);
+        Matrix *m3 = stringToMatrix(p);
+        Searcher<Cell> *bestFS = new BestFS<Cell>();
+        string strBestFS = bestFS->search(m3);
+        Matrix *m4 = stringToMatrix(p);
+        Searcher<Cell> *aStart = new AStar<Cell>();
+        string strAstar = aStart->search(m4);
+
+        cout << "-----finish OA solvers-----" << endl;
     }
 
-    Matrix* stringToMatrix(const string str) {
+    Matrix *stringToMatrix(const string str) {
         vector<string> line;
         int n = str.length();
 
@@ -52,26 +61,26 @@ public:
         int row = 0;
         int col = 0;
         int mysize = line.size();
-        vector<vector<State<Cell>*>> matrix;
+        vector<vector<State<Cell> *>> matrix;
         while (row < (mysize - 3)) {
-            vector<State<Cell>*> stateLine;
+            vector<State<Cell> *> stateLine;
             lexer += line.front();
             line.erase(line.begin());
             strcpy(strToChar, lexer.c_str());
-        //    line.pop_back();
+            //    line.pop_back();
             token = strtok(strToChar, ",");
             while (token != nullptr) {
                 Cell *c = new Cell(row, col);
-                auto* st = new State<Cell>(c);
+                auto *st = new State<Cell>(c);
                 st->setCost(stod(token));
                 stateLine.push_back(st);
                 col++;
                 token = strtok(nullptr, ",");
             }
-            lexer="";
+            lexer = "";
             matrix.push_back(stateLine);
             row++;
-            col=0;
+            col = 0;
         }
         int start1 = 0;
         int start2 = 0;
@@ -108,14 +117,14 @@ public:
 //        returnMatrix->start = start;
 //        returnMatrix->end = end;
 
-        Matrix *returnMatrix = new Matrix(matrix,start1,start2,end1,end2);
+        Matrix *returnMatrix = new Matrix(matrix, start1, start2, end1, end2);
         int test = matrix.size();
         return returnMatrix;
     }
 
-    OA* clone() override {
-        Searcher<Cell>* clonedSearcher;
-        OA* clonedOA = new OA<string, string>();
+    OA *clone() override {
+        Searcher<Cell> *clonedSearcher;
+        OA *clonedOA = new OA<string, string>();
         return clonedOA;
     }
 

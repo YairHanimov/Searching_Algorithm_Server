@@ -3,6 +3,7 @@
 //
 #ifndef SEARCHING_ALGORITHM_SERVER_BESTFS_H
 #define SEARCHING_ALGORITHM_SERVER_BESTFS_H
+
 #include "Searcher.h"
 #include "queue"
 #include "set"
@@ -26,8 +27,8 @@ public:
         vector<State<T>> path;
         double minPath = -1;
         double currentPathCost = 0;
-        string plas ="";
-        priority_queue<State<T>*, vector<State<T>*>, compar> mypq; // a priority queue of states to be evaluated
+        string pathSolution = "";
+        priority_queue<State<T> *, vector<State<T> *>, compar> mypq; // a priority queue of states to be evaluated
         auto initialNode = problem->getInitialState();
         initialNode.setShortestPath(initialNode.getCost());
         mypq.push(&initialNode);
@@ -36,11 +37,11 @@ public:
         set<State<T>, comparforset> closedNodesSet;                    // a set of states already evaluated
         set<State<T>, comparforset> specialSearchSet;
         specialSearchSet.insert(initialNode);
-        unsigned long counterrrr=0;
+        unsigned long evaluations = 0;
         while (!mypq.empty()) {
 
-            counterrrr++;
-            State<T> *currentNode =(mypq.top());
+            evaluations++;
+            State<T> *currentNode = (mypq.top());
 
 
             //         State<T> currentNode =   new State <T>(mypq.top());
@@ -51,55 +52,64 @@ public:
 
             //currentPathCost = currentNode->getShortestPath();
             closedNodesSet.insert(currentNode);       // so we won't check currentNode again
-          //  currentNode->setVisited();
+            //  currentNode->setVisited();
             if (problem->isGoalState(currentNode)) {
-                unsigned long mytotalcost=0;
+                unsigned long mytotalcost = 0;
                 vector<string> direct;
                 vector<int> number;
-              while(currentNode->getParent()!=NULL){
-                   Cell *d =currentNode->getObj();
-                 Cell *dp =currentNode->getParent()->getObj();
-                 if (d->getCol()<dp->getCol()){
-                   int total=  currentNode->getShortestPath();
-                     string s=to_string(total);
-                     direct.push_back("Left("+s+")");
-                 }
-                  if (d->getCol()>dp->getCol()){
-                      int total=  currentNode->getShortestPath();
-                      string s=to_string(total);
-                      direct.push_back("Right("+s+")");
-                  }
-                  if (d->getRow()<dp->getRow()){
-                      int total=  currentNode->getShortestPath();
-                      string s=to_string(total);
-                      direct.push_back("Up("+s+")");
-                  }
-                  if (d->getRow()>dp->getRow()){
-                      int total=  currentNode->getShortestPath();
-                      string s=to_string(total);
-                      direct.push_back("Down("+s+")");
-                  }
-                 // mytotalcost +=currentNode->getCost();
-                  currentNode=currentNode->getParent();
-              }
-
-                for (int jj=direct.size();jj>0;jj--){
-                     plas += direct[jj-1];
+                while (currentNode->getParent() != NULL) {
+                    Cell *d = currentNode->getObj();
+                    Cell *dp = currentNode->getParent()->getObj();
+                    if (d->getCol() < dp->getCol()) {
+                        int total = currentNode->getShortestPath();
+                        string s = to_string(total);
+                        direct.push_back("Left(" + s + ")");
+                    }
+                    if (d->getCol() > dp->getCol()) {
+                        int total = currentNode->getShortestPath();
+                        string s = to_string(total);
+                        direct.push_back("Right(" + s + ")");
+                    }
+                    if (d->getRow() < dp->getRow()) {
+                        int total = currentNode->getShortestPath();
+                        string s = to_string(total);
+                        direct.push_back("Up(" + s + ")");
+                    }
+                    if (d->getRow() > dp->getRow()) {
+                        int total = currentNode->getShortestPath();
+                        string s = to_string(total);
+                        direct.push_back("Down(" + s + ")");
+                    }
+                    // mytotalcost +=currentNode->getCost();
+                    currentNode = currentNode->getParent();
                 }
-            //  mytotalcost+=currentNode->getCost();
-                  cout<<plas<<endl;
-               return plas;
+
+                //string pathSolution = "";
+                for (int jj = direct.size(); jj > 0; jj--) {
+                    if(jj != 1) {
+                        pathSolution += direct[jj - 1] + ",";
+                    }
+                    else {
+                        pathSolution += direct[jj - 1];
+                    }
+                }
+                //  mytotalcost+=currentNode->getCost();
+                cout << "BestFS:" << endl;
+                cout << evaluations << endl;
+                cout<<pathSolution<<endl;
+
+                return pathSolution;
                 // return backtrace(currentNode);
             } else {
-                list<State<T>*> neighbors = problem->getAllPossibleStates(currentNode);
+                list<State<T> *> neighbors = problem->getAllPossibleStates(currentNode);
                 //go over all neighbors of current node
                 for (State<T> *currentNeighbor:neighbors) {
                     //todo : BUG: cell 0x0 passed this test even though it was in closedNoseSet
-                    if ((closedNodesSet.find(currentNeighbor) == closedNodesSet.end())&&
-                        (specialSearchSet.find(currentNeighbor) == specialSearchSet.end())  ) {
+                    if ((closedNodesSet.find(currentNeighbor) == closedNodesSet.end()) &&
+                        (specialSearchSet.find(currentNeighbor) == specialSearchSet.end())) {
                         currentNeighbor->setParent(currentNode);
-                       // currentPathCost += currentNeighbor->getCost()+currentNode->getCost();
-                        currentNeighbor->setShortestPath(currentNode->getShortestPath()+currentNeighbor->getCost());
+                        // currentPathCost += currentNeighbor->getCost()+currentNode->getCost();
+                        currentNeighbor->setShortestPath(currentNode->getShortestPath() + currentNeighbor->getCost());
                         mypq.push(currentNeighbor);
                         specialSearchSet.insert(currentNeighbor);
 
@@ -108,7 +118,8 @@ public:
                         if (currentNeighbor->getShortestPath() >
                             currentNode->getShortestPath() + currentNeighbor->getCost()) {
 
-                            currentNeighbor->setShortestPath(currentNode->getShortestPath() + currentNeighbor->getCost());
+                            currentNeighbor->setShortestPath(
+                                    currentNode->getShortestPath() + currentNeighbor->getCost());
                             currentNeighbor->setParent(currentNode);
                             if (specialSearchSet.find(currentNeighbor) == specialSearchSet.end()) {
                                 mypq.push(currentNeighbor);
@@ -146,7 +157,7 @@ public:
         return path;
     }
 
-    BestFS<T>* clone() override {
+    BestFS<T> *clone() override {
         return new BestFS<T>();
     }
 };
