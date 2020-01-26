@@ -18,7 +18,7 @@ public:
 
     }
 
-    vector<State<T>> search(Matrix *problem) {
+    string search(Matrix *problem) {
         int evaluations = 0;
         queue<State<T>*> bfsQueue;
 
@@ -33,7 +33,8 @@ public:
             if (problem->isGoalState(currentNode)) {
                 cout<<evaluations<<endl;
                 cout<<currentNode->getShortestPath()<<endl;
-                return backtrace(currentNode);
+                return "bla";
+//                return backtrace(currentNode);
             }
 
             list<State<T> *> neighbors = problem->getAllPossibleStates(currentNode);
