@@ -1,9 +1,10 @@
 matrix1: 15x15
+Right(3),Down(5),Down(8),Right(16),Down(16),Right(17),Right(24),Down(28),Right(32),Down(34),Down(42),Right(44),
+Right(47),Right(53),Right(59),Down(63),Right(70),Right(70),Down(71),Down(72),Down(75),Down(81),Right(85),Down(90),
+Right(94),Right(99),Down(100),Down(104)
 matrix2: 20x20
-
-Down(8),Right(8),Right(9),Right(16),Right(20),Down(21),Down(21),Down(23),Down(23),Right(23),Right(31),Down(32),
-Right(40),Right(40),Right(40),Up(42),Right(44),Right(45),Down(51),Down(55),Right(55),Down(55),Right(57),Down(59),
-Right(61),Down(67),Down(69),Right(73),Down(74),Down(81),Down(84),Down(85),Down(88),Right(92),Down(94),Right(97)
+206
+Right(10),Down(12),Down(15),Right(23),Down(23),Right(24),Right(31),Down(35),Right(39),Down(41),Down(49),Right(51),Right(54),Right(60),Right(66),Down(70),Right(77),Right(77),Down(78),Down(79),Down(82),Down(88),Right(92),Down(97),Right(101),Right(106),Down(107),Down(111)
 
 matrix3: 25x25
 matrix4: 27x27

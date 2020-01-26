@@ -1,5 +1,8 @@
 matrix1: 15x15
 matrix2: 20x20
+208
+Right(3),Right(4),Right(11),Right(20),Right(28),Right(32),Right(33),Right(40),Right(44),Right(52),Right(58),Right(67),Down(75),Right(83),Down(85),Down(92),Down(101),Down(101),Down(108),Down(109),Right(117),Down(123),Down(125),Down(131),Down(140),Down(145),Down(146),Down(150)
+
 matrix3: 25x25
 matrix4: 27x27
 matrix5: 30x30
