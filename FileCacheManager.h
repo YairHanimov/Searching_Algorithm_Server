@@ -53,17 +53,21 @@ public:
     }
 
     solution *get(problem p) override {
-        this->s;
         auto it = cache.find(p);
         if (it == cache.end()) {
 
             fstream in_file;
             string filename = p;
+            filename += ".txt";
             in_file.open(filename);
-            if (!in_file) {
+            if (!in_file.is_open()) {
                 return nullptr;
             }
-            in_file.read((char *) &s, sizeof(s));
+            string line = "";
+            while(getline(in_file,line)) {
+                s += line;
+            }
+            //in_file.read((char *) &s, sizeof(s));
 
             in_file.close();
             return &s;

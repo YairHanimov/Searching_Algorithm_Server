@@ -29,6 +29,7 @@ public:
 
         priority_queue<State<T> *, vector<State<T> *>, compareStar> mypq; // a priority queue of states to be evaluated
         auto initialNode = problem->getInitialState();
+        initialNode.setShortestPath(initialNode.getCost());
         problem->givemegoalcell().setHeuristic(0);
         initialNode.setHeuristic(initialNode.getObj(), problem->givemegoalcell().getObj());
         mypq.push(&initialNode);

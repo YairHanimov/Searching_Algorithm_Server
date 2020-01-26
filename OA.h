@@ -5,7 +5,6 @@
 
 #ifndef SEARCHING_ALGORITHM_SERVER_OA_H
 #define SEARCHING_ALGORITHM_SERVER_OA_H
-
 #include <cstring>
 #include "Solver.h"
 #include "Searcher.h"

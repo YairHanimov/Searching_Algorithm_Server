@@ -25,6 +25,7 @@ public:
         stack<State<T> *> dfsStack;
 
         auto initialNode = problem->getInitialState();
+        initialNode.setShortestPath(initialNode.getCost());
         dfsStack.push(&initialNode);
         initialNode.setVisited();
 
