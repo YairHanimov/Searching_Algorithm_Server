@@ -75,7 +75,7 @@ public:
                 cout << "BFS:" << endl;
                 cout << evaluations << endl;
                 cout<<pathSolution<<endl;
-//                return backtrace(currentNode);
+                return pathSolution;
             }
 
             list<State<T> *> neighbors = problem->getAllPossibleStates(currentNode);

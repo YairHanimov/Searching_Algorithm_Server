@@ -72,13 +72,12 @@ public:
                     }
                 }
 
-//                cout<<evaluations<<endl;
-//                cout<<currentNode->getShortestPath()<<endl;
+
                 cout << "DFS:" << endl;
                 cout << evaluations << endl;
-                cout<<pathSolution<<endl;
-                return to_string(evaluations);
-                //                return backtrace(currentNode);
+                cout << pathSolution << endl;
+                return pathSolution;
+
             }
 
             list<State<T> *> neighbors = problem->getAllPossibleStates(currentNode);

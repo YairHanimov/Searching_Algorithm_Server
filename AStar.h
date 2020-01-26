@@ -97,7 +97,7 @@ public:
                 cout << evaluations << endl;
                 cout<<pathSolution<<endl;
                 return pathSolution;
-                //return backtrace(currentNode);
+
             } else {
                 list<State<T> *> neighbors = problem->getAllPossibleStates(currentNode);
                 //go over all neighbors of current node
