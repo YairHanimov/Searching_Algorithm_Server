@@ -1,13 +1,100 @@
 matrix1: 15x15
-matrix2: 20x20
+
 208
-Right(3),Right(4),Right(11),Right(20),Right(28),Right(32),Right(33),Right(40),Right(44),Right(52),Right(58),Right(67),Down(75),Right(83),Down(85),Down(92),Down(101),Down(101),Down(108),Down(109),Right(117),Down(123),Down(125),Down(131),Down(140),Down(145),Down(146),Down(150)
+Right(3),Right(4),Right(11),Right(20),Right(28),Right(32),Right(33),Right(40),Right(44),Right(52),Right(58),Right(67),
+Down(75),Right(83),Down(85),Down(92),Down(101),Down(101),Down(108),Down(109),Right(117),Down(123),Down(125),Down(131),
+Down(140),Down(145),Down(146),Down(150)
+
+
+matrix2: 18x18
+
+292
+Right(9),Down(9),Right(10),Right(17),Right(21),Right(27),Right(31),Right(31),Right(33),Right(35),Right(36),Right(37),
+Right(41),Right(47),Right(49),Right(53),Down(57),Down(59),Down(59),Down(64),Right(65),Down(70),Down(73),Down(81),
+Right(86),Down(95),Down(101),Down(110),Down(111),Down(114),Down(115),Down(124),Down(127),Down(130)
 
 matrix3: 25x25
+
+557
+Right(8),Right(15),Right(15),Down(15),Down(15),Right(20),Right(21),Right(25),Right(34),Right(39),Right(42),Right(51),
+Right(58),Right(62),Right(62),Right(66),Right(70),Right(70),Right(76),Right(76),Right(83),Right(84),Down(88),Down(97),
+Down(101),Down(108),Right(116),Down(122),Down(123),Down(131),Right(131),Down(131),Down(133),Down(140),Down(144),
+Down(148),Right(153),Down(153),Down(154),Down(155),Down(160),Down(160),Down(160),Down(168),Down(176),Down(183),
+Down(188),Right(196)
+
 matrix4: 27x27
+
+660
+Right(0),Right(9),Right(10),Right(15),Right(17),Right(24),Right(28),Down(35),Right(41),Right(45),Right(50),Right(51),
+Right(58),Right(63),Right(66),Right(69),Right(78),Right(82),Right(90),Right(99),Right(100),Right(100),Right(100),
+Right(106),Right(112),Right(118),Down(120),Down(125),Down(129),Down(129),Down(129),Down(135),Down(141),Down(142),
+Down(144),Down(147),Down(149),Down(158),Right(158),Down(166),Down(168),Down(176),Down(179),Down(179),Down(185),
+Down(187),Down(188),Down(197),Down(199),Down(206),Down(213),Down(219)
+
 matrix5: 30x30
+
+821
+Right(4),Right(11),Right(18),Right(24),Right(27),Right(30),Down(37),Right(42),Right(45),Right(54),Right(54),Right(60),
+Right(69),Right(78),Down(85),Right(93),Down(96),Right(99),Right(108),Right(114),Right(114),Right(121),Right(123),
+Down(126),Right(132),Right(138),Right(142),Right(149),Down(156),Right(160),Down(164),Down(166),Down(167),Right(167),
+Down(170),Down(171),Down(177),Down(180),Down(186),Down(192),Right(199),Down(206),Down(209),Down(209),Down(216),
+Down(225),Right(229),Down(232),Down(239),Down(246),Down(253),Down(254),Right(263),Down(268),Down(268),Down(271),
+Down(280),Down(286)
+
 matrix6: 35x35
+
+1104
+Right(8),Right(12),Right(16),Right(22),Right(31),Down(37),Right(46),Right(46),Right(51),Right(58),Right(65),Right(70),
+Right(77),Right(77),Right(83),Right(86),Right(90),Down(90),Right(99),Right(108),Down(111),Down(116),Right(125),
+Right(127),Right(131),Right(140),Right(146),Right(147),Down(150),Right(157),Right(161),Right(161),Right(162),Down(165),
+Right(168),Right(177),Down(179),Down(187),Down(193),Down(198),Down(205),Down(214),Down(214),Down(220),Down(223),
+Down(227),Down(236),Down(240),Down(244),Down(248),Down(254),Down(257),Down(257),Down(261),Down(270),Right(270),
+Right(272),Right(278),Down(279),Down(283),Down(289),Down(292),Down(299),Down(305),Right(313),Down(316),Down(325),
+Down(330)
+
 matrix7: 37x37
+
+1320
+Right(2),Right(10),Right(16),Right(24),Right(26),Right(38),Right(40),Right(44),Right(45),Right(54),Right(63),Right(68),
+Right(80),Right(81),Right(82),Right(83),Right(85),Right(92),Right(95),Right(96),Right(102),Right(111),Right(114),
+Right(123),Right(130),Right(137),Right(146),Right(151),Right(157),Right(161),Right(166),Right(167),Right(173),Down(178),
+Down(180),Down(182),Right(191),Right(203),Down(211),Down(214),Down(220),Down(223),Right(227),Down(229),Down(237),
+Down(239),Down(240),Down(248),Down(257),Down(265),Down(267),Down(275),Down(276),Down(279),Down(283),Down(292),Down(294),
+Down(300),Down(306),Down(318),Down(320),Down(322),Down(328),Down(331),Down(334),Down(343),Down(345),Down(348),Down(357),
+Down(369),Down(373),Down(379)
+
 matrix8: 40x40
+
+1455
+Down(8),Right(13),Right(17),Right(26),Right(31),Down(39),Right(48),Right(57),Right(66),Down(70),Right(73),Right(77),
+Right(79),Right(79),Right(82),Right(90),Right(93),Right(99),Right(106),Right(108),Down(114),Right(123),Right(125),
+Right(134),Right(141),Right(146),Right(154),Down(161),Right(161),Right(161),Right(166),Down(171),Down(177),Right(186),
+Right(193),Right(202),Right(208),Right(213),Right(220),Right(227),Right(228),Down(235),Right(237),Right(242),Right(247),
+Down(255),Down(264),Down(265),Right(269),Down(270),Down(278),Down(287),Down(295),Down(295),Down(299),Down(307),
+Down(309),Down(313),Down(320),Down(323),Down(331),Down(336),Down(341),Down(344),Down(347),Down(350),Down(350),Down(351),
+Down(356),Down(361),Down(361),Down(369),Down(378),Down(387),Down(393),Down(393),Right(394),Down(396)
+
 matrix9: 45x45
+
+1856
+Right(6),Right(6),Right(7),Right(16),Right(25),Right(31),Right(33),Right(40),Down(49),Right(58),Right(60),Right(62),
+Right(64),Down(69),Right(76),Right(78),Right(81),Right(82),Right(82),Right(89),Right(93),Right(102),Right(102),
+Down(106),Right(113),Down(119),Right(121),Right(125),Right(127),Right(127),Right(136),Right(142),Right(143),Down(145),
+Right(146),Right(148),Right(157),Right(165),Right(168),Right(174),Right(179),Right(185),Right(193),Right(195),Down(200),
+Down(206),Down(213),Right(220),Down(228),Down(234),Down(239),Right(239),Down(244),Down(245),Down(246),Down(247),
+Down(256),Down(261),Down(267),Down(267),Down(271),Down(272),Down(276),Right(282),Down(289),Down(294),Down(303),
+Down(308),Down(308),Down(309),Down(315),Down(324),Down(331),Down(331),Down(332),Down(336),Right(343),Down(350),
+Down(354),Down(362),Right(367),Down(368),Down(370),Down(378),Down(380),Down(380),Down(383),Down(389)
+
 matrix10: 50x50
+
+2269
+Down(5),Down(11),Down(16),Down(17),Right(20),Right(20),Right(24),Right(27),Right(33),Right(41),Right(48),Right(55),
+Right(63),Right(70),Right(77),Right(79),Right(86),Right(86),Right(93),Right(94),Right(98),Right(107),Right(112),
+Right(113),Right(116),Right(118),Right(124),Right(125),Right(132),Right(134),Right(138),Right(140),Right(144),
+Right(146),Right(153),Right(154),Right(154),Right(156),Right(164),Right(166),Right(167),Down(170),Right(179),Right(186),
+Down(187),Down(188),Right(193),Right(196),Right(201),Down(204),Right(204),Right(209),Down(211),Down(211),Down(213),
+Down(222),Down(223),Down(224),Down(225),Right(227),Down(236),Down(243),Down(250),Down(250),Down(250),Down(255),
+Down(263),Down(267),Down(274),Down(281),Down(283),Down(284),Down(290),Down(299),Right(299),Right(306),Right(310),
+Down(312),Down(317),Down(323),Down(323),Down(327),Down(330),Down(337),Down(341),Down(345),Down(354),Down(363),Down(366),
+Down(371),Down(377),Down(384),Down(385),Down(394),Right(396),Down(396),Down(397),Down(397)
