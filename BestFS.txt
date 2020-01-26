@@ -1,0 +1,15 @@
+matrix1: 15x15
+matrix2: 20x20
+
+Down(8),Right(8),Right(9),Right(16),Right(20),Down(21),Down(21),Down(23),Down(23),Right(23),Right(31),Down(32),
+Right(40),Right(40),Right(40),Up(42),Right(44),Right(45),Down(51),Down(55),Right(55),Down(55),Right(57),Down(59),
+Right(61),Down(67),Down(69),Right(73),Down(74),Down(81),Down(84),Down(85),Down(88),Right(92),Down(94),Right(97)
+
+matrix3: 25x25
+matrix4: 27x27
+matrix5: 30x30
+matrix6: 35x35
+matrix7: 37x37
+matrix8: 40x40
+matrix9: 45x45
+matrix10: 50x50

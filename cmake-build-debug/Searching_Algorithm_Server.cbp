@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="Searching_Algorithm_Server"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/home/eyalgolan/CLionProjects/Searching_Algorithm_Server/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/eyalgolan/CLionProjects/Searching_Algorithm_Server/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/eyalgolan/CLionProjects/Searching_Algorithm_Server/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/eyalgolan/CLionProjects/Searching_Algorithm_Server/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/eyalgolan/CLionProjects/Searching_Algorithm_Server/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/home/eyalgolan/CLionProjects/Searching_Algorithm_Server/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/eyalgolan/CLionProjects/Searching_Algorithm_Server/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/eyalgolan/CLionProjects/Searching_Algorithm_Server/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/eyalgolan/CLionProjects/Searching_Algorithm_Server/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/eyalgolan/CLionProjects/Searching_Algorithm_Server/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="Searching_Algorithm_Server">
+				<Option output="/home/eyalgolan/CLionProjects/Searching_Algorithm_Server/cmake-build-debug/Searching_Algorithm_Server" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/eyalgolan/CLionProjects/Searching_Algorithm_Server/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/c++/5"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
+					<Add directory="/usr/include/c++/5/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/eyalgolan/CLionProjects/Searching_Algorithm_Server/cmake-build-debug/Makefile&quot;  VERBOSE=1 Searching_Algorithm_Server"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/eyalgolan/CLionProjects/Searching_Algorithm_Server/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/eyalgolan/CLionProjects/Searching_Algorithm_Server/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/eyalgolan/CLionProjects/Searching_Algorithm_Server/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="Searching_Algorithm_Server/fast">
+				<Option output="/home/eyalgolan/CLionProjects/Searching_Algorithm_Server/cmake-build-debug/Searching_Algorithm_Server" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/eyalgolan/CLionProjects/Searching_Algorithm_Server/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/c++/5"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
+					<Add directory="/usr/include/c++/5/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/eyalgolan/CLionProjects/Searching_Algorithm_Server/cmake-build-debug/Makefile&quot;  VERBOSE=1 Searching_Algorithm_Server/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/eyalgolan/CLionProjects/Searching_Algorithm_Server/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/eyalgolan/CLionProjects/Searching_Algorithm_Server/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/eyalgolan/CLionProjects/Searching_Algorithm_Server/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/home/eyalgolan/CLionProjects/Searching_Algorithm_Server/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/eyalgolan/CLionProjects/Searching_Algorithm_Server/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/eyalgolan/CLionProjects/Searching_Algorithm_Server/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/eyalgolan/CLionProjects/Searching_Algorithm_Server/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/eyalgolan/CLionProjects/Searching_Algorithm_Server/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/home/eyalgolan/CLionProjects/Searching_Algorithm_Server/AStar.cpp">
+			<Option target="Searching_Algorithm_Server"/>
+		</Unit>
+		<Unit filename="/home/eyalgolan/CLionProjects/Searching_Algorithm_Server/AStar.h">
+			<Option target="Searching_Algorithm_Server"/>
+		</Unit>
+		<Unit filename="/home/eyalgolan/CLionProjects/Searching_Algorithm_Server/BFS.cpp">
+			<Option target="Searching_Algorithm_Server"/>
+		</Unit>
+		<Unit filename="/home/eyalgolan/CLionProjects/Searching_Algorithm_Server/BFS.h">
+			<Option target="Searching_Algorithm_Server"/>
+		</Unit>
+		<Unit filename="/home/eyalgolan/CLionProjects/Searching_Algorithm_Server/BestFS.cpp">
+			<Option target="Searching_Algorithm_Server"/>
+		</Unit>
+		<Unit filename="/home/eyalgolan/CLionProjects/Searching_Algorithm_Server/BestFS.h">
+			<Option target="Searching_Algorithm_Server"/>
+		</Unit>
+		<Unit filename="/home/eyalgolan/CLionProjects/Searching_Algorithm_Server/CacheManager.cpp">
+			<Option target="Searching_Algorithm_Server"/>
+		</Unit>
+		<Unit filename="/home/eyalgolan/CLionProjects/Searching_Algorithm_Server/CacheManager.h">
+			<Option target="Searching_Algorithm_Server"/>
+		</Unit>
+		<Unit filename="/home/eyalgolan/CLionProjects/Searching_Algorithm_Server/Cell.cpp">
+			<Option target="Searching_Algorithm_Server"/>
+		</Unit>
+		<Unit filename="/home/eyalgolan/CLionProjects/Searching_Algorithm_Server/Cell.h">
+			<Option target="Searching_Algorithm_Server"/>
+		</Unit>
+		<Unit filename="/home/eyalgolan/CLionProjects/Searching_Algorithm_Server/ClientHandler.cpp">
+			<Option target="Searching_Algorithm_Server"/>
+		</Unit>
+		<Unit filename="/home/eyalgolan/CLionProjects/Searching_Algorithm_Server/ClientHandler.h">
+			<Option target="Searching_Algorithm_Server"/>
+		</Unit>
+		<Unit filename="/home/eyalgolan/CLionProjects/Searching_Algorithm_Server/DFS.cpp">
+			<Option target="Searching_Algorithm_Server"/>
+		</Unit>
+		<Unit filename="/home/eyalgolan/CLionProjects/Searching_Algorithm_Server/DFS.h">
+			<Option target="Searching_Algorithm_Server"/>
+		</Unit>
+		<Unit filename="/home/eyalgolan/CLionProjects/Searching_Algorithm_Server/FileCacheManager.cpp">
+			<Option target="Searching_Algorithm_Server"/>
+		</Unit>
+		<Unit filename="/home/eyalgolan/CLionProjects/Searching_Algorithm_Server/FileCacheManager.h">
+			<Option target="Searching_Algorithm_Server"/>
+		</Unit>
+		<Unit filename="/home/eyalgolan/CLionProjects/Searching_Algorithm_Server/Matrix.cpp">
+			<Option target="Searching_Algorithm_Server"/>
+		</Unit>
+		<Unit filename="/home/eyalgolan/CLionProjects/Searching_Algorithm_Server/Matrix.h">
+			<Option target="Searching_Algorithm_Server"/>
+		</Unit>
+		<Unit filename="/home/eyalgolan/CLionProjects/Searching_Algorithm_Server/MyClientHandler.cpp">
+			<Option target="Searching_Algorithm_Server"/>
+		</Unit>
+		<Unit filename="/home/eyalgolan/CLionProjects/Searching_Algorithm_Server/MyClientHandler.h">
+			<Option target="Searching_Algorithm_Server"/>
+		</Unit>
+		<Unit filename="/home/eyalgolan/CLionProjects/Searching_Algorithm_Server/MyParallelServer.cpp">
+			<Option target="Searching_Algorithm_Server"/>
+		</Unit>
+		<Unit filename="/home/eyalgolan/CLionProjects/Searching_Algorithm_Server/MyParallelServer.h">
+			<Option target="Searching_Algorithm_Server"/>
+		</Unit>
+		<Unit filename="/home/eyalgolan/CLionProjects/Searching_Algorithm_Server/MySerialServer.cpp">
+			<Option target="Searching_Algorithm_Server"/>
+		</Unit>
+		<Unit filename="/home/eyalgolan/CLionProjects/Searching_Algorithm_Server/MySerialServer.h">
+			<Option target="Searching_Algorithm_Server"/>
+		</Unit>
+		<Unit filename="/home/eyalgolan/CLionProjects/Searching_Algorithm_Server/MyTestClientHandler.cpp">
+			<Option target="Searching_Algorithm_Server"/>
+		</Unit>
+		<Unit filename="/home/eyalgolan/CLionProjects/Searching_Algorithm_Server/MyTestClientHandler.h">
+			<Option target="Searching_Algorithm_Server"/>
+		</Unit>
+		<Unit filename="/home/eyalgolan/CLionProjects/Searching_Algorithm_Server/OA.cpp">
+			<Option target="Searching_Algorithm_Server"/>
+		</Unit>
+		<Unit filename="/home/eyalgolan/CLionProjects/Searching_Algorithm_Server/OA.h">
+			<Option target="Searching_Algorithm_Server"/>
+		</Unit>
+		<Unit filename="/home/eyalgolan/CLionProjects/Searching_Algorithm_Server/PriorityQueueState.cpp">
+			<Option target="Searching_Algorithm_Server"/>
+		</Unit>
+		<Unit filename="/home/eyalgolan/CLionProjects/Searching_Algorithm_Server/PriorityQueueState.h">
+			<Option target="Searching_Algorithm_Server"/>
+		</Unit>
+		<Unit filename="/home/eyalgolan/CLionProjects/Searching_Algorithm_Server/Searchable.cpp">
+			<Option target="Searching_Algorithm_Server"/>
+		</Unit>
+		<Unit filename="/home/eyalgolan/CLionProjects/Searching_Algorithm_Server/Searchable.h">
+			<Option target="Searching_Algorithm_Server"/>
+		</Unit>
+		<Unit filename="/home/eyalgolan/CLionProjects/Searching_Algorithm_Server/Searcher.cpp">
+			<Option target="Searching_Algorithm_Server"/>
+		</Unit>
+		<Unit filename="/home/eyalgolan/CLionProjects/Searching_Algorithm_Server/Searcher.h">
+			<Option target="Searching_Algorithm_Server"/>
+		</Unit>
+		<Unit filename="/home/eyalgolan/CLionProjects/Searching_Algorithm_Server/Solver.cpp">
+			<Option target="Searching_Algorithm_Server"/>
+		</Unit>
+		<Unit filename="/home/eyalgolan/CLionProjects/Searching_Algorithm_Server/Solver.h">
+			<Option target="Searching_Algorithm_Server"/>
+		</Unit>
+		<Unit filename="/home/eyalgolan/CLionProjects/Searching_Algorithm_Server/State.cpp">
+			<Option target="Searching_Algorithm_Server"/>
+		</Unit>
+		<Unit filename="/home/eyalgolan/CLionProjects/Searching_Algorithm_Server/State.h">
+			<Option target="Searching_Algorithm_Server"/>
+		</Unit>
+		<Unit filename="/home/eyalgolan/CLionProjects/Searching_Algorithm_Server/StateCompare.cpp">
+			<Option target="Searching_Algorithm_Server"/>
+		</Unit>
+		<Unit filename="/home/eyalgolan/CLionProjects/Searching_Algorithm_Server/StateCompare.h">
+			<Option target="Searching_Algorithm_Server"/>
+		</Unit>
+		<Unit filename="/home/eyalgolan/CLionProjects/Searching_Algorithm_Server/StringReverser.cpp">
+			<Option target="Searching_Algorithm_Server"/>
+		</Unit>
+		<Unit filename="/home/eyalgolan/CLionProjects/Searching_Algorithm_Server/StringReverser.h">
+			<Option target="Searching_Algorithm_Server"/>
+		</Unit>
+		<Unit filename="/home/eyalgolan/CLionProjects/Searching_Algorithm_Server/compar.cpp">
+			<Option target="Searching_Algorithm_Server"/>
+		</Unit>
+		<Unit filename="/home/eyalgolan/CLionProjects/Searching_Algorithm_Server/compar.h">
+			<Option target="Searching_Algorithm_Server"/>
+		</Unit>
+		<Unit filename="/home/eyalgolan/CLionProjects/Searching_Algorithm_Server/compareStar.cpp">
+			<Option target="Searching_Algorithm_Server"/>
+		</Unit>
+		<Unit filename="/home/eyalgolan/CLionProjects/Searching_Algorithm_Server/compareStar.h">
+			<Option target="Searching_Algorithm_Server"/>
+		</Unit>
+		<Unit filename="/home/eyalgolan/CLionProjects/Searching_Algorithm_Server/comparforset.cpp">
+			<Option target="Searching_Algorithm_Server"/>
+		</Unit>
+		<Unit filename="/home/eyalgolan/CLionProjects/Searching_Algorithm_Server/comparforset.h">
+			<Option target="Searching_Algorithm_Server"/>
+		</Unit>
+		<Unit filename="/home/eyalgolan/CLionProjects/Searching_Algorithm_Server/main.cpp">
+			<Option target="Searching_Algorithm_Server"/>
+		</Unit>
+		<Unit filename="/home/eyalgolan/CLionProjects/Searching_Algorithm_Server/server_side.h">
+			<Option target="Searching_Algorithm_Server"/>
+		</Unit>
+		<Unit filename="/home/eyalgolan/CLionProjects/Searching_Algorithm_Server/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>

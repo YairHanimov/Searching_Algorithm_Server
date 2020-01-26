@@ -1,0 +1,3 @@
+/home/eyalgolan/CLionProjects/Searching_Algorithm_Server/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/eyalgolan/CLionProjects/Searching_Algorithm_Server/cmake-build-debug/CMakeFiles/Searching_Algorithm_Server.dir
+/home/eyalgolan/CLionProjects/Searching_Algorithm_Server/cmake-build-debug/CMakeFiles/edit_cache.dir
