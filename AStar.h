@@ -81,7 +81,6 @@ public:
                     }
                     // mytotalcost +=currentNode->getCost();
                     currentNode = currentNode->getParent();
-
                 }
                 string pathSolution = "";
                 for (int jj = direct.size(); jj > 0; jj--) {
