@@ -6,7 +6,7 @@
 #include "MyParallelServer.h"
 #include "thread"
 
-#define TIMEOUT 15
+#define TIMEOUT 120
 using namespace std;
 
 void MyParallelServer::open() {
@@ -54,13 +54,13 @@ void MyParallelServer::start(int socketfd, ClientHandler *ch, sockaddr_in addres
         cout<<"i am before threads"<<endl;
         //threadPool[i] = thread(&MyParallelServer::lunchThread, this, newC, client_socket, client_socket);
         thread *t = new thread(&ClientHandler::handleClient, this->client_handler->clone(), client_socket, client_socket);
-        t->join();
+        //t->join();
         threadPool.push_back(t);
         //threadPool[i] = thread(&ClientHandler::handleClient, this->client_handler->clone(), client_socket, client_socket);
-        i++;
         if(i == 10) {
             this->stop();
         }
+        i++;
     }
     //closing the listening socket
     close(socketfd);

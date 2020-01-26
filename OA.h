@@ -28,7 +28,9 @@ public:
 
     string solve(string p) override {
         string tester = "";
-
+        if(p==tester){
+            return "";
+        }
         cout << "i am not  empty" << endl;
         Matrix *m = stringToMatrix(p);
         Searcher<Cell> *aStart = new AStar<Cell>();
@@ -44,13 +46,13 @@ public:
 
         char strToChar[n + 1];
         strcpy(strToChar, str.c_str());
-        char *token = strtok(strToChar, "\n");
+        char *token = strtok(strToChar, "\r\n");
         while (token != nullptr) {
 
             //   cout << token << endl;
             line.push_back(token);
 
-            token = strtok(nullptr, "\n");
+            token = strtok(nullptr, "\r\n");
 
         }
         string lexer;
@@ -58,7 +60,7 @@ public:
         int col = 0;
         int mysize = line.size();
         vector<vector<State<Cell> *>> matrix;
-        while (row < (mysize - 3)) {
+        while (row < (mysize - 2)) {
             vector<State<Cell> *> stateLine;
             lexer += line.front();
             line.erase(line.begin());
@@ -112,6 +114,7 @@ public:
 //        returnMatrix->matrix = matrix;
 //        returnMatrix->start = start;
 //        returnMatrix->end = end;
+
 
         Matrix *returnMatrix = new Matrix(matrix, start1, start2, end1, end2);
         int test = matrix.size();

@@ -6,13 +6,16 @@
 #include <fstream>
 #include "unordered_map"
 #include "CacheManager.h"
+#include <unordered_map>
 
 using namespace std;
 
 template<class problem, class solution>
 class FileCacheManager : public CacheManager<problem, solution> {
 private:
+    unordered_map<problem,string> map;
     solution s;
+    int counter=1;
 public:
 
     list<pair<problem, solution>> dq;
@@ -23,15 +26,18 @@ public:
 
         //create file with the problem as it's name
         string problemName = p;
-        problemName += ".txt";
+        string mycounter=to_string(counter);
+       this->map.insert({p,mycounter});
+        map[problemName]+=mycounter+ ".txt";
+        //problemName += mycounter+ ".txt";
         string solutionName = s;
-        ofstream problemFile(problemName);
+        ofstream problemFile(map[problemName]);
 
         //check file created successfuly
         if (!problemFile) {
             throw "error opening file";
         }
-
+          counter++;
         //write solution to file
         problemFile << solutionName.c_str() << endl;
 
@@ -57,9 +63,11 @@ public:
         if (it == cache.end()) {
 
             fstream in_file;
-            string filename = p;
-            filename += ".txt";
-            in_file.open(filename);
+            string kal=p;
+
+          string filename = this->map[kal];
+           filename += ".txt";
+          in_file.open(filename);
             if (!in_file.is_open()) {
                 return nullptr;
             }

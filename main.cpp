@@ -16,6 +16,7 @@ int main() {
     //part three
     auto *cm = new FileCacheManager<string,string>();
     auto *ch = new MyClientHandler<string,string>(cm);
+    //ch->handleClient(1,1);
     auto *pm = new MyParallelServer(ch);
     pm->open();
     //ch->handleClient(1,1);
