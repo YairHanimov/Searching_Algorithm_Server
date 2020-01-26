@@ -38,6 +38,7 @@ public:
                 // calling to oa because we dont have solution
                 auto *object_adapter = new OA<string, string>();
                 string afterfix = "";
+                cout<<"i am before solve"<<endl;
                 afterfix = object_adapter->solve(buffer);
                 this->cache_manager->insert(buffer, afterfix);
             } else {

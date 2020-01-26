@@ -5,6 +5,7 @@
 
 #ifndef SEARCHING_ALGORITHM_SERVER_OA_H
 #define SEARCHING_ALGORITHM_SERVER_OA_H
+
 #include <cstring>
 #include "Solver.h"
 #include "Searcher.h"
@@ -26,9 +27,12 @@ public:
     OA() = default;
 
     string solve(string p) override {
+        string tester = "";
+
+        cout << "i am not  empty" << endl;
         Matrix *m = stringToMatrix(p);
         Searcher<Cell> *aStart = new AStar<Cell>();
-        cout<<"im trying to solve with AStar"<<endl;
+        cout << "im trying to solve with AStar" << endl;
         string strAstar = aStart->search(m);
         return strAstar;
         cout << "-----finish OA solvers-----" << endl;

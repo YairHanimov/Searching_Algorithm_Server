@@ -49,12 +49,14 @@ void MyParallelServer::start(int socketfd, ClientHandler *ch, sockaddr_in addres
         //accepting a client
         socklen_t addrlen = sizeof(sockaddr_in);
         int client_socket = accept(socketfd, (struct sockaddr *) &address, &addrlen);
-        ClientHandler* newC = this->client_handler->clone();
+
+        //this->client_handler->handleClient(client_socket, client_socket);
         cout<<"i am before threads"<<endl;
         //threadPool[i] = thread(&MyParallelServer::lunchThread, this, newC, client_socket, client_socket);
         thread *t = new thread(&ClientHandler::handleClient, this->client_handler->clone(), client_socket, client_socket);
-        t->detach();
+        t->join();
         threadPool.push_back(t);
+        //threadPool[i] = thread(&ClientHandler::handleClient, this->client_handler->clone(), client_socket, client_socket);
         i++;
         if(i == 10) {
             this->stop();
