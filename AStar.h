@@ -84,12 +84,18 @@ public:
                 }
                 string pathSolution = "";
                 for (int jj = direct.size(); jj > 0; jj--) {
-                    pathSolution += direct[jj - 1];
+                    if(jj != 1) {
+                        pathSolution += direct[jj - 1] + ",";
+                    }
+                    else {
+                        pathSolution += direct[jj - 1];
+                    }
                 }
                 //cout<<plas<<endl;
                 mytotalcost += currentNode->getCost();
                 cout << "AStar:" << endl;
                 cout << evaluations << endl;
+                cout<<pathSolution<<endl;
                 return pathSolution;
                 //return backtrace(currentNode);
             } else {

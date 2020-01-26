@@ -20,7 +20,7 @@ public:
 
     string search(Matrix *problem) {
         int evaluations = 0;
-        queue<State<T>*> bfsQueue;
+        queue<State<T> *> bfsQueue;
 
         auto initialNode = problem->getInitialState();
         bfsQueue.push(&initialNode);
@@ -31,10 +31,50 @@ public:
             State<T> *currentNode = bfsQueue.front();
             bfsQueue.pop();
             if (problem->isGoalState(currentNode)) {
+
+                unsigned long mytotalcost = 0;
+                vector<string> direct;
+                vector<int> number;
+                while (currentNode->getParent() != NULL) {
+                    Cell *d = currentNode->getObj();
+                    Cell *dp = currentNode->getParent()->getObj();
+                    if (d->getCol() < dp->getCol()) {
+                        int total = currentNode->getShortestPath();
+                        string s = to_string(total);
+                        direct.push_back("Left(" + s + ")");
+                    }
+                    if (d->getCol() > dp->getCol()) {
+                        int total = currentNode->getShortestPath();
+                        string s = to_string(total);
+                        direct.push_back("Right(" + s + ")");
+                    }
+                    if (d->getRow() < dp->getRow()) {
+                        int total = currentNode->getShortestPath();
+                        string s = to_string(total);
+                        direct.push_back("Up(" + s + ")");
+                    }
+                    if (d->getRow() > dp->getRow()) {
+                        int total = currentNode->getShortestPath();
+                        string s = to_string(total);
+                        direct.push_back("Down(" + s + ")");
+                    }
+                    // mytotalcost +=currentNode->getCost();
+                    currentNode = currentNode->getParent();
+                }
+                string pathSolution = "";
+                for (int jj = direct.size(); jj > 0; jj--) {
+                    if (jj != 1) {
+                        pathSolution += direct[jj - 1] + ",";
+                    } else {
+                        pathSolution += direct[jj - 1];
+                    }
+                }
+
 //                cout<<evaluations<<endl;
 //                cout<<currentNode->getShortestPath()<<endl;
-                cout<<"BFS:"<<endl;
-                cout <<evaluations<<endl;
+                cout << "BFS:" << endl;
+                cout << evaluations << endl;
+                cout<<pathSolution<<endl;
 //                return backtrace(currentNode);
             }
 
@@ -62,7 +102,7 @@ public:
         return path;
     }
 
-    BFS<T>* clone() override {
+    BFS<T> *clone() override {
         return new BFS<T>();
     }
 };

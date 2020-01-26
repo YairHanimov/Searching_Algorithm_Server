@@ -1,0 +1,10 @@
+matrix1: 15x15
+matrix2: 20x20
+matrix3: 25x25
+matrix4: 27x27
+matrix5: 30x30
+matrix6: 35x35
+matrix7: 37x37
+matrix8: 40x40
+matrix9: 45x45
+matrix10: 50x50

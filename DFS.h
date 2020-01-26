@@ -33,10 +33,50 @@ public:
             State<T> *currentNode = dfsStack.top();
             dfsStack.pop();
             if (problem->isGoalState(currentNode)) {
+
+                unsigned long mytotalcost = 0;
+                vector<string> direct;
+                vector<int> number;
+                while (currentNode->getParent() != NULL) {
+                    Cell *d = currentNode->getObj();
+                    Cell *dp = currentNode->getParent()->getObj();
+                    if (d->getCol() < dp->getCol()) {
+                        int total = currentNode->getShortestPath();
+                        string s = to_string(total);
+                        direct.push_back("Left(" + s + ")");
+                    }
+                    if (d->getCol() > dp->getCol()) {
+                        int total = currentNode->getShortestPath();
+                        string s = to_string(total);
+                        direct.push_back("Right(" + s + ")");
+                    }
+                    if (d->getRow() < dp->getRow()) {
+                        int total = currentNode->getShortestPath();
+                        string s = to_string(total);
+                        direct.push_back("Up(" + s + ")");
+                    }
+                    if (d->getRow() > dp->getRow()) {
+                        int total = currentNode->getShortestPath();
+                        string s = to_string(total);
+                        direct.push_back("Down(" + s + ")");
+                    }
+                    // mytotalcost +=currentNode->getCost();
+                    currentNode = currentNode->getParent();
+                }
+                string pathSolution = "";
+                for (int jj = direct.size(); jj > 0; jj--) {
+                    if (jj != 1) {
+                        pathSolution += direct[jj - 1] + ",";
+                    } else {
+                        pathSolution += direct[jj - 1];
+                    }
+                }
+
 //                cout<<evaluations<<endl;
 //                cout<<currentNode->getShortestPath()<<endl;
                 cout << "DFS:" << endl;
                 cout << evaluations << endl;
+                cout<<pathSolution<<endl;
                 return to_string(evaluations);
                 //                return backtrace(currentNode);
             }
