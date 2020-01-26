@@ -26,19 +26,10 @@ public:
     OA() = default;
 
     string solve(string p) override {
-        Matrix *m1 = stringToMatrix(p);
-        Searcher<Cell> *dfs = new DFS<Cell>();
-        string strDFS = dfs->search(m1);
-        Matrix *m2 = stringToMatrix(p);
-        Searcher<Cell> *bfs = new BFS<Cell>();
-        string strBFS = bfs->search(m2);
-        Matrix *m3 = stringToMatrix(p);
-        Searcher<Cell> *bestFS = new BestFS<Cell>();
-        string strBestFS = bestFS->search(m3);
-        Matrix *m4 = stringToMatrix(p);
+        Matrix *m = stringToMatrix(p);
         Searcher<Cell> *aStart = new AStar<Cell>();
-        string strAstar = aStart->search(m4);
-
+        string strAstar = aStart->search(m);
+        return strAstar;
         cout << "-----finish OA solvers-----" << endl;
     }
 

@@ -139,6 +139,7 @@ CMakeFiles/Searching_Algorithm_Server.dir/main.cpp.o: ../DFS.h
 CMakeFiles/Searching_Algorithm_Server.dir/main.cpp.o: ../FileCacheManager.h
 CMakeFiles/Searching_Algorithm_Server.dir/main.cpp.o: ../Matrix.h
 CMakeFiles/Searching_Algorithm_Server.dir/main.cpp.o: ../MyClientHandler.h
+CMakeFiles/Searching_Algorithm_Server.dir/main.cpp.o: ../MyParallelServer.h
 CMakeFiles/Searching_Algorithm_Server.dir/main.cpp.o: ../MySerialServer.h
 CMakeFiles/Searching_Algorithm_Server.dir/main.cpp.o: ../MyTestClientHandler.h
 CMakeFiles/Searching_Algorithm_Server.dir/main.cpp.o: ../OA.h

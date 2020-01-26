@@ -140,6 +140,7 @@ CMakeFiles/Searching_Algorithm_Server.dir/main.cpp.o
  /home/eyalgolan/CLionProjects/Searching_Algorithm_Server/FileCacheManager.h
  /home/eyalgolan/CLionProjects/Searching_Algorithm_Server/Matrix.h
  /home/eyalgolan/CLionProjects/Searching_Algorithm_Server/MyClientHandler.h
+ /home/eyalgolan/CLionProjects/Searching_Algorithm_Server/MyParallelServer.h
  /home/eyalgolan/CLionProjects/Searching_Algorithm_Server/MySerialServer.h
  /home/eyalgolan/CLionProjects/Searching_Algorithm_Server/MyTestClientHandler.h
  /home/eyalgolan/CLionProjects/Searching_Algorithm_Server/OA.h
