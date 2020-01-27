@@ -30,13 +30,19 @@ We used the Adapter Object to resolve the issue and uphold any principles
 **MyClientHandler**
 
 Create the MyClientHandler class to fit the following communication protocol:
+
 • The customer sends line by line until a line with the value “end” is received
+
 • Each row applies a comma-separated numeric value, so the row collection creates a matrix of
 Values.
+
 • Then the customer sends two more lines. Each row has two comma-separated values: a row
 Row, Col. and Column
+
 o The values ​​in the first row indicate the entrance to the area
+
 o The values ​​in the second row indicate the exit from the area
+
 • Now the server returns only one string, with comma-separated values. The values ​​will be the type of words
 } Right, Left, Down, Up} that indicate the direction to move in order to traverse the area
 On the cheapest route.
