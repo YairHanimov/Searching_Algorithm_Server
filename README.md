@@ -27,7 +27,7 @@ Implement the server-side algorithm
 We used the Adapter Object to resolve the issue and uphold any principles
 **SOLID** we learned.
 
-###MyClientHandler
+**MyClientHandler**
 
 Create the MyClientHandler class to fit the following communication protocol:
 • The customer sends line by line until a line with the value “end” is received
@@ -41,5 +41,6 @@ o The values ​​in the second row indicate the exit from the area
 } Right, Left, Down, Up} that indicate the direction to move in order to traverse the area
 On the cheapest route.
 
-###MyParallelServer
+**MyParallelServer**
+
 We also implemented MyParallelServer to handle all clients at the same time, using threads.
