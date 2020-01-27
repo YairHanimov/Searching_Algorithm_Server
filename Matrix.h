@@ -14,17 +14,10 @@ public:
     State<Cell> *start;
     State<Cell> *end;
 
-//    int start1;
-//    int start2;
-//    int end1;
-//    int end2;
 
     Matrix(vector<vector<State<Cell> *>> m, int start1, int start2, int end1, int end2) {
         this->matrix = m;
-//        this->start1=start1;
-//        this->start2=start2;
-//        this->end1=end1;
-//        this->end2=end2;
+
         Cell *starterCell = new Cell(start1, start2);
         Cell *endedCell = new Cell(end1, end2);
         this->start = m[start1][start2];
@@ -33,11 +26,6 @@ public:
         setendd(this->end);
 
     }
-//    Matrix(vector<vector<State<Cell> *>> m, State<Cell> *s, State<Cell> *e) {
-//        this->matrix = m;
-//        this->start = s;
-//        this->end = e;
-//    }
 
     State<Cell> getInitialState() override {
         return this->start;
@@ -86,10 +74,6 @@ public:
         }
         return myoptionvector;
     }
-//    virtual void makeMeVistetd(State<Cell> c) override {
-//        c.setVisited();
-//
-//    }
 };
 
 #endif //SEARCHING_ALGORITHM_SERVER_MATRIX_H

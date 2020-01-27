@@ -34,7 +34,7 @@ public:
             State<T> *currentNode = dfsStack.top();
             dfsStack.pop();
             if (problem->isGoalState(currentNode)) {
-
+                //build path
                 unsigned long mytotalcost = 0;
                 vector<string> direct;
                 vector<int> number;
@@ -61,7 +61,6 @@ public:
                         string s = to_string(total);
                         direct.push_back("Down(" + s + ")");
                     }
-                    // mytotalcost +=currentNode->getCost();
                     currentNode = currentNode->getParent();
                 }
                 string pathSolution = "";
@@ -73,7 +72,7 @@ public:
                     }
                 }
 
-
+                //print and return solution
                 cout << "DFS:" << endl;
                 cout << evaluations << endl;
                 cout << pathSolution << endl;
@@ -105,6 +104,7 @@ public:
         return path;
     }
 
+    //clone current object
     DFS<T> *clone() override {
         return new DFS<T>();
     }

@@ -26,9 +26,7 @@ void MyParallelServer::open() {
         cerr << "Could not bind the socket to an IP" << endl;
     }
 
-    //thread handler(&MyParallelServer::start, this, socketfd, this->client_handler, address);
-    //handler.detach();
-    //this->start(socketfd, this->client_handler, address);
+    //creating main thread handler to manage creation of the 10 threads
     thread handler([this, socketfd, address] { start(socketfd, this->client_handler, address); });
     handler.join();
 }
@@ -50,13 +48,9 @@ void MyParallelServer::start(int socketfd, ClientHandler *ch, sockaddr_in addres
         socklen_t addrlen = sizeof(sockaddr_in);
         int client_socket = accept(socketfd, (struct sockaddr *) &address, &addrlen);
 
-        //this->client_handler->handleClient(client_socket, client_socket);
-        cout<<"i am before threads"<<endl;
-        //threadPool[i] = thread(&MyParallelServer::lunchThread, this, newC, client_socket, client_socket);
+        cout<<"Start running threads..."<<endl;
         thread *t = new thread(&ClientHandler::handleClient, this->client_handler->clone(), client_socket, client_socket);
-        //t->join();
         threadPool.push_back(t);
-        //threadPool[i] = thread(&ClientHandler::handleClient, this->client_handler->clone(), client_socket, client_socket);
         if(i == 10) {
             this->stop();
         }
@@ -66,9 +60,7 @@ void MyParallelServer::start(int socketfd, ClientHandler *ch, sockaddr_in addres
     close(socketfd);
 }
 
-void MyParallelServer::lunchThread(ClientHandler *c, int client_socket1, int client_socket2) {
-    c->handleClient(client_socket1, client_socket2);
-}
+//function designed to stop wait for all threads to stop and then end the program
 void MyParallelServer::stop() {
     for (auto & currentThread : threadPool) {
         currentThread->join();

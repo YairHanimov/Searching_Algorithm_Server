@@ -16,7 +16,7 @@ private:
     bool visited = false;           //was visited or not
     double cost = 0;                //cost of visiting
     double shortestPathCost = 0;    //how much cost until now
-    int heuristic = 0;
+    int heuristic = 0;              //data member for heuristic algorithms
 
 public:
     bool operator==(State<T> other) {

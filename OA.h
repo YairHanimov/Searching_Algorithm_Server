@@ -27,19 +27,21 @@ public:
     OA() = default;
 
     string solve(string p) override {
+        //checking problem isnt empty
         string tester = "";
         if(p==tester){
             return "";
         }
-        cout << "i am not  empty" << endl;
+        cout << "Problem received by Object Adapter..." << endl;
         Matrix *m = stringToMatrix(p);
         Searcher<Cell> *aStart = new AStar<Cell>();
-        cout << "im trying to solve with AStar" << endl;
+        cout << "Trying to solve the problem with AStar..." << endl;
         string strAstar = aStart->search(m);
+        cout << "---Finished solving with AStar---" << endl;
         return strAstar;
-        cout << "-----finish OA solvers-----" << endl;
     }
 
+    //building matrix from string input
     Matrix *stringToMatrix(const string str) {
         vector<string> line;
         int n = str.length();
@@ -49,7 +51,6 @@ public:
         char *token = strtok(strToChar, "\r\n");
         while (token != nullptr) {
 
-            //   cout << token << endl;
             line.push_back(token);
 
             token = strtok(nullptr, "\r\n");
@@ -65,7 +66,6 @@ public:
             lexer += line.front();
             line.erase(line.begin());
             strcpy(strToChar, lexer.c_str());
-            //    line.pop_back();
             token = strtok(strToChar, ",");
             while (token != nullptr) {
                 Cell *c = new Cell(row, col);
@@ -106,21 +106,14 @@ public:
             end2 = atoi(token);
             token = strtok(nullptr, ",");
         }
-//        Cell *startCell = new Cell(start1, start2);
-//        Cell *endCell = new Cell(end1, end2);
-//
-//        auto* start = new State<Cell>(startCell);
-//        auto* end = new State<Cell>(endCell);
-//        returnMatrix->matrix = matrix;
-//        returnMatrix->start = start;
-//        returnMatrix->end = end;
 
-
+        //returining the built matrix
         Matrix *returnMatrix = new Matrix(matrix, start1, start2, end1, end2);
         int test = matrix.size();
         return returnMatrix;
     }
 
+    //clone current object
     OA *clone() override {
         Searcher<Cell> *clonedSearcher;
         OA *clonedOA = new OA<string, string>();

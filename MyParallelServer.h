@@ -48,8 +48,6 @@ public:
     void stop() override;
 
     void start(int socketfd, ClientHandler *pHandler, sockaddr_in in);
-
-    void lunchThread(ClientHandler *c, int client_socket1, int client_socket2);
 };
 
 #endif //SEARCHING_ALGORITHM_SERVER_MYPARALLELSERVER_H

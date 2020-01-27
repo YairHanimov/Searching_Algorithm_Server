@@ -35,7 +35,7 @@ public:
         mypq.push(&initialNode);
         initialNode.setVisited();
 
-        set<State<T>, comparforset> closedNodesSet;                    // a set of states already evaluated
+        set<State<T>, comparforset> closedNodesSet;  // a set of states already evaluated
         set<State<T>, comparforset> specialSearchSet;
         specialSearchSet.insert(initialNode);
         int evaluations = 0;
@@ -44,17 +44,13 @@ public:
             evaluations++;
             State<T> *currentNode = (mypq.top());
 
-
-            //         State<T> currentNode =   new State <T>(mypq.top());
             specialSearchSet.erase(mypq.top());
             (mypq.pop());
 
-            //currentNode->setVisited();
+            closedNodesSet.insert(currentNode); // so we won't check currentNode again
 
-            //currentPathCost = currentNode->getShortestPath();
-            closedNodesSet.insert(currentNode);       // so we won't check currentNode again
-            //  currentNode->setVisited();
             if (problem->isGoalState(currentNode)) {
+                //build path
                 int mytotalcost = 0;
                 while (currentNode->getParent() != NULL) {
                     Cell *d = currentNode->getObj();
@@ -79,7 +75,6 @@ public:
                         string s = to_string(total);
                         direct.push_back("Down(" + s + ")");
                     }
-                    // mytotalcost +=currentNode->getCost();
                     currentNode = currentNode->getParent();
                 }
                 string pathSolution = "";
@@ -91,10 +86,12 @@ public:
                         pathSolution += direct[jj - 1];
                     }
                 }
-                //cout<<plas<<endl;
+
                 mytotalcost += currentNode->getCost();
                 cout << "AStar:" << endl;
-                cout << evaluations << endl;
+                cout << "Total evaluations:"<<endl;
+                cout<<evaluations << endl;
+                cout<<"Path:"<<endl;
                 cout<<pathSolution<<endl;
                 return pathSolution;
 
@@ -102,17 +99,14 @@ public:
                 list<State<T> *> neighbors = problem->getAllPossibleStates(currentNode);
                 //go over all neighbors of current node
                 for (State<T> *currentNeighbor:neighbors) {
-                    //todo : BUG: cell 0x0 passed this test even though it was in closedNoseSet
                     if ((closedNodesSet.find(currentNeighbor) == closedNodesSet.end()) &&
                         (specialSearchSet.find(currentNeighbor) == specialSearchSet.end())) {
                         currentNeighbor->setParent(currentNode);
-                        // currentPathCost += currentNeighbor->getCost()+currentNode->getCost();
                         currentNeighbor->setShortestPath(currentNode->getShortestPath() + currentNeighbor->getCost());
                         mypq.push(currentNeighbor);
                         specialSearchSet.insert(currentNeighbor);
 
                     } else {
-//                        currentPathCost += currentNeighbor.getCost()+currentNeighbor.getParent()->getShortestPath();
                         if (currentNeighbor->getShortestPath() >
                             currentNode->getShortestPath() + currentNeighbor->getCost()) {
 
@@ -123,8 +117,6 @@ public:
                                 mypq.push(currentNeighbor);
                                 specialSearchSet.insert(currentNeighbor);
                             }
-//                            mypq.push(currentNeighbor);
-//                            specialSearchSet.insert(currentNeighbor);
                         }
                     }
                 }
@@ -133,15 +125,6 @@ public:
         }
     };
 
-//    bool inStateInSet(set<State<T>, compar> closedNodesSet, State<T> toFind) {
-//        for(typename set<State<T>, compar>::iterator it = closedNodesSet.begin() ; it != closedNodesSet.end() ; it++) {
-//            if(it == toFind){
-//                return true;
-//            }
-//            return false;
-//        }
-//
-//    }
     vector<State<T>> backtrace(State<T> goal) {
         vector<State<T>> path;
         path.push_back(goal);
@@ -154,6 +137,7 @@ public:
         return path;
     }
 
+    //clone current object
     AStar<T> *clone() override {
         return new AStar<T>();
     }

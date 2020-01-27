@@ -31,7 +31,7 @@ public:
             State<T> *currentNode = bfsQueue.front();
             bfsQueue.pop();
             if (problem->isGoalState(currentNode)) {
-
+                //build path
                 unsigned long mytotalcost = 0;
                 vector<string> direct;
                 vector<int> number;
@@ -58,7 +58,7 @@ public:
                         string s = to_string(total);
                         direct.push_back("Down(" + s + ")");
                     }
-                    // mytotalcost +=currentNode->getCost();
+
                     currentNode = currentNode->getParent();
                 }
                 string pathSolution = "";
@@ -70,14 +70,13 @@ public:
                     }
                 }
 
-//                cout<<evaluations<<endl;
-//                cout<<currentNode->getShortestPath()<<endl;
+                //print and return solution
                 cout << "BFS:" << endl;
                 cout << evaluations << endl;
                 cout<<pathSolution<<endl;
                 return pathSolution;
             }
-
+            //go over node's neighbors
             list<State<T> *> neighbors = problem->getAllPossibleStates(currentNode);
             for (State<T> *currentNeighbor:neighbors) {
                 if (!currentNeighbor->getVisited()) {
@@ -102,6 +101,7 @@ public:
         return path;
     }
 
+    //clone current object
     BFS<T> *clone() override {
         return new BFS<T>();
     }

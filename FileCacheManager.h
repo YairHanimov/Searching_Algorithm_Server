@@ -29,7 +29,6 @@ public:
         string mycounter=to_string(counter);
        this->map.insert({p,mycounter});
         map[problemName]+=mycounter+ ".txt";
-        //problemName += mycounter+ ".txt";
         string solutionName = s;
         ofstream problemFile(map[problemName]);
 
@@ -75,7 +74,6 @@ public:
             while(getline(in_file,line)) {
                 s += line;
             }
-            //in_file.read((char *) &s, sizeof(s));
 
             in_file.close();
             return &s;
