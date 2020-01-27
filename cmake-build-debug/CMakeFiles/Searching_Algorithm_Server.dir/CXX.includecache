@@ -6,10 +6,6 @@
 
 #IncludeRegexTransform: 
 
-/home/eyalgolan/CLionProjects/Searching_Algorithm_Server/AStar.cpp
-AStar.h
-/home/eyalgolan/CLionProjects/Searching_Algorithm_Server/AStar.h
-
 /home/eyalgolan/CLionProjects/Searching_Algorithm_Server/AStar.h
 Searcher.h
 /home/eyalgolan/CLionProjects/Searching_Algorithm_Server/Searcher.h
@@ -107,6 +103,22 @@ Solver.h
 /home/eyalgolan/CLionProjects/Searching_Algorithm_Server/Solver.h
 OA.h
 /home/eyalgolan/CLionProjects/Searching_Algorithm_Server/OA.h
+
+/home/eyalgolan/CLionProjects/Searching_Algorithm_Server/MyParallelServer.cpp
+sys/socket.h
+-
+iostream
+-
+unistd.h
+-
+netinet/in.h
+-
+chrono
+/home/eyalgolan/CLionProjects/Searching_Algorithm_Server/chrono
+MyParallelServer.h
+/home/eyalgolan/CLionProjects/Searching_Algorithm_Server/MyParallelServer.h
+thread
+/home/eyalgolan/CLionProjects/Searching_Algorithm_Server/thread
 
 /home/eyalgolan/CLionProjects/Searching_Algorithm_Server/MyParallelServer.h
 sys/socket.h

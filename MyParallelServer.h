@@ -16,7 +16,7 @@
 
 using namespace server_side;
 
-#define DEFAULT_PORT 5400
+#define DEFAULT_PORT 5600
 #define DEFAULT_THREAD_NUM 10
 
 #include "list"
