@@ -2,7 +2,8 @@
 
 **Link to Github**: https://github.com/YairHanimov/Searching_Algorithm_Server
 
-##Overview
+**Overview**
+
 In this program we use a solid principle to solve generic problems that the client send to us, using algorithms.
 After the design template is implemented, the following algorithms are used:
 * BestFirstSearch
