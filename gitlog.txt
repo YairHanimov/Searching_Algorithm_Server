@@ -1,0 +1,1199 @@
+commit d187c63198b4214efc730847c253ece2e96c6f76
+Author: eyalgolan <eyalgolan96@gmail.com>
+Date:   Mon Jan 27 15:00:55 2020 +0200
+
+    edit readme
+
+commit 4ab42017d2c010399b477e1b1ea1ccb91e3f7f6f
+Author: eyalgolan <eyalgolan96@gmail.com>
+Date:   Mon Jan 27 15:00:02 2020 +0200
+
+    edit readme
+
+commit 69fea2c6c7b1d2dcdddf6e5f9ce79c8310b4cec6
+Author: eyalgolan <eyalgolan96@gmail.com>
+Date:   Mon Jan 27 14:59:09 2020 +0200
+
+    edit readme
+
+commit a253d72ff4d3902c7879c18fb43e72b43b0bb4a4
+Author: eyalgolan <eyalgolan96@gmail.com>
+Date:   Mon Jan 27 14:57:53 2020 +0200
+
+    create readme
+
+commit fba0e157b43fa73d732b50e09fd4e8e0c4d034f2
+Author: eyalgolan <eyalgolan96@gmail.com>
+Date:   Mon Jan 27 14:51:04 2020 +0200
+
+    added support for port input
+
+commit 5d3e45769765cf05af372068bbd970675195b5a8
+Author: eyalgolan <eyalgolan96@gmail.com>
+Date:   Mon Jan 27 14:16:42 2020 +0200
+
+    adding missing documentation
+
+commit 204b7819ede2d4bc7279b5d88d2ddaefadb3984b
+Author: eyalgolan <eyalgolan96@gmail.com>
+Date:   Mon Jan 27 14:16:06 2020 +0200
+
+    adding missing documentation
+
+commit 165af0b7da0def15aebd7f789e6722a6ba5fbf59
+Author: eyalgolan <eyalgolan96@gmail.com>
+Date:   Mon Jan 27 01:56:38 2020 +0200
+
+    finish
+
+commit 3a4670f38e75a990f073bc1f4e0e410c12606df4
+Author: eyalgolan <eyalgolan96@gmail.com>
+Date:   Mon Jan 27 01:51:02 2020 +0200
+
+    finish
+
+commit e5b8d83d2cf12746924bfb9cdf183bf7b5a1a962
+Author: eyalgolan <eyalgolan96@gmail.com>
+Date:   Sun Jan 26 22:24:03 2020 +0200
+
+    working on myParralelServer
+
+commit 71661f1ec606dd212a8e4312b28f4548c92ceb3e
+Author: eyalgolan <eyalgolan96@gmail.com>
+Date:   Sun Jan 26 20:55:49 2020 +0200
+
+    working on myParralelServer
+
+commit c49aa177436d4a868a00671272db81e5d3dd2da9
+Author: eyalgolan <eyalgolan96@gmail.com>
+Date:   Sun Jan 26 19:52:51 2020 +0200
+
+    working on myParralelServer
+
+commit 4bd5aa15e66d95fdd0056aa7787b59e404d96b29
+Author: eyalgolan <eyalgolan96@gmail.com>
+Date:   Sun Jan 26 19:38:16 2020 +0200
+
+    update results
+
+commit 2319a323d78a0bee4f285ff22c6ff74893c47dd3
+Merge: 507775f e6a3272
+Author: eyalgolan <eyalgolan96@gmail.com>
+Date:   Sun Jan 26 19:01:23 2020 +0200
+
+    Merge remote-tracking branch 'origin/master'
+    
+    # Conflicts:
+    #	AStar.txt
+    #	BFS.txt
+    #	BestFS.txt
+    #	DFS.txt
+    #	MyClientHandler.h
+
+commit 507775f526b600eba72844c58ba785b0077aee63
+Author: eyalgolan <eyalgolan96@gmail.com>
+Date:   Sun Jan 26 19:00:58 2020 +0200
+
+    orginize search algo files
+
+commit e6a32722a5d58b6786ddbdd497b7c528858960a2
+Merge: e4a38be 7ec5d0e
+Author: yair <hthtr0@gmail.com>
+Date:   Sun Jan 26 18:53:18 2020 +0200
+
+    Merge remote-tracking branch 'origin/master'
+    
+    # Conflicts:
+    #	AStar.h
+    #	BFS.h
+    #	BestFS.h
+    #	CMakeLists.txt
+    #	DFS.h
+    #	FileCacheManager.h
+    #	Matrix.h
+    #	MyClientHandler.h
+    #	MyTestClientHandler.h
+    #	OA.h
+    #	Searcher.h
+    #	State.h
+    #	compar.h
+    #	compareStar.cpp
+    #	main.cpp
+
+commit e4a38be8c6f96de1d5313791b20bbb353d7873b1
+Author: yair <hthtr0@gmail.com>
+Date:   Sun Jan 26 18:52:37 2020 +0200
+
+    finish algo!!
+
+commit 7ec5d0e606612356959bfcc1aa58fb20a9c0024b
+Author: eyalgolan <eyalgolan96@gmail.com>
+Date:   Sun Jan 26 18:51:01 2020 +0200
+
+    orginize search algo files
+
+commit ace1c24b9419b07ddb3fb7d2bdc37b482ea5608c
+Author: eyalgolan <eyalgolan96@gmail.com>
+Date:   Sun Jan 26 18:03:09 2020 +0200
+
+    orginize search algo files
+
+commit b999aeb91a57a16f9066a86d415c1c16867a8cf1
+Author: eyalgolan <eyalgolan96@gmail.com>
+Date:   Sun Jan 26 18:01:36 2020 +0200
+
+    orginize search algo files
+
+commit c8e8c771b4fac7e0b23f06a1691323a95f8e4e8e
+Author: eyalgolan <eyalgolan96@gmail.com>
+Date:   Sun Jan 26 16:44:27 2020 +0200
+
+    orginize search algo files
+
+commit 5531896a21825b7e59c7774837b1144f6452bd55
+Author: eyalgolan <eyalgolan96@gmail.com>
+Date:   Sun Jan 26 16:06:10 2020 +0200
+
+    creating result files and adding printing backtrack to bfs, dfs
+
+commit 02c2691d22f5fc30397c383e194ffa06a292f313
+Author: eyalgolan <eyalgolan96@gmail.com>
+Date:   Sun Jan 26 15:27:00 2020 +0200
+
+    finish testing matrixs, AStar is the best one
+
+commit 0642d6177c1cc7589430d0f9e1481b218c8242f0
+Author: eyalgolan <eyalgolan96@gmail.com>
+Date:   Sun Jan 26 15:17:33 2020 +0200
+
+    testing matrixes 3
+
+commit d93de7434b1bd6b3e35864c27d5c4eab293a2289
+Author: eyalgolan <eyalgolan96@gmail.com>
+Date:   Sun Jan 26 15:13:22 2020 +0200
+
+    testing matrixes 2
+
+commit ed31315382f37b72eae6d21837ff2de5d592a3ca
+Author: eyalgolan <eyalgolan96@gmail.com>
+Date:   Sun Jan 26 15:11:45 2020 +0200
+
+    testing matrixes
+
+commit f16acc9114bad485cf1dbc0e32df67b50f5f5bcf
+Author: eyalgolan <eyalgolan96@gmail.com>
+Date:   Sun Jan 26 14:46:40 2020 +0200
+
+    fix additional issues
+
+commit afe5cd7a3a13afc144d341d13695d46c40942b72
+Author: eyalgolan <eyalgolan96@gmail.com>
+Date:   Sun Jan 26 14:33:03 2020 +0200
+
+    fix cache open existing solution from previous run issues
+
+commit bc85031b1b18dc0128b1eddf538d67499165008e
+Author: eyalgolan <eyalgolan96@gmail.com>
+Date:   Sun Jan 26 11:46:48 2020 +0200
+
+    fix bfs competability
+
+commit bb4a48b523ef328d30353afd05c6fa21b1e1cb6e
+Merge: 8870060 8197493
+Author: eyalgolan <eyalgolan96@gmail.com>
+Date:   Sun Jan 26 11:31:53 2020 +0200
+
+    Merge remote-tracking branch 'origin/ParallelServer' into ParallelServer
+
+commit 8870060d3993cdfb833d6e10578d52dd1f736f74
+Author: eyalgolan <eyalgolan96@gmail.com>
+Date:   Sun Jan 26 11:30:05 2020 +0200
+
+    fixed thread isses
+
+commit 727f8c815093cd65d975f47a223ee9c19249182e
+Author: eyalgolan <eyalgolan96@gmail.com>
+Date:   Fri Jan 24 00:05:21 2020 +0200
+
+    issues with threads
+
+commit 8bcd5a9613bd1cdac1311aa830a4f8ea2bf34d0d
+Author: eyalgolan <eyalgolan96@gmail.com>
+Date:   Thu Jan 23 22:38:09 2020 +0200
+
+    issues with threads
+
+commit 7a336228034d5443e503b5ba14573d87bf4ff441
+Author: eyalgolan <eyalgolan96@gmail.com>
+Date:   Thu Jan 23 22:19:00 2020 +0200
+
+    issues with threads
+
+commit 496468b71da86c9e3fd46edd2920fcf9403a6f49
+Author: eyalgolan <eyalgolan96@gmail.com>
+Date:   Thu Jan 23 21:29:28 2020 +0200
+
+    integrating clone functions
+
+commit ef777688f1c680b54924aafc5046938a96e8312a
+Author: eyalgolan <eyalgolan96@gmail.com>
+Date:   Thu Jan 23 21:24:44 2020 +0200
+
+    integrating clone functions
+
+commit 95dcc1fcac9eaea408980f2ce39a6ecf036a1475
+Author: eyalgolan <eyalgolan96@gmail.com>
+Date:   Thu Jan 23 21:00:12 2020 +0200
+
+    working on thread pool and stop server state
+
+commit e3ca659de1b3f607da6eca85da2e1a4b3f5480b8
+Author: eyalgolan <eyalgolan96@gmail.com>
+Date:   Thu Jan 23 20:55:14 2020 +0200
+
+    working on thread implementation
+
+commit 8197493f3128f12ab873803d159d7468159a1a3b
+Author: eyalgolan <eyalgolan96@gmail.com>
+Date:   Sun Jan 26 11:30:05 2020 +0200
+
+    fixed thread isses
+
+commit 5679904db06d497de8523575e2299179c27ee35c
+Author: eyalgolan <eyalgolan96@gmail.com>
+Date:   Fri Jan 24 00:05:21 2020 +0200
+
+    issues with threads
+
+commit 4eb3972d147220bfa57d0f84f8949d7d72422d72
+Author: yair <hthtr0@gmail.com>
+Date:   Thu Jan 23 23:23:22 2020 +0200
+
+    finish algo!
+
+commit 68f54b75b24efe9bc558df5c89a6810e01e63fd0
+Author: eyalgolan <eyalgolan96@gmail.com>
+Date:   Thu Jan 23 22:38:09 2020 +0200
+
+    issues with threads
+
+commit 66be204ab58426ce89b72829dab6b99a4d713b1d
+Author: eyalgolan <eyalgolan96@gmail.com>
+Date:   Thu Jan 23 22:19:00 2020 +0200
+
+    issues with threads
+
+commit 483c618ba404e4c5ab1698e6ad2f3e6575dd332a
+Author: eyalgolan <eyalgolan96@gmail.com>
+Date:   Thu Jan 23 21:29:28 2020 +0200
+
+    integrating clone functions
+
+commit 55863e6b79b9276e545ee1876f3f1f1c30606191
+Author: eyalgolan <eyalgolan96@gmail.com>
+Date:   Thu Jan 23 21:24:44 2020 +0200
+
+    integrating clone functions
+
+commit 8128b43d5d2f196d5887667599ab990f29ac7b59
+Author: eyalgolan <eyalgolan96@gmail.com>
+Date:   Thu Jan 23 21:00:12 2020 +0200
+
+    working on thread pool and stop server state
+
+commit 64c8956bb4139746d7c34a933f945488ec98e1c2
+Author: eyalgolan <eyalgolan96@gmail.com>
+Date:   Thu Jan 23 20:55:14 2020 +0200
+
+    working on thread implementation
+
+commit b9322f750d8b51f9c753421a63979f539c226908
+Author: yair <hthtr0@gmail.com>
+Date:   Thu Jan 23 19:57:21 2020 +0200
+
+    finish algo
+
+commit 039252809c0db2109e67b3a5e8202072908acefd
+Author: yair <hthtr0@gmail.com>
+Date:   Thu Jan 23 19:08:23 2020 +0200
+
+    working on dfs
+
+commit 43c2bcbb615bbcd387dcd86a0fd6702dccbaab0e
+Author: eyalgolan <eyalgolan96@gmail.com>
+Date:   Thu Jan 23 16:15:44 2020 +0200
+
+    initial attempt - results:
+    1320 evaluations
+    result 379
+    Meaning BFS is currently not working
+
+commit 48cff4c4bb2390af3ba7ed79cdd1a4be1f72394a
+Author: eyalgolan <eyalgolan96@gmail.com>
+Date:   Thu Jan 23 15:55:31 2020 +0200
+
+    working on bfs
+
+commit 8fe5840609633121821f2a462b5c9ce47ca6b924
+Author: eyalgolan <eyalgolan96@gmail.com>
+Date:   Thu Jan 23 15:03:44 2020 +0200
+
+    fixing bestFS issues
+
+commit 41e8ad401f9ce701a8fa24767631f8554f023d2e
+Author: yair <hthtr0@gmail.com>
+Date:   Thu Jan 23 15:47:43 2020 +0200
+
+    bestfs work!!!!!
+
+commit 1aa24f60bb65be1c1b1682f730b09d50607e8ec6
+Author: yair <hthtr0@gmail.com>
+Date:   Thu Jan 23 15:14:10 2020 +0200
+
+    bestfs work!!!!!
+
+commit 34d98a1ea57f71623ff1335012c0e3084bbb3e2c
+Author: yair <hthtr0@gmail.com>
+Date:   Thu Jan 23 14:40:26 2020 +0200
+
+    bestfs work!!!!!
+
+commit c96477bb29faf4eebccfc137bccc7e1034ca25ba
+Author: yair <hthtr0@gmail.com>
+Date:   Thu Jan 23 14:03:02 2020 +0200
+
+    bestfs work!!!!
+
+commit 71a782865b407e1c7fe90c3b5a9f051625b27518
+Author: yair <hthtr0@gmail.com>
+Date:   Thu Jan 23 13:42:18 2020 +0200
+
+    bestfs work!!
+
+commit 872d86d812d0e95a9c763eab2d0aa7f957482ec5
+Author: yair <hthtr0@gmail.com>
+Date:   Thu Jan 23 13:37:35 2020 +0200
+
+    almost work
+
+commit 0712fc7fffad7a9265e47ceebf38b73ca9c92e8e
+Author: yair <hthtr0@gmail.com>
+Date:   Thu Jan 23 13:18:43 2020 +0200
+
+    change methood 300
+
+commit 5c055da5410ebaa63b9940672842e9c5949c5ef7
+Merge: 9cc0bb9 ba37d46
+Author: yair <hthtr0@gmail.com>
+Date:   Thu Jan 23 12:11:59 2020 +0200
+
+    Merge remote-tracking branch 'origin/part-three' into part-three
+    
+    # Conflicts:
+    #	BestFS.h
+    #	Searchable.h
+
+commit 9cc0bb995c46961932a4352fd2e4af00f6bdf2c4
+Author: yair <hthtr0@gmail.com>
+Date:   Thu Jan 23 12:09:31 2020 +0200
+
+    change methood 30
+
+commit ba37d468e3703aac897da78cda0b9b36d16597e4
+Author: eyalgolan <eyalgolan96@gmail.com>
+Date:   Wed Jan 22 00:03:16 2020 +0200
+
+    orginize code, working on returned solution from BestFS
+
+commit b0c51588bed52fade7f703f7cf839dd68ac1321b
+Author: eyalgolan <eyalgolan96@gmail.com>
+Date:   Tue Jan 21 23:13:59 2020 +0200
+
+    orginize code, working on returned solution from BestFS
+
+commit d14ff560d33c728365c07ebef72a213a1ef6bf35
+Author: eyalgolan <eyalgolan96@gmail.com>
+Date:   Tue Jan 21 23:07:49 2020 +0200
+
+    orginize code, working on returned solution from BestFS
+
+commit 79a11fa54a5108b213a873a241f41ecc8f0af2f0
+Author: eyalgolan <eyalgolan96@gmail.com>
+Date:   Tue Jan 21 22:02:30 2020 +0200
+
+    orginize code, working on returned solution from BestFS
+
+commit b2fbb4de117bb5484cb3d502565fb44a5001340d
+Author: eyalgolan <eyalgolan96@gmail.com>
+Date:   Tue Jan 21 21:51:54 2020 +0200
+
+    orginize code, working on returned solution from BestFS
+
+commit 4505eebaf1612a759911883861c29aa6d5499ba2
+Author: yair <hthtr0@gmail.com>
+Date:   Tue Jan 21 21:20:31 2020 +0200
+
+    change methood 3
+
+commit abe28a8293aec9dfb815f68ddbdebf5a46db18a3
+Author: yair <hthtr0@gmail.com>
+Date:   Tue Jan 21 20:05:06 2020 +0200
+
+    change methood2
+
+commit e17b306cad974a385961275eb3a7fe28945b01a3
+Merge: a628a9a 3e20fb6
+Author: yair <hthtr0@gmail.com>
+Date:   Tue Jan 21 19:49:48 2020 +0200
+
+    Merge remote-tracking branch 'origin/part-three' into part-three
+    
+    # Conflicts:
+    #	BestFS.h
+    #	State.h
+
+commit a628a9a686bc66b2fdb4233a204d5fe0394a2c8e
+Author: yair <hthtr0@gmail.com>
+Date:   Tue Jan 21 19:46:11 2020 +0200
+
+    change methood
+
+commit 3e20fb6d623286d24ac2732014bed538c03e2c41
+Author: eyalgolan <eyalgolan96@gmail.com>
+Date:   Tue Jan 21 19:13:33 2020 +0200
+
+    trying to fix infinite state parent loop
+
+commit 42d582c9f793d83f2b71a94f724bec8fe4280369
+Author: eyalgolan <eyalgolan96@gmail.com>
+Date:   Tue Jan 21 18:40:11 2020 +0200
+
+    trying to orginize code
+
+commit 761f68b70a1e448b1fe23b0a2e0863c5d569085b
+Author: yair <hthtr0@gmail.com>
+Date:   Tue Jan 21 18:21:48 2020 +0200
+
+    set visit
+
+commit 9c502aa2ccf4e85879cf95148b6dbc85ade36f0a
+Author: yair <hthtr0@gmail.com>
+Date:   Tue Jan 21 18:09:36 2020 +0200
+
+    set sparent problem matrix push
+
+commit d8f49bb4b130837754c1ce81833d347b569cd041
+Author: eyalgolan <eyalgolan96@gmail.com>
+Date:   Tue Jan 21 17:35:07 2020 +0200
+
+    start working on fixing BUG: cell 0x0 passed is in closedNodeSet test even though it was in closedNoseSet
+
+commit 9f0ca128b4142c516d7e3436b5df5e198aaf6684
+Author: yair <hthtr0@gmail.com>
+Date:   Tue Jan 21 15:57:17 2020 +0200
+
+    set sparent problem
+
+commit 580adf0acb02eb2fe873870d2178729adcdea211
+Author: eyalgolan <eyalgolan96@gmail.com>
+Date:   Tue Jan 21 16:38:12 2020 +0200
+
+    start working on fixing BUG: cell 0x0 passed is in closedNodeSet test even though it was in closedNoseSet
+
+commit 60d7039c2a783360b0f847124b4058b9b10e75cf
+Author: yair <hthtr0@gmail.com>
+Date:   Tue Jan 21 15:45:32 2020 +0200
+
+    set sparent problem
+
+commit 44a3a35382065ab5f7b3e90aa0aa2187395c5a7c
+Author: yair <hthtr0@gmail.com>
+Date:   Tue Jan 21 11:10:49 2020 +0200
+
+    upstaee operator
+
+commit a958a460ec98df159654d33e538b62d90d7d65ff
+Author: eyalgolan <eyalgolan96@gmail.com>
+Date:   Tue Jan 21 10:28:44 2020 +0200
+
+    start working on fixing BUG: cell 0x0 passed is in closedNodeSet test even though it was in closedNoseSet
+
+commit 96c4a42424ea757efacce621567e54db21418182
+Author: eyalgolan <eyalgolan96@gmail.com>
+Date:   Tue Jan 21 09:29:23 2020 +0200
+
+    start working on fixing BUG: cell 0x0 passed is in closedNodeSet test even though it was in closedNoseSet
+
+commit f21aeacaaf8f1fc3c40a9c5105ffeebd75bd6371
+Author: yair <hthtr0@gmail.com>
+Date:   Tue Jan 21 01:50:52 2020 +0200
+
+    upstaee
+
+commit 11ebff3b4e59c703a5d024cc6781887ee7c3edfa
+Author: yair <hthtr0@gmail.com>
+Date:   Tue Jan 21 01:11:32 2020 +0200
+
+    without bugs
+
+commit 54e8213bdade5ef5d6d5b727e355f10bfc0a7395
+Author: yair <hthtr0@gmail.com>
+Date:   Mon Jan 20 23:17:36 2020 +0200
+
+    after bug fix update.
+    3
+
+commit 7312fc96efeb0b263fde7953e27be1ec8d4ecc46
+Author: yair <hthtr0@gmail.com>
+Date:   Mon Jan 20 20:40:05 2020 +0200
+
+    after bug fix update.
+
+commit 3a3c3d727566c1e33fbbbdd26bb26c1f0dcc2d16
+Author: yair <hthtr0@gmail.com>
+Date:   Mon Jan 20 20:15:56 2020 +0200
+
+    after bug fix update
+
+commit a1a6af4b0fb2de6c03ac56e3a891fb7e013f2a14
+Author: yair <hthtr0@gmail.com>
+Date:   Mon Jan 20 19:41:27 2020 +0200
+
+    after bug fix
+
+commit 72463ce3f10cc230fe128d721022752dca268fa5
+Author: yair <hthtr0@gmail.com>
+Date:   Mon Jan 20 18:54:40 2020 +0200
+
+    after bug fix
+
+commit 482fc14bdd1e8bad2a6aac10c28440679db4a251
+Author: yair <hthtr0@gmail.com>
+Date:   Mon Jan 20 18:12:13 2020 +0200
+
+     update10
+
+commit 63403f8309f5c100c68c305352a1d2d71cca5d2b
+Author: eyalgolan <eyalgolan96@gmail.com>
+Date:   Sun Jan 19 19:56:58 2020 +0200
+
+    working on BestFS
+
+commit c6da83eae3866bef7b27add10356cac110af6d9d
+Author: eyalgolan <eyalgolan96@gmail.com>
+Date:   Sun Jan 19 17:31:27 2020 +0200
+
+    working on BestFS
+
+commit 518311517896374040511d2a43319880a3af6825
+Author: eyalgolan <eyalgolan96@gmail.com>
+Date:   Sun Jan 19 16:56:32 2020 +0200
+
+    working on BestFS
+
+commit a5867b8907874fbb3da43266936f98111b40e207
+Author: yair <hthtr0@gmail.com>
+Date:   Sun Jan 19 18:49:19 2020 +0200
+
+    state update3
+
+commit 82f97c5556fbb39d7aee130b5323ef3b7ace9531
+Author: eyalgolan <eyalgolan96@gmail.com>
+Date:   Sun Jan 19 16:36:41 2020 +0200
+
+    working on BestFS
+
+commit 19ce3c101f751d89556a5c674d953bb846edc1e1
+Merge: 7e8f407 603adb9
+Author: yair <hthtr0@gmail.com>
+Date:   Sun Jan 19 18:24:18 2020 +0200
+
+    Merge remote-tracking branch 'origin/part-three' into part-three
+
+commit 7e8f4077ecf606d7d73557dc486443e65715815c
+Author: yair <hthtr0@gmail.com>
+Date:   Sun Jan 19 18:24:01 2020 +0200
+
+    state update1
+
+commit fc54af7df2e3c06182700d229c335dfbf3397b52
+Author: yair <hthtr0@gmail.com>
+Date:   Sun Jan 19 18:06:34 2020 +0200
+
+    state update
+
+commit 603adb9f9f58dcc13eed8049978906d3ccabd4d0
+Author: eyalgolan <eyalgolan96@gmail.com>
+Date:   Sun Jan 19 16:01:17 2020 +0200
+
+    working on BestFS
+
+commit 42876c5b80c9997ae8840a087c0dbbc1b97dba4b
+Author: eyalgolan <eyalgolan96@gmail.com>
+Date:   Sun Jan 19 15:46:22 2020 +0200
+
+    working on BestFS
+
+commit ba5c7e83dae056a45327c3fa3e231871e2662f9d
+Author: eyalgolan <eyalgolan96@gmail.com>
+Date:   Sun Jan 19 15:31:35 2020 +0200
+
+    working on BestFS
+
+commit c15a3fbe0e69cc4f4639318519891b40be8609e3
+Author: eyalgolan <eyalgolan96@gmail.com>
+Date:   Sun Jan 19 15:11:05 2020 +0200
+
+    working on BestFS
+
+commit 65b918e4bd6e4ee2c369ab6ba59abb2b53096414
+Author: eyalgolan <eyalgolan96@gmail.com>
+Date:   Sun Jan 19 15:04:34 2020 +0200
+
+    working on BestFS
+
+commit ca378be0dab30b52bb1ef484cf6ef56cbac96cab
+Author: eyalgolan <eyalgolan96@gmail.com>
+Date:   Sun Jan 19 14:43:50 2020 +0200
+
+    fix Matrix issues
+
+commit 63b26755a14ae588b2c568436d86b873ad922e74
+Author: eyalgolan <eyalgolan96@gmail.com>
+Date:   Sun Jan 19 14:31:56 2020 +0200
+
+    fix Matrix issues
+
+commit e546d4e503a8a39a699e3345ee7b12119b23be7f
+Merge: e559ca8 e59eb16
+Author: eyalgolan <eyalgolan96@gmail.com>
+Date:   Sun Jan 19 14:22:12 2020 +0200
+
+    Merge branch 'part-three' of https://github.com/YairHanimov/Searching_Algorithm_Server into part-three
+
+commit e59eb1696ace93af04138bb5f2119de1e57c936a
+Author: yair <hthtr0@gmail.com>
+Date:   Sun Jan 19 15:24:32 2020 +0200
+
+    server cash seaarch3
+
+commit e559ca8a2ec629ff904e815cf072e9d79a7d63ad
+Author: eyalgolan <eyalgolan96@gmail.com>
+Date:   Sun Jan 19 14:20:32 2020 +0200
+
+    working on BestFS
+
+commit 5c3ef879b77dde3140a4ca57078813caaf30fc86
+Author: eyalgolan <eyalgolan96@gmail.com>
+Date:   Sun Jan 19 14:04:24 2020 +0200
+
+    working on BestFS
+
+commit f7c4d56ffa847cc22aeada57f6bc277d61404f6d
+Author: eyalgolan <eyalgolan96@gmail.com>
+Date:   Sun Jan 19 13:36:59 2020 +0200
+
+    need to change State to work with double instead of Cell, and build State by state field which will be a one-to-one function based on location in the matrix
+
+commit 17632efd2aec2a0d3f61c9bef58cb4111de60fe3
+Author: eyalgolan <eyalgolan96@gmail.com>
+Date:   Sun Jan 19 13:21:17 2020 +0200
+
+    Searcher general structure
+
+commit 5b9859910dbf2c8a53d12f62e3e0389eaf43b816
+Author: eyalgolan <eyalgolan96@gmail.com>
+Date:   Sun Jan 19 13:17:24 2020 +0200
+
+    Searcher general structure
+
+commit 8eb5362229563bd484dc5958eaf8de3faf8336e2
+Author: yair <hthtr0@gmail.com>
+Date:   Sat Jan 18 20:00:39 2020 +0200
+
+    matrix full
+
+commit 9f24f1c4cb465652aca05ca032438073631dab75
+Author: eyalgolan <eyalgolan96@gmail.com>
+Date:   Thu Jan 16 15:21:01 2020 +0200
+
+    fixed OA-Matrix-state build issues
+
+commit 5cf948e0f2e183faa2f3ae33f488fde9de7f38fc
+Author: eyalgolan <eyalgolan96@gmail.com>
+Date:   Thu Jan 16 14:44:56 2020 +0200
+
+    fixed OA-Matrix-state build issues
+
+commit 46c618b0e569dbee18835cbd340816d6852c3330
+Author: eyalgolan <eyalgolan96@gmail.com>
+Date:   Thu Jan 16 14:36:42 2020 +0200
+
+    fixed OA-Matrix-state build issues
+
+commit 018ddea035843891f0930459496262eb616ab94b
+Author: eyalgolan <eyalgolan96@gmail.com>
+Date:   Thu Jan 16 13:07:46 2020 +0200
+
+    fixed OA-Matrix-state build issues
+
+commit e422dbe1f5a6f932b9dfc7262092fab66310c8c9
+Author: eyalgolan <eyalgolan96@gmail.com>
+Date:   Thu Jan 16 09:02:38 2020 +0200
+
+    working on matrix solving
+
+commit ef291de8aeb063f0220da7366a728199adcbd3ad
+Author: eyalgolan <eyalgolan96@gmail.com>
+Date:   Thu Jan 16 09:01:44 2020 +0200
+
+    working on matrix solving
+
+commit b821495bb023e96f72d47977d4d34edfe857d205
+Author: eyalgolan <eyalgolan96@gmail.com>
+Date:   Thu Jan 16 08:54:18 2020 +0200
+
+    working on matrix solving
+
+commit 5635507669fd331aed50bad9991dbe9b3e080e2f
+Author: yair <hthtr0@gmail.com>
+Date:   Thu Jan 16 22:44:57 2020 +0200
+
+    server cash seaarch21133
+
+commit f463fa27301bda96034daf3db1e38317938ee284
+Author: eyalgolan <eyalgolan96@gmail.com>
+Date:   Thu Jan 16 07:33:08 2020 +0200
+
+    working on matrix solving
+
+commit 556b04ce28cb76826b7c88d1fc5e73030d2168bf
+Author: eyalgolan <eyalgolan96@gmail.com>
+Date:   Thu Jan 16 07:27:36 2020 +0200
+
+    working on matrix solving
+
+commit 56a26f01c0f141570b4b0d8e3bd6bd909fea25cc
+Author: eyalgolan <eyalgolan96@gmail.com>
+Date:   Thu Jan 16 07:21:12 2020 +0200
+
+    working on matrix solving
+
+commit 8fc2450b269b1893828648bb4ebccc10434926ee
+Author: eyalgolan <eyalgolan96@gmail.com>
+Date:   Thu Jan 16 07:04:42 2020 +0200
+
+    working on matrix solving
+
+commit 776c53e56bc6fa318025c3d524844b5ff3de8589
+Author: eyalgolan <eyalgolan96@gmail.com>
+Date:   Thu Jan 16 05:20:50 2020 +0200
+
+    basic work on search algorithms
+
+commit e009edd0c5a35acccde7e87915f8570f22536040
+Author: eyalgolan <eyalgolan96@gmail.com>
+Date:   Thu Jan 16 05:16:35 2020 +0200
+
+    working on matrix, state classes
+
+commit 43122aed0afebf012c72d0e45ac129b262180d5f
+Author: eyalgolan <eyalgolan96@gmail.com>
+Date:   Thu Jan 16 05:10:38 2020 +0200
+
+    building part 3 general structure
+
+commit 46051f11b840ac5fc18410bd9f1c24c3e3b672ee
+Author: eyalgolan <eyalgolan96@gmail.com>
+Date:   Thu Jan 16 04:59:47 2020 +0200
+
+    building part 3 general structure
+
+commit 808058f607ca2015716e0f185634833ee1fa09a8
+Author: eyalgolan <eyalgolan96@gmail.com>
+Date:   Thu Jan 16 04:53:17 2020 +0200
+
+    building part 3 general structure
+
+commit c6e34fcdd5a17fb7c6e39d400e782cd966349183
+Author: eyalgolan <eyalgolan96@gmail.com>
+Date:   Thu Jan 16 04:42:05 2020 +0200
+
+    start working on part three
+
+commit 8a5936ddcd57ebedc7f30f8c8ee256b81f2d117d
+Author: eyalgolan <eyalgolan96@gmail.com>
+Date:   Thu Jan 16 04:05:07 2020 +0200
+
+    finish cache issues
+
+commit 2490ff0c6c342db46379cffd6e2d746042a6ef8c
+Author: eyalgolan <eyalgolan96@gmail.com>
+Date:   Thu Jan 16 01:30:57 2020 +0200
+
+    try to fix
+
+commit 22b3755b29745d50a824dfba45e44b95ab2481f5
+Author: eyalgolan <eyalgolan96@gmail.com>
+Date:   Thu Jan 16 00:58:52 2020 +0200
+
+    Revert "server cash seaarch2"
+    
+    This reverts commit 9764f34c3da62ada740a6a34f04fa3ef9c2904e9.
+
+commit 382cd65b201afc597b4a7cd0e46d1c1ca5af18a6
+Author: eyalgolan <eyalgolan96@gmail.com>
+Date:   Thu Jan 16 00:58:35 2020 +0200
+
+    Revert "changing to work by ex uml1"
+    
+    This reverts commit 3308deeeeaf3e839214e21876a87fc180e5ecbac.
+
+commit 3308deeeeaf3e839214e21876a87fc180e5ecbac
+Author: eyalgolan <eyalgolan96@gmail.com>
+Date:   Thu Jan 16 00:57:45 2020 +0200
+
+    changing to work by ex uml1
+
+commit 9764f34c3da62ada740a6a34f04fa3ef9c2904e9
+Author: yair <hthtr0@gmail.com>
+Date:   Thu Jan 16 15:31:24 2020 +0200
+
+    server cash seaarch2
+
+commit 6ea15f2fde0712229dc2e6bde4c8e21b2d497e59
+Merge: f7a360a 8cc3a95
+Author: yair <hthtr0@gmail.com>
+Date:   Thu Jan 16 15:10:37 2020 +0200
+
+    Merge branch 'part-two' of https://github.com/YairHanimov/Searching_Algorithm_Server into part-two
+
+commit f7a360a76f6bb774401747ad836818c70590b786
+Merge: 0fc8072 10a8cb0
+Author: yair <hthtr0@gmail.com>
+Date:   Thu Jan 16 15:07:13 2020 +0200
+
+    Merge remote-tracking branch 'origin/part-two' into part-two
+    
+    # Conflicts:
+    #	main.cpp
+
+commit 0fc807230d62f5222619b4308449f4a048111851
+Author: yair <hthtr0@gmail.com>
+Date:   Thu Jan 16 15:06:46 2020 +0200
+
+    server cash seaarch
+
+commit 44c752302388e6859e2b820600502e29628862c1
+Merge: 62cc8da 9aa536c
+Author: yair <hthtr0@gmail.com>
+Date:   Thu Jan 16 14:47:52 2020 +0200
+
+    Merge branch 'part-two' of https://github.com/YairHanimov/Searching_Algorithm_Server into part-two
+
+commit 62cc8da1a4a1d4845303375750974f6cd3cd31ba
+Merge: f977adc c4a76ed
+Author: yair <hthtr0@gmail.com>
+Date:   Thu Jan 16 14:44:49 2020 +0200
+
+    Merge branch 'part-two' of https://github.com/YairHanimov/Searching_Algorithm_Server into part-two
+    
+     Conflicts:
+    	MySerialServer.h
+
+commit f977adc1230ace22f2f5b68225833c687d7684a7
+Author: yair <hthtr0@gmail.com>
+Date:   Thu Jan 16 14:36:43 2020 +0200
+
+    push
+
+commit 8cc3a9538340a23fc89503299a5ecef16e49dc2e
+Author: eyalgolan <eyalgolan96@gmail.com>
+Date:   Thu Jan 16 00:18:40 2020 +0200
+
+    changing to work by ex uml1
+
+commit 10a8cb02910507c8307cf78a0c3b1dfccdba5d9a
+Author: eyalgolan <eyalgolan96@gmail.com>
+Date:   Thu Jan 16 00:09:01 2020 +0200
+
+    changing to work by ex uml
+
+commit 9aa536cb9878a3b00c37790810403a5302eaff23
+Author: eyalgolan <eyalgolan96@gmail.com>
+Date:   Wed Jan 15 23:55:26 2020 +0200
+
+    changing to work by ex uml
+
+commit c4a76ed59c799aa86bc67f32f00b4648d6bd5744
+Author: eyalgolan <eyalgolan96@gmail.com>
+Date:   Wed Jan 15 23:52:49 2020 +0200
+
+    changing to work by ex uml
+
+commit 067a248710f83d52efd39fda7f02a2cc1f0efec6
+Author: eyalgolan <eyalgolan96@gmail.com>
+Date:   Wed Jan 15 23:26:39 2020 +0200
+
+    making serial server generic
+
+commit a2b631ef17798708ef2cbf8ad23327488e1562ab
+Author: eyalgolan <eyalgolan96@gmail.com>
+Date:   Wed Jan 15 22:48:28 2020 +0200
+
+    working on server issue
+
+commit f9b3571cfaf1fba606a613121bc2459408f47fb9
+Author: eyalgolan <eyalgolan96@gmail.com>
+Date:   Wed Jan 15 22:16:33 2020 +0200
+
+    integrate ex2 cache
+
+commit 896447d2c9540d86cdb0a1b8075bd85707fedda1
+Author: eyalgolan <eyalgolan96@gmail.com>
+Date:   Wed Jan 15 22:13:39 2020 +0200
+
+    integrate ex2 cache
+
+commit f1a86ca54f3d1e18d78ad66b5b2ca3604a4decb3
+Author: eyalgolan <eyalgolan96@gmail.com>
+Date:   Wed Jan 15 22:07:05 2020 +0200
+
+    integrate ex2 cache
+
+commit 01c391da331acf6154cb30c36a5c92835ad1d316
+Author: eyalgolan <eyalgolan96@gmail.com>
+Date:   Wed Jan 15 21:59:12 2020 +0200
+
+    integrate ex2 cache
+
+commit 84198239b8c22da339af53a870eaa40d1dfc30fc
+Author: eyalgolan <eyalgolan96@gmail.com>
+Date:   Wed Jan 15 21:39:49 2020 +0200
+
+    working on file cache
+
+commit f9390727daa832a62886dd939d011c76c1d923e5
+Author: yair <hthtr0@gmail.com>
+Date:   Thu Jan 16 12:27:47 2020 +0200
+
+    cash
+
+commit b931b9674cd25eacc08e3f85a648472697cd7423
+Author: eyalgolan <eyalgolan96@gmail.com>
+Date:   Wed Jan 15 14:08:25 2020 +0200
+
+    update cache to be with templates
+
+commit 7d2be6dced5b2a10b207802fe055c9f6199de37c
+Author: eyalgolan <eyalgolan96@gmail.com>
+Date:   Tue Jan 14 19:35:02 2020 +0200
+
+    fix stringreverser issue
+    start working on cache
+
+commit 1eceae0509caab471b0a59b6d4b64f0d6102b84d
+Author: eyalgolan <eyalgolan96@gmail.com>
+Date:   Tue Jan 14 19:22:13 2020 +0200
+
+    fix stringreverser issue
+    start working on cache
+
+commit 558a52b989b7f1539a1d2a3a3949b8375ac54c64
+Author: eyalgolan <eyalgolan96@gmail.com>
+Date:   Tue Jan 14 19:10:55 2020 +0200
+
+    start working on cache
+
+commit c148f27e1975e49db50be4bce4a2efb66e5114b6
+Author: eyalgolan <eyalgolan96@gmail.com>
+Date:   Tue Jan 14 18:29:50 2020 +0200
+
+    working on read in MyTestClientHandler, flush issue
+
+commit ecdac24b333232d0357c1471e6cc2fa3c39d626e
+Author: yair <hthtr0@gmail.com>
+Date:   Tue Jan 14 17:35:03 2020 +0200
+
+    client server.timeout.token
+
+commit 841198ca595cfe59cf42f7d7e859cbe9f05b58a3
+Author: eyalgolan <eyalgolan96@gmail.com>
+Date:   Tue Jan 14 17:25:24 2020 +0200
+
+    start working on read in MyTestClientHandler
+
+commit 33e86bc5ddc2efe8f9531606c50fc35c27dbf2d5
+Author: eyalgolan <eyalgolan96@gmail.com>
+Date:   Mon Jan 13 08:17:01 2020 +0200
+
+    change solver input types to generic
+
+commit 67718c1666dfe7638df08a97dc44901481011dbb
+Author: yair <hthtr0@gmail.com>
+Date:   Sun Jan 12 20:55:45 2020 +0200
+
+    client server.timeout.
+
+commit 6f25a97a2f73c7e381f32639ebca075106bc78e0
+Author: yair <hthtr0@gmail.com>
+Date:   Sun Jan 12 20:53:41 2020 +0200
+
+    client server.timeout.
+
+commit eb8efa4f15f0899645c58263c9d678047011bba5
+Author: yair <hthtr0@gmail.com>
+Date:   Sun Jan 12 20:45:18 2020 +0200
+
+    client server.timeout.
+
+commit cb7934bfb26f67d7cbf5742120d0bb69b8b37f68
+Author: yair <hthtr0@gmail.com>
+Date:   Sun Jan 12 20:35:40 2020 +0200
+
+    client server.timeout.
+
+commit 65b57fb0a08ba3f9dce417aff53d97325b6a4bbd
+Author: yair <hthtr0@gmail.com>
+Date:   Sun Jan 12 20:16:58 2020 +0200
+
+    client server.timeout.
+
+commit fef88ce2e72c1e473090fce2571c4ca4a7a0921c
+Merge: dd554d7 f643011
+Author: eyalgolan <eyalgolan96@gmail.com>
+Date:   Sun Jan 12 17:06:18 2020 +0200
+
+    finished bulding general structure
+
+commit dd554d74637a8babff5824aafa19b5363bdcffd5
+Author: yair <hthtr0@gmail.com>
+Date:   Sun Jan 12 20:13:29 2020 +0200
+
+    client server.timeout.
+
+commit 8e2e27c9dddadad2ccf1340111b33c3d8e60a4b8
+Author: yair <hthtr0@gmail.com>
+Date:   Sun Jan 12 19:54:12 2020 +0200
+
+    client server.timeout.
+
+commit 1ea9a1ea64568d290ea34ace262ce16b1eee952e
+Author: yair <hthtr0@gmail.com>
+Date:   Sun Jan 12 19:51:36 2020 +0200
+
+    client server.timeout.
+
+commit f64301166be1cf005b7e51fc182c7e137d527e5a
+Author: eyalgolan <eyalgolan96@gmail.com>
+Date:   Sun Jan 12 17:02:35 2020 +0200
+
+    fixing clion version issue
+
+commit f10f191450c3354ed940de87d2da2ca879f4dc2e
+Author: eyalgolan <eyalgolan96@gmail.com>
+Date:   Sun Jan 12 16:41:27 2020 +0200
+
+    implementing MySerialServer
+
+commit 24fc150f52991c628e8fdfdd9756be2b39baf844
+Author: eyalgolan <eyalgolan96@gmail.com>
+Date:   Sun Jan 12 16:30:57 2020 +0200
+
+    implementing MySerialServer
+
+commit eea493e822cd44cfe50d11ee5fbde1c406754a78
+Author: yair <hthtr0@gmail.com>
+Date:   Sun Jan 12 16:15:10 2020 +0200
+
+    Initial commit
+
+commit 7a15221dbd2a64b4ff970fb2bed6ea11fcddd7be
+Author: eyalgolan <eyalgolan96@gmail.com>
+Date:   Sun Jan 12 16:12:33 2020 +0200
+
+    implementing MyTestClientHandler
+
+commit 9a808ecd84acdf6f68d0155bb83007c709aee5d6
+Author: yair <hthtr0@gmail.com>
+Date:   Sun Jan 12 19:11:37 2020 +0200
+
+    client server.timeout
+
+commit cfc0ccf5e0306b000009c984e768ea05f2185d65
+Author: eyalgolan <eyalgolan96@gmail.com>
+Date:   Sun Jan 12 15:28:40 2020 +0200
+
+    implementing MyTestClientHandler
+
+commit 486bb6e385ca19fee48c6952da5a79cd7279c9c8
+Author: eyalgolan <eyalgolan96@gmail.com>
+Date:   Sun Jan 12 15:21:25 2020 +0200
+
+    working on general classes structure
+
+commit decf8d81c84d420249317f1f6c1d6dc3f3ea3b79
+Author: yair <hthtr0@gmail.com>
+Date:   Sun Jan 12 18:10:09 2020 +0200
+
+    client server.
+
+commit bd0a3aeadf2cccd327056a1eec3f60ccfdc7fffe
+Author: yair <hthtr0@gmail.com>
+Date:   Sun Jan 12 18:07:07 2020 +0200
+
+    client server
+
+commit db09618f761989068898d85eabeb51bd63e9a2e9
+Author: yair <hthtr0@gmail.com>
+Date:   Sun Jan 12 17:57:07 2020 +0200
+
+    creat server class1
+
+commit 274ca0f72170f03d3d7b993ce481c89627123e16
+Author: eyalgolan <eyalgolan96@gmail.com>
+Date:   Sun Jan 12 15:09:56 2020 +0200
+
+    working on general classes structure
+
+commit a3a3447db3a9c2bb0739445e891fe167cc11dc06
+Author: eyalgolan <eyalgolan96@gmail.com>
+Date:   Sun Jan 12 15:02:07 2020 +0200
+
+    working on general classes structure
+
+commit 3bca2fd70f8829375403e19565c8ab6a2736479d
+Author: yair <hthtr0@gmail.com>
+Date:   Sun Jan 12 17:36:42 2020 +0200
+
+    creat server class.
+
+commit 36322ee7066060d9cb43dcac5706cecce4f5e006
+Author: eyalgolan <eyalgolan96@gmail.com>
+Date:   Sun Jan 12 14:24:12 2020 +0200
+
+    Create server_side namespace
+
+commit a61a53edf41eb75f9bf8f8fdee24ce1b4039c96d
+Author: eyalgolan <eyalgolan96@gmail.com>
+Date:   Sun Jan 12 14:11:36 2020 +0200
+
+    Create MyTestClientHandler files
+
+commit 9e5fcc6d9626c419e1184d034408792b3c298c9d
+Author: yair <hthtr0@gmail.com>
+Date:   Sun Jan 12 16:51:40 2020 +0200
+
+    creat server class
+
+commit af2d846ffa08ac4284104aac19b39980f0989fdd
+Author: eyalgolan <eyalgolan96@gmail.com>
+Date:   Sun Jan 12 14:04:37 2020 +0200
+
+    Create ClientHandler files
+
+commit 5d6f891078a82a5b28a4fd0c718fd856b707d0ea
+Author: yair <hthtr0@gmail.com>
+Date:   Sun Jan 12 16:37:51 2020 +0200
+
+    test branch
