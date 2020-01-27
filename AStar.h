@@ -87,6 +87,7 @@ public:
                     }
                 }
 
+                //print and return results
                 mytotalcost += currentNode->getCost();
                 cout << "AStar:" << endl;
                 cout << "Total evaluations:"<<endl;
